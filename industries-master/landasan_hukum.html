@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
   <head>
-    <title>Landasan Hukum K3 - K3 Indonesia</title>
+    <title>Landasan Hukum K3 - K3 Pengolahan Limbah</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Landasan hukum dan regulasi K3 di Indonesia - Undang-undang, Peraturan Pemerintah, dan standar K3">
@@ -18,13 +18,437 @@
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
 
+    <style>
+      /* Navbar putih dengan text hitam */
+      .navbar-white {
+        background: #ffffff !important;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+      }
+      .navbar-white .navbar-brand {
+        color: #2c3e50 !important;
+        font-weight: 700;
+        font-size: 1.4rem;
+      }
+      .navbar-white .nav-link {
+        color: #2c3e50 !important;
+        font-weight: 500;
+        margin: 0 0.3rem;
+        padding: 0.5rem 1rem !important;
+        transition: all 0.3s ease;
+      }
+      .navbar-white .nav-link:hover {
+        color: #fd5f01 !important;
+      }
+      .navbar-white .nav-link.active {
+        color: #fd5f01 !important;
+      }
+      .navbar-white .navbar-toggler {
+        border-color: #2c3e50;
+      }
+      .navbar-white .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2844, 62, 80, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+
+      body {
+        padding-top: 80px;
+        background: #f8f9fa;
+        min-height: 100vh;
+      }
+
+      /* Hero Section dengan warna orange #fd5f01 */
+      .hero-section {
+        background: #fd5f01;
+        padding: 100px 0 80px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+          radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+          radial-gradient(circle at 40% 40%, rgba(255,255,255,0.05) 0%, transparent 50%);
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      }
+      .hero-subtitle {
+        font-size: 1.4rem;
+        opacity: 0.9;
+        font-weight: 300;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      /* Main container */
+      .main-container {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        margin: -40px auto 0;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Section titles dengan warna orange #fd5f01 */
+      .section-title {
+        position: relative;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      .section-title .heading {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        display: inline-block;
+      }
+      .section-title .heading::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: #fd5f01;
+        border-radius: 2px;
+      }
+      .section-title .lead {
+        font-size: 1.2rem;
+        color: #7f8c8d;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Category headers dengan orange #fd5f01 */
+      .category-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: #fd5f01;
+        border-radius: 15px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+      .category-header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffffff" opacity="0.1"><circle cx="50" cy="50" r="40"/></svg>');
+        background-size: 100px;
+        animation: rotate 20s linear infinite;
+      }
+      @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .category-header h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        position: relative;
+        z-index: 2;
+      }
+      .category-header .icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        display: block;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Law cards dengan aksen orange #fd5f01 */
+      .law-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        border: none;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        border-left: 6px solid #fd5f01;
+      }
+      .law-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: #fd5f01;
+      }
+      .law-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      }
+      .law-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 70px;
+        background: #fd5f01;
+        color: white;
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 5px 15px rgba(253, 95, 1, 0.4);
+        transition: all 0.3s ease;
+      }
+      .law-card:hover .law-number {
+        transform: scale(1.1);
+      }
+      .law-card h4 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+      }
+      .law-card strong {
+        color: #fd5f01;
+        display: block;
+        margin-bottom: 0.8rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      .law-card p {
+        color: #5d6d7e;
+        line-height: 1.7;
+        font-size: 1.05rem;
+      }
+      .law-card ul {
+        color: #5d6d7e;
+        line-height: 1.7;
+      }
+      .law-card ul li {
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+      }
+      .law-card ul li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #fd5f01;
+        font-weight: bold;
+      }
+
+      /* Feature cards dengan orange #fd5f01 */
+      .feature-section {
+        padding: 4rem 0;
+      }
+      .feature-card {
+        background: white;
+        border-radius: 15px;
+        padding: 3rem 2rem;
+        text-align: center;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        transition: all 0.4s ease;
+        border: none;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+      .feature-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: #fd5f01;
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      }
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        background: #fd5f01;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 2rem;
+        color: white;
+        font-size: 2rem;
+        box-shadow: 0 5px 15px rgba(253, 95, 1, 0.4);
+        transition: all 0.3s ease;
+      }
+      .feature-card:hover .feature-icon {
+        transform: scale(1.1);
+      }
+      .feature-card h4 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+      }
+      .feature-card p {
+        color: #7f8c8d;
+        line-height: 1.6;
+        font-size: 1.05rem;
+      }
+
+      /* Highlight section dengan orange #fd5f01 */
+      .highlight-section {
+        background: #fd5f01;
+        border-radius: 20px;
+        padding: 3rem;
+        color: white;
+        margin: 4rem 0;
+        box-shadow: 0 15px 35px rgba(253, 95, 1, 0.3);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+      .highlight-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffffff" opacity="0.1"><circle cx="50" cy="50" r="40"/></svg>');
+        background-size: 100px;
+        animation: rotate 20s linear infinite;
+      }
+      .highlight-section h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 2;
+      }
+      .highlight-section p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 0;
+        position: relative;
+        z-index: 2;
+        opacity: 0.95;
+      }
+      .highlight-section strong {
+        color: #2c3e50;
+        font-weight: 700;
+      }
+
+      /* CTA section dengan dark theme */
+      .cta-section {
+        background: #2c3e50;
+        color: white;
+        padding: 4rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><polygon points="1000,100 1000,0 0,100"></polygon></svg>');
+        background-size: cover;
+      }
+      .cta-title {
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 2;
+      }
+      .cta-section .lead {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 2;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .btn-modern {
+        background: #fd5f01;
+        color: white;
+        padding: 12px 35px;
+        border-radius: 30px;
+        border: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(253, 95, 1, 0.4);
+        font-size: 1.1rem;
+        position: relative;
+        z-index: 2;
+      }
+      .btn-modern:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(253, 95, 1, 0.6);
+        color: white;
+        background: #e55601;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        .hero-subtitle {
+          font-size: 1.1rem;
+        }
+        .main-container {
+          margin: -20px 15px 0;
+          border-radius: 15px;
+        }
+        .law-card {
+          padding: 1.5rem;
+        }
+        .feature-card {
+          margin-bottom: 1.5rem;
+          padding: 2rem 1rem;
+        }
+        .highlight-section {
+          padding: 2rem;
+          margin: 3rem 0;
+        }
+      }
+    </style>
+
   </head>
   <body>
     
     <header role="banner">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-white">
+      <nav class="navbar navbar-expand-lg navbar-white fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand " href="index.html">K3 Indonesia</a>
+          <a class="navbar-brand" href="index.html">K3 Pengolahan Limbah</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -35,253 +459,288 @@
                 <a class="nav-link" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="landasan-hukum.html">Landasan Hukum</a>
+                <a class="nav-link active" href="landasan_hukum.html">Landasan Hukum</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="keselamatan-kerja.html">Keselamatan Kerja</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="apd.html">APD</a>
+                <a class="nav-link" href="lingkungan_kerja.html">Lingkungan Kerja</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="keselamatan_kerja.html">Keselamatan Kerja</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="p3k.html">P3K</a>
-              </li>
+                <a class="nav-link" href="apd.html">APD</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
-    <!-- END header -->
 
     <div class="top-shadow"></div>
 
-    <div class="inner-page">
-    <div class="slider-item";>
-        
-        <div class="container">
-          <div class="row slider-text align-items-center justify-content-center">
-            <div class="col-md-8 text-center col-sm-12 element-animate pt-5">
-              <h1 class="pt-5"><span>Landasan Hukum K3</span></h1>
-              <p class="mb-5 w-75 pl-0">Regulasi dan Peraturan Keselamatan dan Kesehatan Kerja di Indonesia</p>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <h1 class="hero-title">Landasan Hukum K3</h1>
+            <p class="hero-subtitle">Regulasi dan Peraturan Keselamatan dan Kesehatan Kerja di Indonesia - Panduan Lengkap untuk Perusahaan Pengolahan Limbah</p>
           </div>
         </div>
-
       </div>
-    </div>
-    <!-- END slider -->
-    </div>
-    
+    </section>
+
+    <!-- Main Content -->
     <section class="section">
       <div class="container">
-        <div class="row justify-content-center mb-5 element-animate">
-          <div class="col-md-10 text-center">
-            <h2 class="heading mb-4">Landasan Hukum yang Mengatur K3</h2>
-            <p class="mb-5 lead">Berikut adalah regulasi dan peraturan yang menjadi landasan pelaksanaan Keselamatan dan Kesehatan Kerja di Indonesia, termasuk pengelolaan lingkungan hidup dan limbah B3.</p>
-          </div>
-        </div>
+        <div class="main-container">
+          <div class="p-5">
+            
+            <!-- Introduction -->
+            <div class="row justify-content-center mb-5">
+              <div class="col-md-10 text-center">
+                <div class="section-title">
+                  <p class="lead">Berikut adalah regulasi dan peraturan yang menjadi landasan pelaksanaan Keselamatan dan Kesehatan Kerja di Indonesia, termasuk pengelolaan lingkungan hidup dan limbah B3.</p>
+                </div>
+              </div>
+            </div>
 
-        <!-- UNDANG-UNDANG -->
-        <div class="row mb-5">
-          <div class="col-12">
-            <h3 class="mb-4 text-primary">
-              <span class="ion-ios-book-outline mr-2"></span>Undang-Undang
-            </h3>
-          </div>
-        </div>
+            <!-- UNDANG-UNDANG -->
+            <div class="category-header">
+              <span class="icon ion-ios-book-outline"></span>
+              <h3>Undang-Undang</h3>
+              <p class="mb-0">Dasar Hukum Utama Sistem K3 Indonesia</p>
+            </div>
 
-        <div class="row mb-4">
-          <div class="col-lg-12">
-            <div class="card border-0 shadow-sm mb-4">
-              <div class="card-body p-4">
-                <div class="d-flex align-items-start">
-                  <div class="mr-3">
-                    <span class="badge badge-primary" style="font-size: 1.2rem; padding: 0.5rem 0.8rem;">1</span>
+            <div class="row mb-5">
+              <!-- UU 1/1970 -->
+              <div class="col-lg-12 mb-4">
+                <div class="law-card">
+                  <div class="d-flex align-items-start">
+                    <div class="mr-4">
+                      <div class="law-number">1</div>
+                    </div>
+                    <div class="flex-grow-1">
+                      <h4>UU No. 1 Tahun 1970 tentang Keselamatan Kerja</h4>
+                      <strong>Fungsi:</strong>
+                      <p>Merupakan dasar hukum utama di tempat K3. Undang-undang ini menjadi fondasi pelaksanaan keselamatan kerja di Indonesia yang mengatur kewajiban pengusaha dalam menjamin keselamatan pekerja, syarat-syarat keselamatan kerja di tempat kerja, pengawasan, serta sanksi pelanggaran K3.</p>
+                    </div>
                   </div>
-                  <div class="flex-grow-1">
-                    <h4 class="text-black mb-3">UU No. 1 Tahun 1970 tentang Keselamatan Kerja</h4>
-                    <p class="mb-0"><strong>Fungsi:</strong> Merupakan dasar hukum utama di tempat K3. Undang-undang ini menjadi fondasi pelaksanaan keselamatan kerja di Indonesia yang mengatur kewajiban pengusaha dalam menjamin keselamatan pekerja, syarat-syarat keselamatan kerja di tempat kerja, pengawasan, serta sanksi pelanggaran K3.</p>
+                </div>
+              </div>
+
+              <!-- UU 32/2009 -->
+              <div class="col-lg-12 mb-4">
+                <div class="law-card">
+                  <div class="d-flex align-items-start">
+                    <div class="mr-4">
+                      <div class="law-number">2</div>
+                    </div>
+                    <div class="flex-grow-1">
+                      <h4>UU No. 32 Tahun 2009 tentang Perlindungan dan Pengelolaan Lingkungan Hidup</h4>
+                      <strong>Fungsi:</strong>
+                      <p>Merupakan pengelolaan limbah B3 (Bahan Berbahaya dan Beracun) agar tidak merusak lingkungan. Undang-undang ini mengatur perlindungan dan pengelolaan lingkungan hidup termasuk aspek pengelolaan limbah berbahaya yang dapat membahayakan keselamatan dan kesehatan pekerja.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- UU 13/2003 -->
+              <div class="col-lg-12 mb-4">
+                <div class="law-card">
+                  <div class="d-flex align-items-start">
+                    <div class="mr-4">
+                      <div class="law-number">3</div>
+                    </div>
+                    <div class="flex-grow-1">
+                      <h4>UU No. 13 Tahun 2003 tentang Ketenagakerjaan jo. UU No. 11 Tahun 2020 (Cipta Kerja)</h4>
+                      <strong>Fungsi:</strong>
+                      <p>Mengatur hak pekerja atas lingkungan kerja yang sehat dan aman. Undang-undang ini melengkapi aspek ketenagakerjaan termasuk perlindungan keselamatan dan kesehatan tenaga kerja, standar kerja minimum terkait K3, serta jaminan sosial ketenagakerjaan untuk kecelakaan kerja.</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-12">
-            <div class="card border-0 shadow-sm mb-4">
-              <div class="card-body p-4">
-                <div class="d-flex align-items-start">
-                  <div class="mr-3">
-                    <span class="badge badge-primary" style="font-size: 1.2rem; padding: 0.5rem 0.8rem;">2</span>
+            <!-- PERATURAN PEMERINTAH -->
+            <div class="category-header">
+              <span class="icon ion-document-text"></span>
+              <h3>Peraturan Pemerintah & Peraturan Menteri</h3>
+              <p class="mb-0">Implementasi Teknis dan Regulasi Pendukung</p>
+            </div>
+
+            <div class="row mb-5">
+              <!-- PP 22/2021 -->
+              <div class="col-lg-12 mb-4">
+                <div class="law-card">
+                  <div class="d-flex align-items-start">
+                    <div class="mr-4">
+                      <div class="law-number">4</div>
+                    </div>
+                    <div class="flex-grow-1">
+                      <h4>PP No. 22 Tahun 2021 tentang Penyelenggaraan Perlindungan dan Pengelolaan Lingkungan Hidup</h4>
+                      <strong>Fungsi:</strong>
+                      <p>Menggantikan PP No. 101 Tahun 2014, peraturan ini mengatur lebih rinci mengenai penyelenggaraan perlindungan dan pengelolaan lingkungan hidup, termasuk spesifikasi pengelolaan limbah B3 dari identifikasi hingga pembuangan akhir. Peraturan ini memastikan kegiatan operasional perusahaan berjalan aman dan tidak membahayakan lingkungan serta kesehatan pekerja.</p>
+                    </div>
                   </div>
-                  <div class="flex-grow-1">
-                    <h4 class="text-black mb-3">UU No. 32 Tahun 2009 tentang Perlindungan dan Pengelolaan Lingkungan Hidup</h4>
-                    <p class="mb-0"><strong>Fungsi:</strong> Merupakan pengelolaan limbah B3 (Bahan Berbahaya dan Beracun) agar tidak merusak lingkungan. Undang-undang ini mengatur perlindungan dan pengelolaan lingkungan hidup termasuk aspek pengelolaan limbah berbahaya yang dapat membahayakan keselamatan dan kesehatan pekerja.</p>
+                </div>
+              </div>
+
+              <!-- Permen LHK 6/2021 -->
+              <div class="col-lg-12 mb-4">
+                <div class="law-card">
+                  <div class="d-flex align-items-start">
+                    <div class="mr-4">
+                      <div class="law-number">5</div>
+                    </div>
+                    <div class="flex-grow-1">
+                      <h4>Permen LHK No. 6 Tahun 2021 tentang Tata Cara dan Persyaratan Pengelolaan Limbah B3</h4>
+                      <strong>Fungsi:</strong>
+                      <p>Peraturan ini memberikan panduan teknis secara rinci mengenai tahapan pengelolaan limbah B3, meliputi:</p>
+                      <ul>
+                        <li>Penetapan status limbah B3</li>
+                        <li>Pengurangan limbah (reduce)</li>
+                        <li>Penyimpanan limbah B3</li>
+                        <li>Pengumpulan limbah B3</li>
+                        <li>Pengangkutan limbah B3</li>
+                        <li>Pemanfaatan limbah B3</li>
+                        <li>Pengolahan limbah B3</li>
+                        <li>Pembuangan akhir limbah B3</li>
+                        <li>Perizinan terkait pengelolaan limbah B3</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-12">
-            <div class="card border-0 shadow-sm mb-4">
-              <div class="card-body p-4">
-                <div class="d-flex align-items-start">
-                  <div class="mr-3">
-                    <span class="badge badge-primary" style="font-size: 1.2rem; padding: 0.5rem 0.8rem;">3</span>
+            <!-- Mengapa Regulasi K3 Penting -->
+            <div class="row justify-content-center mb-5">
+              <div class="col-md-10 text-center">
+                <div class="section-title">
+                  <h2 class="heading">Mengapa Regulasi K3 Penting?</h2>
+                  <p class="lead">Penerapan standar K3 yang tepat memberikan manfaat strategis bagi semua pihak</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-section">
+              <div class="row">
+                <div class="col-md-4 mb-4">
+                  <div class="feature-card">
+                    <div class="feature-icon">
+                      <span class="ion-ios-body"></span>
+                    </div>
+                    <h4>Perlindungan Pekerja</h4>
+                    <p>Menjamin keselamatan dan kesehatan tenaga kerja dari potensi bahaya di tempat kerja serta mencegah kecelakaan kerja dan penyakit akibat kerja.</p>
                   </div>
-                  <div class="flex-grow-1">
-                    <h4 class="text-black mb-3">UU No. 13 Tahun 2003 tentang Ketenagakerjaan jo. UU No. 11 Tahun 2020 (Cipta Kerja)</h4>
-                    <p class="mb-0"><strong>Fungsi:</strong> Mengatur hak pekerja atas lingkungan kerja yang sehat dan aman. Undang-undang ini melengkapi aspek ketenagakerjaan termasuk perlindungan keselamatan dan kesehatan tenaga kerja, standar kerja minimum terkait K3, serta jaminan sosial ketenagakerjaan untuk kecelakaan kerja.</p>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                  <div class="feature-card">
+                    <div class="feature-icon">
+                      <span class="ion-earth"></span>
+                    </div>
+                    <h4>Kelestarian Lingkungan</h4>
+                    <p>Mencegah pencemaran dan kerusakan lingkungan dari aktivitas industri pengolahan limbah berbahaya dan beracun.</p>
+                  </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                  <div class="feature-card">
+                    <div class="feature-icon">
+                      <span class="ion-arrow-graph-up-right"></span>
+                    </div>
+                    <h4>Produktivitas Perusahaan</h4>
+                    <p>Meningkatkan efisiensi dan produktivitas melalui lingkungan kerja yang aman, sehat, dan sistem yang terstandarisasi.</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <!-- PERATURAN PEMERINTAH -->
-        <div class="row mb-5 mt-5">
-          <div class="col-12">
-            <h3 class="mb-4 text-primary">
-              <span class="ion-document-text mr-2"></span>Peraturan Pemerintah & Peraturan Menteri
-            </h3>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 mb-4">
-            <div class="card border-0 shadow-sm">
-              <div class="card-body p-4">
-                <div class="d-flex align-items-start">
-                  <div class="mr-3">
-                    <span class="badge badge-success" style="font-size: 1.2rem; padding: 0.5rem 0.8rem;">4</span>
-                  </div>
-                  <div class="flex-grow-1">
-                    <h5 class="text-black mb-3">PP No. 22 Tahun 2021 tentang Penyelenggaraan Perlindungan dan Pengelolaan Lingkungan Hidup</h5>
-                    <p class="mb-0"><strong>Fungsi:</strong> Menggantikan PP No. 101 Tahun 2014, peraturan ini mengatur lebih rinci mengenai penyelenggaraan perlindungan dan pengelolaan lingkungan hidup, termasuk spesifikasi pengelolaan limbah B3 dari identifikasi hingga pembuangan akhir. Peraturan ini memastikan kegiatan operasional perusahaan berjalan aman dan tidak membahayakan lingkungan serta kesehatan pekerja.</p>
-                  </div>
-                </div>
-              </div>
+            <!-- Kesimpulan -->
+            <div class="highlight-section">
+              <h3>
+                <span class="ion-ios-checkmark-outline mr-2"></span>Pentingnya Penerapan Regulasi K3
+              </h3>
+              <p>
+                Penerapan K3 pada perusahaan menjadi kunci utama dalam <strong>mencegah kecelakaan kerja</strong> dan <strong>melindungi kesehatan pekerja</strong> dari paparan limbah berbahaya. Dengan dukungan regulasi K3 dan lingkungan yang berlaku, perusahaan dapat memastikan kegiatan operasional berjalan <strong>aman</strong>, <strong>efisien</strong>, serta tetap menjaga <strong>keberlanjutan lingkungan</strong>.
+              </p>
             </div>
-          </div>
 
-          <div class="col-lg-12 mb-4">
-            <div class="card border-0 shadow-sm">
-              <div class="card-body p-4">
-                <div class="d-flex align-items-start">
-                  <div class="mr-3">
-                    <span class="badge badge-success" style="font-size: 1.2rem; padding: 0.5rem 0.8rem;">5</span>
-                  </div>
-                  <div class="flex-grow-1">
-                    <h5 class="text-black mb-3">Permen LHK No. 6 Tahun 2021 tentang Tata Cara dan Persyaratan Pengelolaan Limbah B3</h5>
-                    <p class="mb-3"><strong>Fungsi:</strong> Peraturan ini memberikan panduan teknis secara rinci mengenai tahapan pengelolaan limbah B3, meliputi:</p>
-                    <ul class="mb-0">
-                      <li>Penetapan status limbah B3</li>
-                      <li>Pengurangan limbah (reduce)</li>
-                      <li>Penyimpanan limbah B3</li>
-                      <li>Pengumpulan limbah B3</li>
-                      <li>Pengangkutan limbah B3</li>
-                      <li>Pemanfaatan limbah B3</li>
-                      <li>Pengolahan limbah B3</li>
-                      <li>Pembuangan akhir limbah B3</li>
-                      <li>Perizinan terkait pengelolaan limbah B3</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-
-        <!-- KESIMPULAN -->
-        <div class="row mb-5 mt-5">
-          <div class="col-12">
-            <div class="card border-0 shadow-sm" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-              <div class="card-body p-5 text-white">
-                <h3 class="text-white mb-4">
-                  <span class="ion-ios-checkmark-outline mr-2"></span>Pentingnya Penerapan Regulasi K3
-                </h3>
-                <p class="mb-0" style="font-size: 1.1rem; line-height: 1.8;">
-                  Penerapan K3 pada perusahaan menjadi kunci utama dalam <strong>mencegah kecelakaan kerja</strong> dan <strong>melindungi kesehatan pekerja</strong> dari paparan limbah berbahaya. Dengan dukungan regulasi K3 dan lingkungan yang berlaku, perusahaan dapat memastikan kegiatan operasional berjalan <strong>aman</strong>, <strong>efisien</strong>, serta tetap menjaga <strong>keberlanjutan lingkungan</strong>.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
 
-    <section class="section bg-primary">
+    <!-- CTA Section -->
+    <section class="cta-section">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-8">
-            <h2 class="text-white mb-0">Komitmen Penerapan K3</h2>
-            <p class="text-white lead">Kepatuhan terhadap regulasi K3 adalah tanggung jawab bersama untuk menciptakan lingkungan kerja yang aman dan produktif.</p>
-          </div>
-          <div class="col-lg-4 text-lg-right">
-            <a href="contact.html" class="btn btn-outline-white px-4 py-3">Konsultasi K3</a>
-          </div>
-        </div>
+        <h2 class="cta-title">Komitmen Penerapan K3</h2>
+        <p class="lead">Kepatuhan terhadap regulasi K3 adalah tanggung jawab bersama untuk menciptakan lingkungan kerja yang aman, sehat, dan produktif bagi semua pihak.</p>
       </div>
     </section>
 
-    <footer class="site-footer bg-light" role="contentinfo">
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-4 mb-5">
-            <h3>Tentang K3 Indonesia</h3>
-            <p class="mb-5">Komitmen kami adalah menciptakan lingkungan kerja yang aman, sehat, dan produktif melalui implementasi standar K3 yang komprehensif.</p>
+            <h3>About Us</h3>
+            <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. .</p>
             <ul class="list-unstyled footer-link d-flex footer-social">
               <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
               <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
               <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
               <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
             </ul>
-
           </div>
           <div class="col-md-5 mb-5 pl-md-5">
-            <h3>Kontak Kami</h3>
+            <h3>Contact Info</h3>
             <ul class="list-unstyled footer-link">
               <li class="d-block">
-                <span class="d-block">Alamat:</span>
-                <span>Jl. K3 Safety No. 123, Jakarta Selatan, DKI Jakarta 12345</span></li>
-              <li class="d-block"><span class="d-block">Telepon:</span><span>+62 21 1234 5678</span></li>
-              <li class="d-block"><span class="d-block">Email:</span><span>info@k3indonesia.com</span></li>
+                <span class="d-block">Address:</span>
+                <span>34 Street Name, City Name Here, United States</span>
+              </li>
+              <li class="d-block">
+                <span class="d-block">Telephone:</span>
+                <span>+1 242 4942 290</span>
+              </li>
+              <li class="d-block">
+                <span class="d-block">Email:</span>
+                <span>info@yourdomain.com</span>
+              </li>
             </ul>
           </div>
           <div class="col-md-3 mb-5">
-            <h3>Menu Cepat</h3>
+            <h3>Quick Links</h3>
             <ul class="list-unstyled footer-link">
-              <li><a href="landasan-hukum.html">Landasan Hukum</a></li>
-              <li><a href="keselamatan-kerja.html">Keselamatan Kerja</a></li>
-              <li><a href="apd.html">APD</a></li>
-              <li><a href="contact.html">Kontak</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Disclaimers</a></li>
+              <li><a href="#">Contact</a></li>
             </ul>
-          </div>
-          <div class="col-md-3">
-          
           </div>
         </div>
         <div class="row">
           <div class="col-12 text-md-center text-left">
-             <p>
+            <p>
               Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> K3 Indonesia | All rights reserved
+              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
+              with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
             </p>
           </div>
         </div>
       </div>
     </footer>
-    <!-- END footer -->
 
     <!-- loader -->
-    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+    <div id="loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/>
+      </svg>
+    </div>
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -289,8 +748,6 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/main.js"></script>
-
     <script src="js/main.js"></script>
     
   </body>
