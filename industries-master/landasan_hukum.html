@@ -19,46 +19,48 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-      /* Navbar putih dengan text hitam */
+      /* Navbar dengan warna aesthetic */
       .navbar-white {
         background: #ffffff !important;
         box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         transition: all 0.3s ease;
       }
       .navbar-white .navbar-brand {
-        color: #2c3e50 !important;
+        color: #2d3436 !important;
         font-weight: 700;
         font-size: 1.4rem;
       }
       .navbar-white .nav-link {
-        color: #2c3e50 !important;
+        color: #2d3436 !important;
         font-weight: 500;
         margin: 0 0.3rem;
         padding: 0.5rem 1rem !important;
         transition: all 0.3s ease;
       }
       .navbar-white .nav-link:hover {
-        color: #fd5f01 !important;
+        color: #6c5ce7 !important;
       }
       .navbar-white .nav-link.active {
-        color: #fd5f01 !important;
+        color: #6c5ce7 !important;
+        font-weight: 600;
       }
       .navbar-white .navbar-toggler {
-        border-color: #2c3e50;
+        border-color: #2d3436;
       }
       .navbar-white .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2844, 62, 80, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2845, 52, 54, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
       }
 
       body {
         padding-top: 80px;
-        background: #f8f9fa;
+        background: #fafafa;
         min-height: 100vh;
+        color: #2d3436;
       }
 
-      /* Hero Section dengan warna orange #fd5f01 */
+      /* Hero Section dengan gradient aesthetic */
       .hero-section {
-        background: #fd5f01;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         padding: 100px 0 80px;
         color: white;
         position: relative;
@@ -101,13 +103,13 @@
       .main-container {
         background: #ffffff;
         border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         margin: -40px auto 0;
         position: relative;
         z-index: 2;
       }
 
-      /* Section titles dengan warna orange #fd5f01 */
+      /* Section titles dengan warna aesthetic */
       .section-title {
         position: relative;
         text-align: center;
@@ -116,7 +118,7 @@
       .section-title .heading {
         font-size: 2.5rem;
         font-weight: 700;
-        color: #2c3e50;
+        color: #2d3436;
         margin-bottom: 1rem;
         display: inline-block;
       }
@@ -128,22 +130,22 @@
         transform: translateX(-50%);
         width: 80px;
         height: 4px;
-        background: #fd5f01;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         border-radius: 2px;
       }
       .section-title .lead {
         font-size: 1.2rem;
-        color: #7f8c8d;
+        color: #636e72;
         max-width: 700px;
         margin: 0 auto;
       }
 
-      /* Category headers dengan orange #fd5f01 */
+      /* Category headers dengan gradient aesthetic */
       .category-header {
         text-align: center;
         margin-bottom: 3rem;
         padding: 2rem;
-        background: #fd5f01;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         border-radius: 15px;
         color: white;
         position: relative;
@@ -179,7 +181,7 @@
         z-index: 2;
       }
 
-      /* Law cards dengan aksen orange #fd5f01 */
+      /* Law cards dengan aksen aesthetic */
       .law-card {
         background: white;
         border-radius: 15px;
@@ -190,7 +192,7 @@
         transition: all 0.4s ease;
         position: relative;
         overflow: hidden;
-        border-left: 6px solid #fd5f01;
+        border-left: 6px solid #6c5ce7;
       }
       .law-card::before {
         content: '';
@@ -199,7 +201,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: #fd5f01;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       }
       .law-card:hover {
         transform: translateY(-5px);
@@ -211,13 +213,13 @@
         justify-content: center;
         width: 70px;
         height: 70px;
-        background: #fd5f01;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
         border-radius: 50%;
         font-weight: bold;
         font-size: 1.5rem;
         margin-bottom: 1.5rem;
-        box-shadow: 0 5px 15px rgba(253, 95, 1, 0.4);
+        box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
         transition: all 0.3s ease;
       }
       .law-card:hover .law-number {
@@ -226,24 +228,24 @@
       .law-card h4 {
         font-size: 1.4rem;
         font-weight: 600;
-        color: #2c3e50;
+        color: #2d3436;
         margin-bottom: 1rem;
         line-height: 1.4;
       }
       .law-card strong {
-        color: #fd5f01;
+        color: #6c5ce7;
         display: block;
         margin-bottom: 0.8rem;
         font-size: 1.1rem;
         font-weight: 600;
       }
       .law-card p {
-        color: #5d6d7e;
+        color: #636e72;
         line-height: 1.7;
         font-size: 1.05rem;
       }
       .law-card ul {
-        color: #5d6d7e;
+        color: #636e72;
         line-height: 1.7;
       }
       .law-card ul li {
@@ -255,11 +257,11 @@
         content: '✓';
         position: absolute;
         left: 0;
-        color: #fd5f01;
+        color: #6c5ce7;
         font-weight: bold;
       }
 
-      /* Feature cards dengan orange #fd5f01 */
+      /* Feature cards dengan warna aesthetic */
       .feature-section {
         padding: 4rem 0;
       }
@@ -282,7 +284,7 @@
         left: 0;
         right: 0;
         height: 4px;
-        background: #fd5f01;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       }
       .feature-card:hover {
         transform: translateY(-5px);
@@ -291,7 +293,7 @@
       .feature-icon {
         width: 80px;
         height: 80px;
-        background: #fd5f01;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -299,7 +301,7 @@
         margin: 0 auto 2rem;
         color: white;
         font-size: 2rem;
-        box-shadow: 0 5px 15px rgba(253, 95, 1, 0.4);
+        box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
         transition: all 0.3s ease;
       }
       .feature-card:hover .feature-icon {
@@ -308,23 +310,23 @@
       .feature-card h4 {
         font-size: 1.3rem;
         font-weight: 600;
-        color: #2c3e50;
+        color: #2d3436;
         margin-bottom: 1rem;
       }
       .feature-card p {
-        color: #7f8c8d;
+        color: #636e72;
         line-height: 1.6;
         font-size: 1.05rem;
       }
 
-      /* Highlight section dengan orange #fd5f01 */
+      /* Highlight section dengan gradient aesthetic */
       .highlight-section {
-        background: #fd5f01;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         border-radius: 20px;
         padding: 3rem;
         color: white;
         margin: 4rem 0;
-        box-shadow: 0 15px 35px rgba(253, 95, 1, 0.3);
+        box-shadow: 0 15px 35px rgba(108, 92, 231, 0.3);
         position: relative;
         overflow: hidden;
         text-align: center;
@@ -356,13 +358,13 @@
         opacity: 0.95;
       }
       .highlight-section strong {
-        color: #2c3e50;
+        color: #dfe6e9;
         font-weight: 700;
       }
 
       /* CTA section dengan dark theme */
       .cta-section {
-        background: #2c3e50;
+        background: #2d3436;
         color: white;
         padding: 4rem 0;
         text-align: center;
@@ -397,23 +399,28 @@
         margin-right: auto;
       }
       .btn-modern {
-        background: #fd5f01;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
         padding: 12px 35px;
         border-radius: 30px;
         border: none;
         font-weight: 600;
         transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(253, 95, 1, 0.4);
+        box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
         font-size: 1.1rem;
         position: relative;
         z-index: 2;
       }
       .btn-modern:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(253, 95, 1, 0.6);
+        box-shadow: 0 8px 20px rgba(108, 92, 231, 0.6);
         color: white;
-        background: #e55601;
+      }
+
+      /* Footer styling */
+      .site-footer {
+        background: #2d3436;
+        color: white;
       }
 
       /* Responsive */
@@ -682,12 +689,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer" role="contentinfo">
+    <footer class="site-footer bg-light" role="contentinfo">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-4 mb-5">
-            <h3>About Us</h3>
-            <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. .</p>
+            <h3>Tentang Kami</h3>
+            <p class="mb-5">Komitmen kami adalah menciptakan lingkungan kerja yang aman, sehat, dan produktif melalui implementasi standar K3 yang komprehensif dalam pengolahan limbah.</p>
             <ul class="list-unstyled footer-link d-flex footer-social">
               <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
               <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
@@ -696,29 +703,29 @@
             </ul>
           </div>
           <div class="col-md-5 mb-5 pl-md-5">
-            <h3>Contact Info</h3>
+            <h3>Kontak Kami</h3>
             <ul class="list-unstyled footer-link">
               <li class="d-block">
-                <span class="d-block">Address:</span>
-                <span>34 Street Name, City Name Here, United States</span>
+                <span class="d-block">Alamat:</span>
+                <span>Jl. K3 Safety No. 123, Jakarta Selatan, DKI Jakarta 12345</span>
               </li>
               <li class="d-block">
-                <span class="d-block">Telephone:</span>
-                <span>+1 242 4942 290</span>
+                <span class="d-block">Telepon:</span>
+                <span>+62 21 1234 5678</span>
               </li>
               <li class="d-block">
                 <span class="d-block">Email:</span>
-                <span>info@yourdomain.com</span>
+                <span>info@k3pengolahanlimbah.com</span>
               </li>
             </ul>
           </div>
           <div class="col-md-3 mb-5">
-            <h3>Quick Links</h3>
+            <h3>Menu Cepat</h3>
             <ul class="list-unstyled footer-link">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Terms of Use</a></li>
-              <li><a href="#">Disclaimers</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="landasan_hukum.html">Landasan Hukum</a></li>
+              <li><a href="keselamatan_kerja.html">Keselamatan Kerja</a></li>
+              <li><a href="apd.html">APD</a></li>
             </ul>
           </div>
         </div>
@@ -726,8 +733,7 @@
           <div class="col-12 text-md-center text-left">
             <p>
               Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
-              with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+              <script>document.write(new Date().getFullYear());</script> K3 Pengolahan Limbah | All rights reserved
             </p>
           </div>
         </div>
@@ -738,7 +744,7 @@
     <div id="loader" class="show fullscreen">
       <svg class="circular" width="48px" height="48px">
         <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
-        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#6c5ce7"/>
       </svg>
     </div>
 
