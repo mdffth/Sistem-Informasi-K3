@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-      /* Navbar dengan warna aesthetic */
       .navbar-white {
         background: #ffffff !important;
         box-shadow: 0 2px 20px rgba(0,0,0,0.1);
@@ -89,6 +88,7 @@
         font-weight: 800;
         margin-bottom: 1.5rem;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        color: #ffffff !important; /* Teks Landasan Hukum warna putih */
       }
       .hero-subtitle {
         font-size: 1.4rem;
@@ -97,6 +97,7 @@
         max-width: 600px;
         margin: 0 auto;
         line-height: 1.6;
+        color: rgba(255, 255, 255, 0.95) !important; /* Subtitle juga putih */
       }
 
       /* Main container */
@@ -172,6 +173,7 @@
         margin-bottom: 0.5rem;
         position: relative;
         z-index: 2;
+        color: #ffffff !important; /* Teks header kategori putih */
       }
       .category-header .icon {
         font-size: 3rem;
@@ -179,6 +181,10 @@
         display: block;
         position: relative;
         z-index: 2;
+        color: #ffffff !important; /* Ikon putih */
+      }
+      .category-header p {
+        color: rgba(255, 255, 255, 0.9) !important; /* Deskripsi kategori putih */
       }
 
       /* Law cards dengan aksen aesthetic */
@@ -348,6 +354,7 @@
         margin-bottom: 2rem;
         position: relative;
         z-index: 2;
+        color: #ffffff !important; /* Teks highlight putih */
       }
       .highlight-section p {
         font-size: 1.1rem;
@@ -356,6 +363,7 @@
         position: relative;
         z-index: 2;
         opacity: 0.95;
+        color: rgba(255, 255, 255, 0.95) !important; /* Paragraf highlight putih */
       }
       .highlight-section strong {
         color: #dfe6e9;
@@ -387,6 +395,7 @@
         margin-bottom: 1.5rem;
         position: relative;
         z-index: 2;
+        color: #ffffff !important; /* Teks CTA putih */
       }
       .cta-section .lead {
         font-size: 1.2rem;
@@ -397,6 +406,7 @@
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
+        color: rgba(255, 255, 255, 0.9) !important; /* Subtitle CTA putih */
       }
       .btn-modern {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -419,8 +429,8 @@
 
       /* Footer styling */
       .site-footer {
-        background: #2d3436;
-        color: white;
+        background: white;
+        color: black;
       }
 
       /* Responsive */
@@ -689,12 +699,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="site-footer bg-light" role="contentinfo">
+    <footer class="site-footer" role="contentinfo">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-4 mb-5">
-            <h3>Tentang Kami</h3>
-            <p class="mb-5">Komitmen kami adalah menciptakan lingkungan kerja yang aman, sehat, dan produktif melalui implementasi standar K3 yang komprehensif dalam pengolahan limbah.</p>
+            <h3>About Us</h3>
+            <p class="mb-5">Situs ini menyediakan informasi tentang Keselamatan dan Kesehatan Kerja (K3) khususnya di industri pengelolaan limbah, untuk meningkatkan kesadaran dan pemahaman tentang pentingnya keselamatan kerja.</p>
             <ul class="list-unstyled footer-link d-flex footer-social">
               <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
               <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
@@ -703,27 +713,28 @@
             </ul>
           </div>
           <div class="col-md-5 mb-5 pl-md-5">
-            <h3>Kontak Kami</h3>
+            <h3>Contact Info</h3>
             <ul class="list-unstyled footer-link">
               <li class="d-block">
-                <span class="d-block">Alamat:</span>
-                <span>Jl. K3 Safety No. 123, Jakarta Selatan, DKI Jakarta 12345</span>
+                <span class="d-block">Address:</span>
+                <span>Jurusan Teknologi Informasi, Politeknik Negeri Malang</span>
               </li>
               <li class="d-block">
-                <span class="d-block">Telepon:</span>
-                <span>+62 21 1234 5678</span>
+                <span class="d-block">Telephone:</span>
+                <span>+62 341 404424</span>
               </li>
               <li class="d-block">
                 <span class="d-block">Email:</span>
-                <span>info@k3pengolahanlimbah.com</span>
+                <span>k3@polinema.ac.id</span>
               </li>
             </ul>
           </div>
           <div class="col-md-3 mb-5">
-            <h3>Menu Cepat</h3>
+            <h3>Quick Links</h3>
             <ul class="list-unstyled footer-link">
               <li><a href="index.html">Home</a></li>
               <li><a href="landasan_hukum.html">Landasan Hukum</a></li>
+              <li><a href="lingkungan_kerja.html">Lingkungan Kerja</a></li>
               <li><a href="keselamatan_kerja.html">Keselamatan Kerja</a></li>
               <li><a href="apd.html">APD</a></li>
             </ul>
@@ -733,7 +744,7 @@
           <div class="col-12 text-md-center text-left">
             <p>
               Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> K3 Pengolahan Limbah | All rights reserved
+              <script>document.write(new Date().getFullYear());</script> All rights reserved | Situs K3 Indonesia
             </p>
           </div>
         </div>
