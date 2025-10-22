@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
-    <title>Industries Website Template by Colorlib</title>
+    <title>Keselamatan Kerja - K3 Pengolahan Limbah</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Faktor-faktor yang mempengaruhi keselamatan kerja di perusahaan pengolahan limbah industri">
     
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:400,700" rel="stylesheet">
 
@@ -18,12 +18,474 @@
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
 
+    <style>
+      /* Navbar dengan warna aesthetic */
+      .navbar-white {
+        background: #ffffff !important;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+      }
+      .navbar-white .navbar-brand {
+        color: #2d3436 !important;
+        font-weight: 700;
+        font-size: 1.4rem;
+      }
+      .navbar-white .nav-link {
+        color: #2d3436 !important;
+        font-weight: 500;
+        margin: 0 0.3rem;
+        padding: 0.5rem 1rem !important;
+        transition: all 0.3s ease;
+      }
+      .navbar-white .nav-link:hover {
+        color: #6c5ce7 !important;
+      }
+      .navbar-white .nav-link.active {
+        color: #6c5ce7 !important;
+        font-weight: 600;
+      }
+      .navbar-white .navbar-toggler {
+        border-color: #2d3436;
+      }
+      .navbar-white .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2845, 52, 54, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+
+      body {
+        padding-top: 80px;
+        background: #fafafa;
+        min-height: 100vh;
+        color: #2d3436;
+      }
+
+      /* Hero Section dengan gradient aesthetic */
+      .hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 100px 0 80px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+          radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+          radial-gradient(circle at 40% 40%, rgba(255,255,255,0.05) 0%, transparent 50%);
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        color: #ffffff !important;
+      }
+      .hero-subtitle {
+        font-size: 1.4rem;
+        opacity: 0.9;
+        font-weight: 300;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.95) !important;
+      }
+
+      /* Main container */
+      .main-container {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        margin: -40px auto 0;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Section titles dengan warna aesthetic */
+      .section-title {
+        position: relative;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      .section-title .heading {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #2d3436;
+        margin-bottom: 1rem;
+        display: inline-block;
+      }
+      .section-title .heading::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 2px;
+      }
+      .section-title .lead {
+        font-size: 1.2rem;
+        color: #636e72;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      
+
+      /* Category headers dengan gradient aesthetic */
+      .category-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 15px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+      .category-header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffffff" opacity="0.1"><circle cx="50" cy="50" r="40"/></svg>');
+        background-size: 100px;
+        animation: rotate 20s linear infinite;
+      }
+      @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .category-header h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        position: relative;
+        z-index: 2;
+        color: #ffffff !important;
+      }
+      .category-header .icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        display: block;
+        position: relative;
+        z-index: 2;
+        color: #ffffff !important;
+      }
+      .category-header p {
+        color: rgba(255, 255, 255, 0.9) !important;
+      }
+
+      /* Factor cards dengan aksen aesthetic */
+      .factor-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        border: none;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        border-left: 6px solid #6c5ce7;
+      }
+      .factor-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .factor-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      }
+      .factor-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        transition: all 0.3s ease;
+      }
+      .factor-card:hover .factor-number {
+        transform: scale(1.1);
+      }
+      .factor-card h4 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #2d3436;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+      }
+      .factor-card strong {
+        color: #6c5ce7;
+        display: block;
+        margin-bottom: 0.8rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      .factor-card p {
+        color: #636e72;
+        line-height: 1.7;
+        font-size: 1.05rem;
+      }
+      .factor-card ul {
+        color: #636e72;
+        line-height: 1.7;
+      }
+      .factor-card ul li {
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+      }
+      .factor-card ul li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #6c5ce7;
+        font-weight: bold;
+      }
+
+      /* Prevention cards */
+      .prevention-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        border: none;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        border-left: 6px solid #6c5ce7;
+        height: 100%;
+      }
+      .prevention-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .prevention-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      }
+      .prevention-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 2rem;
+        color: white;
+        font-size: 2rem;
+        box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        transition: all 0.3s ease;
+      }
+      .prevention-card:hover .prevention-icon {
+        transform: scale(1.1);
+      }
+      .prevention-card h4 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #2d3436;
+        margin-bottom: 1rem;
+      }
+      .prevention-card p {
+        color: #636e72;
+        line-height: 1.6;
+        font-size: 1.05rem;
+      }
+
+      /* Image styling */
+      .content-image {
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        margin: 2rem 0;
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+      }
+      .content-image:hover {
+        transform: scale(1.02);
+      }
+
+      /* Highlight section dengan gradient aesthetic */
+      .highlight-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 20px;
+        padding: 3rem;
+        color: white;
+        margin: 4rem 0;
+        box-shadow: 0 15px 35px rgba(108, 92, 231, 0.3);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+      .highlight-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffffff" opacity="0.1"><circle cx="50" cy="50" r="40"/></svg>');
+        background-size: 100px;
+        animation: rotate 20s linear infinite;
+      }
+      .highlight-section h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 2;
+        color: #ffffff !important;
+      }
+      .highlight-section p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 0;
+        position: relative;
+        z-index: 2;
+        opacity: 0.95;
+        color: rgba(255, 255, 255, 0.95) !important;
+      }
+      .highlight-section strong {
+        color: #dfe6e9;
+        font-weight: 700;
+      }
+
+      /* CTA section dengan dark theme */
+      .cta-section {
+        background: #2d3436;
+        color: white;
+        padding: 4rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><polygon points="1000,100 1000,0 0,100"></polygon></svg>');
+        background-size: cover;
+      }
+      .cta-title {
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 2;
+        color: #ffffff !important;
+      }
+      .cta-section .lead {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 2;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        color: rgba(255, 255, 255, 0.9) !important;
+      }
+
+      /* Footer styling - PERBAIKAN */
+      .site-footer {
+        background: #ffffff !important;
+        color: #2d3436 !important;
+        border-top: 1px solid #e0e0e0;
+      }
+
+      .site-footer h3 {
+        color: #2d3436 !important;
+      }
+
+      .site-footer p,
+      .site-footer li,
+      .site-footer span {
+        color: #636e72 !important;
+      }
+
+      .site-footer a {
+        color: #6c5ce7 !important;
+        transition: color 0.3s ease;
+      }
+
+      .site-footer a:hover {
+        color: #5b4bd4 !important;
+      }
+
+      /* Social media icons */
+      .site-footer .footer-social a {
+        color: #636e72 !important;
+      }
+
+      .site-footer .footer-social a:hover {
+        color: #6c5ce7 !important;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        .hero-subtitle {
+          font-size: 1.1rem;
+        }
+        .main-container {
+          margin: -20px 15px 0;
+          border-radius: 15px;
+        }
+        .factor-card, .prevention-card {
+          padding: 1.5rem;
+        }
+        .highlight-section {
+          padding: 2rem;
+          margin: 3rem 0;
+        }
+      }
+    </style>
+
   </head>
   <body>
-     <header role="banner">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    
+    <header role="banner">
+      <nav class="navbar navbar-expand-lg navbar-white fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand " href="index.html">K3 Indonesia</a>
+          <a class="navbar-brand" href="index.html">K3 Pengolahan Limbah</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -31,248 +493,294 @@
           <div class="collapse navbar-collapse" id="navbarsExample05">
             <ul class="navbar-nav pl-md-5 ml-auto">
               <li class="nav-item">
-                <a class="nav-link active" href="index.html">Home</a>
+                <a class="nav-link" href="index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="landasan_hukum.html">Landasan Hukum</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="lingkungan_kerja.html">Lingkungan Kerja</a>
-
-                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="keselamatan_kerja.html">Keselamatan Kerja</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="apd.html">APD</a>
               </li>
             </ul>
-
-          
           </div>
         </div>
       </nav>
     </header>
-    <!-- END header -->
 
     <div class="top-shadow"></div>
 
-    <div class="inner-page">
-    <div class="slider-item" style="background-color: white;">
-        
-        <div class="container">
-          <div class="row slider-text align-items-center justify-content-center">
-            <div class="col-md-8 text-center col-sm-12 element-animate pt-5">
-              <h1 class="pt-5"><span>Keselamatan Kerja</span></h1>
-              <p class="mb-5 w-75 pl-0">Kesehatan dan keselamatan kerja di dalam perusahaan pengolahan limbah 
-industri memiliki peranan yang sangat penting karena berhubungan langsung 
-dengan bahaya yang ada. Resiko kecelakaan dan juga penyakit  kerja sangat 
-tinggi apabila tidak ada pengendalian yang tepat. Oleh karena itu, perlu 
-dianalisis faktor-faktor yang menjadi penyebab timbulnya bahaya serta 
-faktor-faktor yang dapat mencegah dan mengendalikan risiko di tempat kerja. .</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <!-- END slider -->
-    </div>
-    
-    <section class="section border-t pb-0">
+    <!-- Hero Section -->
+    <section class="hero-section">
       <div class="container">
-        <div class="row justify-content-center mb-5 element-animate">
-          <div class="col-md-8 text-center">
-            <h2 class=" heading mb-4">Faktor-faktor yang mempengaruhi keselamatan kerja</h2>
-            <p class="mb-5 lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <h1 class="hero-title">Keselamatan Kerja</h1>
+            <p class="hero-subtitle">Faktor-faktor yang mempengaruhi keselamatan kerja dan upaya pencegahan kecelakaan di perusahaan pengolahan limbah industri</p>
           </div>
         </div>
-      </div>
-      <div class="container-fluid">
-        <div class="row no-gutters">
-          <div class="col-md-4 element-animate">
-            <a href="project-single.html" class="link-thumbnail">
-              <h3>Ducting Design in Colorado</h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="project-single.html" class="link-thumbnail">
-              <h3>Tanks Project In California</h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="project-single.html" class="link-thumbnail">
-              <h3>Structural Design in New York</h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/img_3.jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="project-single.html" class="link-thumbnail">
-              <h3>Stacks Design</h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/img_4.jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="project-single.html" class="link-thumbnail">
-              <h3>Intercate Custom</h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="project-single.html" class="link-thumbnail">
-              <h3>Banker Design</h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-        </div>
-        
       </div>
     </section>
-    <!-- END section -->
 
-    <section class="section bg-light block-11">
-      <div class="container"> 
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-8 text-center">
-            <h2 class=" heading mb-4">Happy Clients</h2>
-          </div>
-        </div>
-        <div class="nonloop-block-11 owl-carousel">
-          <div class="item">
-            <div class="block-33 h-100">
-                <div class="vcard d-flex mb-3">
-                  <div class="image align-self-center"><img src="images/person_3.jpg" alt="Person here"></div>
-                  <div class="name-text align-self-center">
-                    <h2 class="heading">John Smith</h2>
-                    <span class="meta">Companies Client</span>
-                  </div>
-                </div>
-                <div class="text">
-                  <blockquote>
-                    <p>&rdquo; The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. &ldquo;</p>
-                  </blockquote>
+    <!-- Main Content -->
+    <section class="section">
+      <div class="container">
+        <div class="main-container">
+          <div class="p-5">
+            
+            <!-- Introduction -->
+            <div class="row justify-content-center mb-5">
+              <div class="col-md-10 text-center">
+                <div class="section-title">
+                  <p class="lead">Kesehatan dan keselamatan kerja di dalam perusahaan pengolahan limbah industri memiliki peranan yang sangat penting karena berhubungan langsung dengan bahaya yang ada. Resiko kecelakaan dan juga penyakit kerja sangat tinggi apabila tidak ada pengendalian yang tepat.</p>
                 </div>
               </div>
-          </div>
+            </div>
 
-          <div class="item">
-            <div class="block-33 h-100">
-                <div class="vcard d-flex mb-3">
-                  <div class="image align-self-center"><img src="images/person_2.jpg" alt="Person here"></div>
-                  <div class="name-text align-self-center">
-                    <h2 class="heading">Joshua Darren</h2>
-                    <span class="meta">Companies Client</span>
+            <!-- Gambar Utama -->
+            <div class="row mb-5">
+              <div class="col-md-12">
+                <img src="images/k31.jpg" alt="Keselamatan Kerja di Industri Pengolahan Limbah" class="content-image">
+              </div>
+            </div>
+
+            <!-- Faktor-faktor yang Mempengaruhi Keselamatan Kerja -->
+            <div class="category-header">
+              <span class="icon ion-ios-analytics-outline"></span>
+              <h3>Faktor-faktor yang Mempengaruhi Keselamatan Kerja</h3>
+              <p class="mb-0">Terdapat beberapa faktor-faktor yang paling berpengaruh terhadap keselamatan kerja</p>
+            </div>
+
+            <div class="row mb-5">
+              <!-- Faktor Manusia -->
+              <div class="col-lg-12 mb-4">
+                <div class="factor-card">
+                  <div class="d-flex align-items-start">
+                    <div class="mr-4">
+                      <div class="factor-number">1</div>
+                    </div>
+                    <div class="flex-grow-1">
+                      <h4>Faktor Manusia</h4>
+                      <strong>Aspek yang Mempengaruhi:</strong>
+                      <p>Faktor manusia menjadi aspek paling penting karena pekerja adalah yang langsung berhadapan dengan bahaya di lapangan. Menentukan sejauh mana mereka mampu memahami prosedur kerja aman dan menggunakan alat pelindung diri secara benar.</p>
+                      <ul>
+                        <li>Pemahaman prosedur kerja aman</li>
+                        <li>Penggunaan alat pelindung diri (APD)</li>
+                        <li>Sikap dan perilaku kerja</li>
+                        <li>Kedisiplinan mematuhi SOP</li>
+                        <li>Kondisi fisik dan mental pekerja</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div class="text">
-                  <blockquote>
-                    <p>&rdquo; Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. &ldquo;</p>
-                  </blockquote>
-                </div>
               </div>
-          </div>
 
-          <div class="item">
-            <div class="block-33 h-100">
-                <div class="vcard d-flex mb-3">
-                  <div class="image align-self-center"><img src="images/person_3.jpg" alt="Person here"></div>
-                  <div class="name-text align-self-center">
-                    <h2 class="heading">John Smith</h2>
-                    <span class="meta">Companies Client</span>
+              <!-- Faktor Bahan dan Material -->
+              <div class="col-lg-12 mb-4">
+                <div class="factor-card">
+                  <div class="d-flex align-items-start">
+                    <div class="mr-4">
+                      <div class="factor-number">2</div>
+                    </div>
+                    <div class="flex-grow-1">
+                      <h4>Faktor Bahan dan Material</h4>
+                      <strong>Jenis Bahaya Material:</strong>
+                      <p>Faktor material dalam perusahaan pengelolaan limbah industri merupakan salah satu faktor yang paling berpengaruh terhadap keselamatan kerja. Limbah B3 merupakan salah satu contoh dari bahan material berbahaya yang ada.</p>
+                      <ul>
+                        <li>Limbah B3 (Bahan Berbahaya dan Beracun)</li>
+                        <li>Bahan dengan sifat toksik, mudah terbakar, korosif</li>
+                        <li>Bahan karsinogenik</li>
+                        <li>Potensi kebakaran, ledakan, dan keracunan</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div class="text">
-                  <blockquote>
-                    <p>&rdquo; A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. &ldquo;</p>
-                  </blockquote>
-                </div>
               </div>
-          </div>
 
-          <div class="item">
-            <div class="block-33 h-100">
-                <div class="vcard d-flex mb-3">
-                  <div class="image align-self-center"><img src="images/person_3.jpg" alt="Person here"></div>
-                  <div class="name-text align-self-center">
-                    <h2 class="heading">John Smith</h2>
-                    <span class="meta">Companies Client</span>
+              <!-- Faktor Lingkungan Kerja -->
+              <div class="col-lg-12 mb-4">
+                <div class="factor-card">
+                  <div class="d-flex align-items-start">
+                    <div class="mr-4">
+                      <div class="factor-number">3</div>
+                    </div>
+                    <div class="flex-grow-1">
+                      <h4>Faktor Lingkungan Kerja</h4>
+                      <strong>Aspek Lingkungan Kerja:</strong>
+                      <p>Lingkungan kerja juga sangat memengaruhi tingkat keselamatan. Dalam perusahaan pengelolaan limbah industri, mencakup berbagai aspek fisik dan non-fisik.</p>
+                      <ul>
+                        <li>Kualitas udara dan konsentrasi gas beracun</li>
+                        <li>Pencahayaan, suhu, dan kelembaban</li>
+                        <li>Tingkat kebisingan dari mesin</li>
+                        <li>Sistem ventilasi untuk uap berbahaya</li>
+                        <li>Layout area penyimpanan dan jalur transportasi</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div class="text">
-                  <blockquote>
-                    <p>&rdquo; Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. &ldquo;</p>
-                  </blockquote>
+              </div>
+            </div>
+
+            <!-- Gambar Pendukung -->
+            <div class="row mb-5">
+              <div class="col-md-6">
+                <img src="images/k32.jpg" alt="Penggunaan APD di Industri Limbah" class="content-image">
+              </div>
+              <div class="col-md-6">
+                <img src="images/k31.png" alt="Proses Pengolahan Limbah yang Aman" class="content-image">
+              </div>
+            </div>
+
+            <!-- Faktor-faktor Pencegahan Kecelakaan Kerja -->
+            <div class="category-header">
+              <span class="icon ion-ios-shield-outline"></span>
+              <h3>Faktor-faktor Pencegahan Kecelakaan Kerja</h3>
+              <p class="mb-0">Berbagai upaya pencegahan dapat dilakukan untuk mengurangi risiko kecelakaan kerja</p>
+            </div>
+
+            <div class="row mb-5">
+              <!-- Manajemen dan Organisasi -->
+              <div class="col-md-4 mb-4">
+                <div class="prevention-card">
+                  <div class="prevention-icon">
+                    <span class="ion-ios-people"></span>
+                  </div>
+                  <h4>Manajemen dan Organisasi</h4>
+                  <p>Implementasi Sistem Manajemen Keselamatan dan Kesehatan Kerja (SMK3) dengan fokus pada:</p>
+                  <ul>
+                    <li>Pengelolaan limbah berbahaya</li>
+                    <li>Sistem dokumentasi untuk tracking limbah B3</li>
+                    <li>Audit berkala dengan ahli limbah eksternal</li>
+                    <li>Pelatihan dan kompetensi berkelanjutan</li>
+                    <li>Sertifikasi pekerja untuk menangani limbah khusus</li>
+                  </ul>
                 </div>
               </div>
+              
+              <!-- Teknis dan Lingkungan Kerja -->
+              <div class="col-md-4 mb-4">
+                <div class="prevention-card">
+                  <div class="prevention-icon">
+                    <span class="ion-ios-gear"></span>
+                  </div>
+                  <h4>Teknis dan Lingkungan Kerja</h4>
+                  <p>Pembentukan pertahanan fisik dan teknis yang langsung melindungi pekerja:</p>
+                  <ul>
+                    <li>Penyediaan Alat Pelindung Diri (APD)</li>
+                    <li>Pengendalian lingkungan kerja</li>
+                    <li>Sistem ventilasi dan pengolahan udara</li>
+                    <li>Pengaturan tata letak dan jalur evakuasi</li>
+                    <li>Persiapan dan pelatihan tanggap darurat</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <!-- Manusia dan Perilaku -->
+              <div class="col-md-4 mb-4">
+                <div class="prevention-card">
+                  <div class="prevention-icon">
+                    <span class="ion-ios-person"></span>
+                  </div>
+                  <h4>Manusia dan Perilaku</h4>
+                  <p>Pendekatan untuk membentuk perilaku aman pekerja:</p>
+                  <ul>
+                    <li>Peningkatan kesadaran pentingnya keselamatan</li>
+                    <li>Pembiasaan penggunaan APD</li>
+                    <li>Kepatuhan terhadap prosedur standar operasi (SOP)</li>
+                    <li>Pengurangan perilaku tergesa-gesa dalam bekerja</li>
+                    <li>Peningkatan kewaspadaan terhadap bahaya</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kesimpulan -->
+            <div class="highlight-section">
+              <h3>
+                <span class="ion-ios-checkmark-outline mr-2"></span>Pentingnya Penerapan Keselamatan Kerja
+              </h3>
+              <p>
+                Penerapan K3 pada perusahaan menjadi kunci utama dalam <strong>mencegah kecelakaan kerja</strong> dan <strong>melindungi kesehatan pekerja</strong> dari paparan limbah berbahaya. Dengan dukungan sistem keselamatan yang komprehensif, perusahaan dapat memastikan kegiatan operasional berjalan <strong>aman</strong>, <strong>efisien</strong>, serta tetap menjaga <strong>keberlanjutan lingkungan</strong>.
+              </p>
+            </div>
+
           </div>
-          
         </div>
       </div>
-    </div>
-    <!-- END .block-4 -->
     </section>
 
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-title">Komitmen Keselamatan Kerja</h2>
+        <p class="lead">Keselamatan kerja adalah tanggung jawab bersama untuk menciptakan lingkungan kerja yang aman, sehat, dan produktif bagi semua pihak.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="site-footer" role="contentinfo">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-4 mb-5">
-            <h3>About Us</h3>
-            <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. .</p>
+            <h3>Tentang Kami</h3>
+            <p class="mb-5">K3 Pengolahan Limbah berkomitmen untuk menciptakan lingkungan kerja yang aman dan sehat bagi seluruh pekerja dalam industri pengelolaan limbah berbahaya.</p>
             <ul class="list-unstyled footer-link d-flex footer-social">
               <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
               <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
               <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
               <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
             </ul>
-
           </div>
           <div class="col-md-5 mb-5 pl-md-5">
-            <h3>Contact Info</h3>
+            <h3>Informasi Kontak</h3>
             <ul class="list-unstyled footer-link">
               <li class="d-block">
-                <span class="d-block">Address:</span>
-                <span >34 Street Name, City Name Here, United States</span></li>
-              <li class="d-block"><span class="d-block">Telephone:</span><span >+1 242 4942 290</span></li>
-              <li class="d-block"><span class="d-block">Email:</span><span >info@yourdomain.com</span></li>
+                <span class="d-block">Alamat:</span>
+                <span>Jurusan Teknologi Informasi, Politeknik Negeri Malang</span>
+              </li>
+              <li class="d-block">
+                <span class="d-block">Telepon:</span>
+                <span>+62 341 404424</span>
+              </li>
+              <li class="d-block">
+                <span class="d-block">Email:</span>
+                <span>k3@polinema.ac.id</span>
+              </li>
             </ul>
           </div>
           <div class="col-md-3 mb-5">
-            <h3>Quick Links</h3>
+            <h3>QUICK LINKS</h3>
             <ul class="list-unstyled footer-link">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Terms of Use</a></li>
-              <li><a href="#">Disclaimers</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="landasan_hukum.html">Landasan Hukum</a></li>
+              <li><a href="lingkungan_kerja.html">Lingkungan Kerja</a></li>
+              <li><a href="apd.html">APD</a></li>
             </ul>
-          </div>
-          <div class="col-md-3">
-          
           </div>
         </div>
         <div class="row">
           <div class="col-12 text-md-center text-left">
-             <p>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <p>
               Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
-              with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank"
-                class="text-primary">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              <script>document.write(new Date().getFullYear());</script> | Kel 1-SIB 3B | Sistem Informasi K3 Pengolahan Limbah
             </p>
           </div>
         </div>
       </div>
     </footer>
-    <!-- END footer -->
 
     <!-- loader -->
-    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+    <div id="loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#6c5ce7"/>
+      </svg>
+    </div>
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -280,8 +788,6 @@ faktor-faktor yang dapat mencegah dan mengendalikan risiko di tempat kerja. .</p
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/main.js"></script>
-
     <script src="js/main.js"></script>
     
   </body>
