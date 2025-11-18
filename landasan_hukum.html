@@ -57,7 +57,7 @@
         color: #2d3436;
       }
 
-      /* Hero Section dengan gradient aesthetic */
+      /* Hero Section */
       .hero-section {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         padding: 100px 0 80px;
@@ -88,7 +88,7 @@
         font-weight: 800;
         margin-bottom: 1.5rem;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        color: #ffffff !important; /* Teks Landasan Hukum warna putih */
+        color: #ffffff !important;
       }
       .hero-subtitle {
         font-size: 1.4rem;
@@ -97,7 +97,7 @@
         max-width: 600px;
         margin: 0 auto;
         line-height: 1.6;
-        color: rgba(255, 255, 255, 0.95) !important; /* Subtitle juga putih */
+        color: rgba(255, 255, 255, 0.95) !important;
       }
 
       /* Main container */
@@ -110,7 +110,7 @@
         z-index: 2;
       }
 
-      /* Section titles dengan warna aesthetic */
+      /* Section titles*/
       .section-title {
         position: relative;
         text-align: center;
@@ -141,7 +141,7 @@
         margin: 0 auto;
       }
 
-      /* Category headers dengan gradient aesthetic */
+      /* Category headers */
       .category-header {
         text-align: center;
         margin-bottom: 3rem;
@@ -173,7 +173,7 @@
         margin-bottom: 0.5rem;
         position: relative;
         z-index: 2;
-        color: #ffffff !important; /* Teks header kategori putih */
+        color: #ffffff !important;
       }
       .category-header .icon {
         font-size: 3rem;
@@ -181,13 +181,39 @@
         display: block;
         position: relative;
         z-index: 2;
-        color: #ffffff !important; /* Ikon putih */
+        color: #ffffff !important;
       }
       .category-header p {
-        color: rgba(255, 255, 255, 0.9) !important; /* Deskripsi kategori putih */
+        color: rgba(255, 255, 255, 0.9) !important;
       }
 
-      /* Law cards dengan aksen aesthetic */
+      /* Tombol Download di Header */
+      .btn-download-header {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 25px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        font-weight: 600;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 1rem;
+        text-decoration: none;
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+      }
+      .btn-download-header:hover {
+        background: rgba(255, 255, 255, 0.3);
+        color: white;
+        text-decoration: none;
+        transform: translateY(-2px);
+      }
+
+      /* Law cards */
       .law-card {
         background: white;
         border-radius: 15px;
@@ -267,7 +293,7 @@
         font-weight: bold;
       }
 
-      /* Feature cards dengan warna aesthetic */
+      /* Feature cards */
       .feature-section {
         padding: 4rem 0;
       }
@@ -325,7 +351,7 @@
         font-size: 1.05rem;
       }
 
-      /* Highlight section dengan gradient aesthetic */
+      /* Highlight section */
       .highlight-section {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         border-radius: 20px;
@@ -354,7 +380,7 @@
         margin-bottom: 2rem;
         position: relative;
         z-index: 2;
-        color: #ffffff !important; /* Teks highlight putih */
+        color: #ffffff !important;
       }
       .highlight-section p {
         font-size: 1.1rem;
@@ -363,7 +389,7 @@
         position: relative;
         z-index: 2;
         opacity: 0.95;
-        color: rgba(255, 255, 255, 0.95) !important; /* Paragraf highlight putih */
+        color: rgba(255, 255, 255, 0.95) !important;
       }
       .highlight-section strong {
         color: #dfe6e9;
@@ -395,7 +421,7 @@
         margin-bottom: 1.5rem;
         position: relative;
         z-index: 2;
-        color: #ffffff !important; /* Teks CTA putih */
+        color: #ffffff !important;
       }
       .cta-section .lead {
         font-size: 1.2rem;
@@ -406,8 +432,9 @@
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
-        color: rgba(255, 255, 255, 0.9) !important; /* Subtitle CTA putih */
+        color: rgba(255, 255, 255, 0.9) !important;
       }
+
       .btn-modern {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
@@ -427,7 +454,7 @@
         color: white;
       }
 
-      /* Footer styling - PERBAIKAN */
+      /* Footer stylinggit */
       .site-footer {
         background: #ffffff !important;
         color: #2d3436 !important;
@@ -556,6 +583,11 @@
               <span class="icon ion-ios-book-outline"></span>
               <h3>Undang-Undang</h3>
               <p class="mb-0">Dasar Hukum Utama Sistem K3 Indonesia</p>
+              
+              <!-- Tombol Download di Category Header -->
+              <a href="#" class="btn-download-header" id="downloadPdf">
+                <i class="fa fa-file-pdf-o"></i> Download PDF Landasan Hukum K3
+              </a>
             </div>
 
             <div class="row mb-5">
@@ -794,6 +826,194 @@
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <!-- PDF Generation Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+      // Fungsi untuk generate PDF dari konten landasan hukum
+      function generateLandasanHukumPDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        // Judul
+        doc.setFontSize(18);
+        doc.setTextColor(40, 40, 40);
+        doc.text('LANDASAN HUKUM K3', 20, 20);
+        
+        doc.setFontSize(12);
+        doc.setTextColor(100, 100, 100);
+        doc.text('Regulasi dan Peraturan Keselamatan dan Kesehatan Kerja di Indonesia', 20, 30);
+        doc.text('Panduan Lengkap untuk Perusahaan Pengolahan Limbah', 20, 38);
+        
+        // Garis pemisah
+        doc.setDrawColor(108, 92, 231);
+        doc.setLineWidth(0.5);
+        doc.line(20, 45, 190, 45);
+        
+        let yPosition = 60;
+        
+        // UNDANG-UNDANG
+        doc.setFontSize(14);
+        doc.setTextColor(108, 92, 231);
+        doc.text('UNDANG-UNDANG', 20, yPosition);
+        yPosition += 10;
+        
+        doc.setFontSize(10);
+        doc.setTextColor(40, 40, 40);
+        
+        // UU 1/1970
+        doc.setFont(undefined, 'bold');
+        doc.text('1. UU No. 1 Tahun 1970 tentang Keselamatan Kerja', 20, yPosition);
+        yPosition += 6;
+        doc.setFont(undefined, 'normal');
+        doc.text('   Merupakan dasar hukum utama di tempat K3. Undang-undang ini menjadi', 20, yPosition);
+        yPosition += 5;
+        doc.text('   fondasi pelaksanaan keselamatan kerja di Indonesia yang mengatur', 20, yPosition);
+        yPosition += 5;
+        doc.text('   kewajiban pengusaha dalam menjamin keselamatan pekerja.', 20, yPosition);
+        yPosition += 10;
+        
+        // UU 32/2009
+        doc.setFont(undefined, 'bold');
+        doc.text('2. UU No. 32 Tahun 2009 tentang Perlindungan dan', 20, yPosition);
+        yPosition += 6;
+        doc.text('   Pengelolaan Lingkungan Hidup', 20, yPosition);
+        yPosition += 6;
+        doc.setFont(undefined, 'normal');
+        doc.text('   Merupakan pengelolaan limbah B3 (Bahan Berbahaya dan Beracun) agar', 20, yPosition);
+        yPosition += 5;
+        doc.text('   tidak merusak lingkungan. Mengatur perlindungan dan pengelolaan', 20, yPosition);
+        yPosition += 5;
+        doc.text('   lingkungan hidup termasuk aspek pengelolaan limbah berbahaya.', 20, yPosition);
+        yPosition += 10;
+        
+        // UU 13/2003
+        doc.setFont(undefined, 'bold');
+        doc.text('3. UU No. 13 Tahun 2003 tentang Ketenagakerjaan', 20, yPosition);
+        yPosition += 6;
+        doc.setFont(undefined, 'normal');
+        doc.text('   Mengatur hak pekerja atas lingkungan kerja yang sehat dan aman.', 20, yPosition);
+        yPosition += 5;
+        doc.text('   Melengkapi aspek ketenagakerjaan termasuk perlindungan keselamatan', 20, yPosition);
+        yPosition += 5;
+        doc.text('   dan kesehatan tenaga kerja.', 20, yPosition);
+        yPosition += 15;
+        
+        // PERATURAN PEMERINTAH
+        if (yPosition > 250) {
+          doc.addPage();
+          yPosition = 20;
+        }
+        
+        doc.setFontSize(14);
+        doc.setTextColor(108, 92, 231);
+        doc.text('PERATURAN PEMERINTAH & PERATURAN MENTERI', 20, yPosition);
+        yPosition += 10;
+        
+        doc.setFontSize(10);
+        doc.setTextColor(40, 40, 40);
+        
+        // PP 22/2021
+        doc.setFont(undefined, 'bold');
+        doc.text('4. PP No. 22 Tahun 2021 tentang Penyelenggaraan', 20, yPosition);
+        yPosition += 6;
+        doc.text('   Perlindungan dan Pengelolaan Lingkungan Hidup', 20, yPosition);
+        yPosition += 6;
+        doc.setFont(undefined, 'normal');
+        doc.text('   Menggantikan PP No. 101 Tahun 2014, mengatur lebih rinci mengenai', 20, yPosition);
+        yPosition += 5;
+        doc.text('   penyelenggaraan perlindungan dan pengelolaan lingkungan hidup,', 20, yPosition);
+        yPosition += 5;
+        doc.text('   termasuk spesifikasi pengelolaan limbah B3.', 20, yPosition);
+        yPosition += 10;
+        
+        // Permen LHK 6/2021
+        doc.setFont(undefined, 'bold');
+        doc.text('5. Permen LHK No. 6 Tahun 2021 tentang Tata Cara', 20, yPosition);
+        yPosition += 6;
+        doc.text('   dan Persyaratan Pengelolaan Limbah B3', 20, yPosition);
+        yPosition += 6;
+        doc.setFont(undefined, 'normal');
+        doc.text('   Memberikan panduan teknis secara rinci mengenai tahapan', 20, yPosition);
+        yPosition += 5;
+        doc.text('   pengelolaan limbah B3:', 20, yPosition);
+        yPosition += 8;
+        
+        const listItems = [
+          '• Penetapan status limbah B3',
+          '• Pengurangan limbah (reduce)',
+          '• Penyimpanan limbah B3', 
+          '• Pengumpulan limbah B3',
+          '• Pengangkutan limbah B3',
+          '• Pemanfaatan limbah B3',
+          '• Pengolahan limbah B3',
+          '• Pembuangan akhir limbah B3',
+          '• Perizinan terkait pengelolaan limbah B3'
+        ];
+        
+        listItems.forEach(item => {
+          if (yPosition > 270) {
+            doc.addPage();
+            yPosition = 20;
+          }
+          doc.text('   ' + item, 20, yPosition);
+          yPosition += 5;
+        });
+        
+        yPosition += 10;
+        
+        // MANFAAT K3
+        if (yPosition > 250) {
+          doc.addPage();
+          yPosition = 20;
+        }
+        
+        doc.setFontSize(14);
+        doc.setTextColor(108, 92, 231);
+        doc.text('MANFAAT PENERAPAN REGULASI K3', 20, yPosition);
+        yPosition += 10;
+        
+        doc.setFontSize(10);
+        doc.setTextColor(40, 40, 40);
+        
+        doc.text('• Perlindungan Pekerja: Menjamin keselamatan dan kesehatan tenaga kerja', 20, yPosition);
+        yPosition += 5;
+        doc.text('• Kelestarian Lingkungan: Mencegah pencemaran dan kerusakan lingkungan', 20, yPosition);
+        yPosition += 5;
+        doc.text('• Produktivitas Perusahaan: Meningkatkan efisiensi dan produktivitas', 20, yPosition);
+        yPosition += 10;
+        
+        // Footer
+        doc.setFontSize(8);
+        doc.setTextColor(150, 150, 150);
+        doc.text('Dokumen ini dibuat oleh Sistem Informasi K3 Pengolahan Limbah', 20, 280);
+        doc.text(new Date().toLocaleDateString('id-ID'), 180, 280, null, null, 'right');
+        
+        //Generate PDF dan buka di tab baru
+        const pdfBlob = doc.output('blob');
+        const pdfUrl = URL.createObjectURL(pdfBlob);
+        
+        const newWindow = window.open(pdfUrl, '_blank');
+        
+        // Set nama file untuk download (optional)
+        if (newWindow) {
+          newWindow.document.title = 'Landasan Hukum K3.pdf';
+        }
+        
+        // Optional: Auto revoke object URL setelah beberapa detik
+        setTimeout(() => {
+          URL.revokeObjectURL(pdfUrl);
+        }, 1000);
+      }
+
+      // Pasang event listener ke tombol download
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('downloadPdf').addEventListener('click', function(e) {
+          e.preventDefault();
+          generateLandasanHukumPDF();
+        });
+      });
+    </script>
     
   </body>
 </html>
