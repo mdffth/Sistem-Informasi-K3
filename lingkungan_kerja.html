@@ -20,14 +20,16 @@
   <style>
     .navbar-white {
       background: #ffffff !important;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
     }
+
     .navbar-white .navbar-brand {
       color: #2d3436 !important;
       font-weight: 700;
       font-size: 1.4rem;
     }
+
     .navbar-white .nav-link {
       color: #2d3436 !important;
       font-weight: 500;
@@ -35,16 +37,20 @@
       padding: 0.5rem 1rem !important;
       transition: all 0.3s ease;
     }
+
     .navbar-white .nav-link:hover {
       color: #6c5ce7 !important;
     }
+
     .navbar-white .nav-link.active {
       color: #6c5ce7 !important;
       font-weight: 600;
     }
+
     .navbar-white .navbar-toggler {
       border-color: #2d3436;
     }
+
     .navbar-white .navbar-toggler-icon {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2845, 52, 54, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
@@ -64,6 +70,7 @@
       overflow: hidden;
       text-align: center;
     }
+
     .hero-section::before {
       content: '';
       position: absolute;
@@ -71,23 +78,33 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.05) 0%, transparent 50%);
+      background:
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
       animation: float 6s ease-in-out infinite;
     }
+
     @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
     }
+
     .hero-title {
       font-size: 3.5rem;
       font-weight: 800;
       margin-bottom: 1.5rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       color: #ffffff !important;
     }
+
     .hero-subtitle {
       font-size: 1.4rem;
       opacity: 0.9;
@@ -102,7 +119,7 @@
     .main-container {
       background: #ffffff;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
       margin: -40px auto 0;
       position: relative;
       z-index: 2;
@@ -114,6 +131,7 @@
       text-align: center;
       margin-bottom: 3rem;
     }
+
     .section-title .heading {
       font-size: 2.5rem;
       font-weight: 700;
@@ -121,6 +139,7 @@
       margin-bottom: 1rem;
       display: inline-block;
     }
+
     .section-title .heading::after {
       content: '';
       position: absolute;
@@ -139,16 +158,17 @@
       border-radius: 15px;
       padding: 2.5rem;
       margin-bottom: 3rem;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
       border: none;
       transition: all 0.4s ease;
       position: relative;
       overflow: hidden;
       border-left: 4px solid #6c5ce7;
     }
+
     .content-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     }
 
     /* Image styling - GAMBAR BESAR */
@@ -156,15 +176,16 @@
       width: 100%;
       max-height: 600px;
       border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
       margin: 2rem 0;
       transition: all 0.3s ease;
       border: 3px solid #f8f9fa;
       object-fit: contain;
     }
+
     .large-image:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
       border-color: #6c5ce7;
     }
 
@@ -184,15 +205,18 @@
       list-style: none;
       padding-left: 0;
     }
+
     .content-list li {
       padding: 0.8rem 0;
       border-bottom: 1px solid #e0e0e0;
       position: relative;
       padding-left: 2rem;
     }
+
     .content-list li:last-child {
       border-bottom: none;
     }
+
     .content-list li::before {
       content: '✓';
       position: absolute;
@@ -211,14 +235,32 @@
       margin-right: 10px;
       vertical-align: middle;
       border: 2px solid #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-    .badge-red { background: #e74c3c; }
-    .badge-green { background: #27ae60; }
-    .badge-yellow { background: #f39c12; }
-    .badge-gray { background: #95a5a6; }
-    .badge-brown { background: #8b4513; }
-    .badge-blue { background: #3498db; }
+
+    .badge-red {
+      background: #e74c3c;
+    }
+
+    .badge-green {
+      background: #27ae60;
+    }
+
+    .badge-yellow {
+      background: #f39c12;
+    }
+
+    .badge-gray {
+      background: #95a5a6;
+    }
+
+    .badge-brown {
+      background: #8b4513;
+    }
+
+    .badge-blue {
+      background: #3498db;
+    }
 
     /* Alert styling */
     .safety-alert {
@@ -229,6 +271,7 @@
       padding: 1.5rem;
       margin-top: 2rem;
     }
+
     .safety-alert strong {
       color: #fff;
     }
@@ -241,30 +284,36 @@
       padding: 3rem 0 2rem;
       margin-top: 4rem;
     }
+
     .site-footer h3 {
       color: #2d3436 !important;
       font-weight: 600;
       margin-bottom: 1.5rem;
     }
+
     .site-footer p,
     .site-footer li,
     .site-footer span {
       color: #636e72 !important;
     }
+
     .site-footer a {
       color: #6c5ce7 !important;
       text-decoration: none;
       transition: color 0.3s ease;
     }
+
     .site-footer a:hover {
       color: #5b4bd4 !important;
       text-decoration: underline;
     }
+
     .site-footer .footer-social a {
       color: #636e72 !important;
       font-size: 1.2rem;
       transition: all 0.3s ease;
     }
+
     .site-footer .footer-social a:hover {
       color: #6c5ce7 !important;
       transform: translateY(-2px);
@@ -275,19 +324,24 @@
       .hero-title {
         font-size: 2.5rem;
       }
+
       .hero-subtitle {
         font-size: 1.1rem;
       }
+
       .main-container {
         margin: -20px 15px 0;
         border-radius: 15px;
       }
+
       .content-card {
         padding: 1.5rem;
       }
+
       .large-image {
         max-height: 400px;
       }
+
       .content-area {
         padding: 0 1rem;
       }
@@ -322,6 +376,9 @@
             <li class="nav-item">
               <a class="nav-link" href="apd.html">APD</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="p3k.html">P3K</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -337,7 +394,8 @@
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <h1 class="hero-title">Denah Lingkungan Kerja</h1>
-          <p class="hero-subtitle">Tata Letak dan Pengaturan Area Kerja untuk Keselamatan dan Efisiensi dalam Pengelolaan Limbah</p>
+          <p class="hero-subtitle">Tata Letak dan Pengaturan Area Kerja untuk Keselamatan dan Efisiensi dalam
+            Pengelolaan Limbah</p>
         </div>
       </div>
     </div>
@@ -348,33 +406,39 @@
     <div class="container">
       <div class="main-container">
         <div class="p-5">
-          
+
 
           <div class="content-card">
             <!-- GAMBAR BESAR DI ATAS -->
             <div class="image-container">
               <img src="images/mapk3.png" alt="Denah Perusahaan" class="large-image">
             </div>
-            
+
             <!-- KETERANGAN DI BAWAH -->
             <div class="content-area">
               <h3 class="mb-4 text-center">Penjelasan Denah Lingkungan Kerja</h3>
               <p class="mb-4 text-center">
                 Gambar denah di atas menunjukkan tata letak lingkungan kerja di sebuah perusahaan pengelolaan limbah
                 industri. Area terbagi menjadi dua bagian besar, yaitu sisi kiri yang lebih difokuskan pada area
-                administrasi, operasional, serta fasilitas pendukung karyawan, dan sisi kanan yang lebih difokuskan untuk
+                administrasi, operasional, serta fasilitas pendukung karyawan, dan sisi kanan yang lebih difokuskan
+                untuk
                 area pengolahan serta manajemen limbah industri.
               </p>
-              
+
               <div class="row">
                 <div class="col-md-8 mx-auto">
                   <h5 class="mb-3 text-center">Kode Warna Area:</h5>
                   <ul class="content-list">
-                    <li><span class="color-badge badge-red"></span><b>Merah:</b> Area yang dapat menyebabkan bahaya / beresiko tinggi</li>
-                    <li><span class="color-badge badge-green"></span><b>Hijau:</b> Area yang relatif aman / resiko rendah</li>
-                    <li><span class="color-badge badge-yellow"></span><b>Kuning:</b> Fasilitas umum dan pendukung seperti kantin dan ruang teknisi</li>
-                    <li><span class="color-badge badge-gray"></span><b>Abu Abu:</b> Area penyimpanan besar, seperti penyimpanan limbah outdoor dan gudang besar</li>
-                    <li><span class="color-badge badge-brown"></span><b>Coklat:</b> Area penyimpanan arsip atau Gudang</li>
+                    <li><span class="color-badge badge-red"></span><b>Merah:</b> Area yang dapat menyebabkan bahaya /
+                      beresiko tinggi</li>
+                    <li><span class="color-badge badge-green"></span><b>Hijau:</b> Area yang relatif aman / resiko
+                      rendah</li>
+                    <li><span class="color-badge badge-yellow"></span><b>Kuning:</b> Fasilitas umum dan pendukung
+                      seperti kantin dan ruang teknisi</li>
+                    <li><span class="color-badge badge-gray"></span><b>Abu Abu:</b> Area penyimpanan besar, seperti
+                      penyimpanan limbah outdoor dan gudang besar</li>
+                    <li><span class="color-badge badge-brown"></span><b>Coklat:</b> Area penyimpanan arsip atau Gudang
+                    </li>
                     <li><span class="color-badge badge-blue"></span><b>Biru:</b> Fasilitas umum toilet</li>
                   </ul>
                 </div>
@@ -387,7 +451,8 @@
             <div class="col-md-10 text-center">
               <div class="section-title">
                 <h2 class="heading">Peta Lokasi APAR</h2>
-                <p class="lead">Penempatan strategis alat pemadam kebakaran untuk respons cepat dalam keadaan darurat</p>
+                <p class="lead">Penempatan strategis alat pemadam kebakaran untuk respons cepat dalam keadaan darurat
+                </p>
               </div>
             </div>
           </div>
@@ -397,27 +462,31 @@
             <div class="image-container">
               <img src="images/apark3.png" alt="APAR Perusahaan" class="large-image">
             </div>
-            
+
             <!-- KETERANGAN DI BAWAH -->
             <div class="content-area">
               <h3 class="mb-4 text-center">Penjelasan Peta Lokasi APAR</h3>
               <p class="text-center">
-                Denah di atas menunjukkan tata letak APAR (Alat Pemadam Api Ringan) yang tersebar di seluruh area perusahaan. 
+                Denah di atas menunjukkan tata letak APAR (Alat Pemadam Api Ringan) yang tersebar di seluruh area
+                perusahaan.
                 Penempatan yang strategis ini sangat penting bagi sebuah lingkungan industri pengelolaan limbah.
               </p>
-              
+
               <div class="row">
                 <div class="col-md-10 mx-auto">
                   <p>
-                    Ketersediaan APAR yang mudah dijangkau di berbagai titik rawan seperti laboratorium, area pengelolaan limbah, 
-                    dan ruang teknis merupakan lini pertahanan pertama yang krusial. Ini memungkinkan respons cepat untuk memadamkan api
-                    pada tahap awal, yang sangat vital untuk melindungi keselamatan jiwa karyawan dan memberi mereka waktu
+                    Ketersediaan APAR yang mudah dijangkau di berbagai titik rawan seperti laboratorium, area
+                    pengelolaan limbah,
+                    dan ruang teknis merupakan lini pertahanan pertama yang krusial. Ini memungkinkan respons cepat
+                    untuk memadamkan api
+                    pada tahap awal, yang sangat vital untuk melindungi keselamatan jiwa karyawan dan memberi mereka
+                    waktu
                     untuk evakuasi yang aman.
                   </p>
-                  
+
                   <div class="safety-alert text-center">
                     <strong>💡 Tips Keselamatan Penting:</strong><br>
-                    Pastikan Anda mengetahui lokasi APAR terdekat dari posisi kerja Anda dan pahami cara penggunaannya. 
+                    Pastikan Anda mengetahui lokasi APAR terdekat dari posisi kerja Anda dan pahami cara penggunaannya.
                     Lakukan pengecekan berkala terhadap kondisi APAR dan ikuti pelatihan penggunaan APAR secara rutin.
                   </div>
                 </div>
@@ -435,7 +504,8 @@
       <div class="row mb-5">
         <div class="col-md-4 mb-5">
           <h3>Tentang Kami</h3>
-          <p class="mb-5">K3 Pengolahan Limbah berkomitmen untuk menciptakan lingkungan kerja yang aman dan sehat bagi seluruh pekerja dalam industri pengelolaan limbah berbahaya.</p>
+          <p class="mb-5">K3 Pengolahan Limbah berkomitmen untuk menciptakan lingkungan kerja yang aman dan sehat bagi
+            seluruh pekerja dalam industri pengelolaan limbah berbahaya.</p>
           <ul class="list-unstyled footer-link d-flex footer-social">
             <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
             <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
@@ -467,6 +537,7 @@
             <li><a href="landasan_hukum.html">Landasan Hukum</a></li>
             <li><a href="keselamatan_kerja.html">Keselamatan Kerja</a></li>
             <li><a href="apd.html">APD</a></li>
+            <li><a href="p3k.html">P3K</a></li>
           </ul>
         </div>
       </div>
@@ -474,7 +545,8 @@
         <div class="col-12 text-md-center text-left">
           <p>
             Copyright &copy;
-            <script>document.write(new Date().getFullYear());</script> | Kel 1-SIB 3B | Sistem Informasi K3 Pengolahan Limbah
+            <script>document.write(new Date().getFullYear());</script> | Kel 1-SIB 3B | Sistem Informasi K3 Pengolahan
+            Limbah
           </p>
         </div>
       </div>

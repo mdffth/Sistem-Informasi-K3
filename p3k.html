@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <title>PERTOLONGAN PERTAMA PADA KECELAKAAN (P3K)</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description"
+    content="Modul Pertolongan Pertama Pada Kecelakaan (P3K) untuk industri pengolahan limbah - langkah P3K untuk berbagai kecelakaan.">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:400,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+  <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+
+  <!-- Theme Style -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* --- keep original theme styles (copied & slightly adapted) --- */
+    .navbar-white {
+      background: #ffffff !important;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-white .navbar-brand {
+      color: #2d3436 !important;
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+
+    .navbar-white .nav-link {
+      color: #2d3436 !important;
+      font-weight: 500;
+      margin: 0 0.3rem;
+      padding: 0.5rem 1rem !important;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-white .nav-link:hover {
+      color: #6c5ce7 !important;
+    }
+
+    .navbar-white .nav-link.active {
+      color: #6c5ce7 !important;
+      font-weight: 600;
+    }
+
+    .navbar-white .navbar-toggler {
+      border-color: #2d3436;
+    }
+
+    .navbar-white .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2845, 52, 54, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    body {
+      padding-top: 80px;
+      background: #fafafa;
+      min-height: 100vh;
+      color: #2d3436;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 100px 0 80px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      color: #ffffff !important;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      font-weight: 300;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.95) !important;
+    }
+
+    /* Main container */
+    .main-container {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      margin: -40px auto 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Section titles*/
+    .section-title {
+      position: relative;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title .heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2d3436;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .section-title .heading::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 2px;
+    }
+
+    .section-title .lead {
+      font-size: 1.1rem;
+      color: #636e72;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Category headers */
+    .category-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 15px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .category-header h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 2;
+      color: #ffffff !important;
+    }
+
+    .category-header .icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+      position: relative;
+      z-index: 2;
+      color: #ffffff !important;
+    }
+
+    /* Card (reused .law-card) */
+    .law-card {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+      border: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border-left: 6px solid #6c5ce7;
+    }
+
+    .law-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .law-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+    }
+
+    .law-card h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #2d3436;
+      margin-bottom: 0.6rem;
+      line-height: 1.4;
+    }
+
+    .law-card strong {
+      color: #6c5ce7;
+      display: block;
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .law-card p {
+      color: #636e72;
+      line-height: 1.7;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .law-card ul {
+      color: #636e72;
+      line-height: 1.7;
+      margin-left: 0;
+      padding-left: 1.2rem;
+    }
+
+    .law-card ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Download button header */
+    .btn-download-header {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      padding: 10px 22px;
+      border-radius: 25px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 0.8rem;
+      text-decoration: none;
+      position: relative;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .btn-download-header:hover {
+      background: rgba(255, 255, 255, 0.25);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* CTA & footer styling left intact */
+    .cta-section {
+      background: #2d3436;
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-modern {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 12px 35px;
+      border-radius: 30px;
+      border: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+      font-size: 1.1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .site-footer {
+      background: #ffffff !important;
+      color: #2d3436 !important;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .main-container {
+        margin: -20px 12px 0;
+        border-radius: 12px;
+      }
+
+      .law-card {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header role="banner">
+    <nav class="navbar navbar-expand-lg navbar-white fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">K3 Pengolahan Limbah</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+          aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample05">
+          <ul class="navbar-nav pl-md-5 ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="landasan_hukum.html">Landasan Hukum</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lingkungan_kerja.html">Lingkungan Kerja</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="keselamatan_kerja.html">Keselamatan Kerja</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="apd.html">APD</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="p3k.html">P3K</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="top-shadow"></div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h1 class="hero-title">PERTOLONGAN PERTAMA PADA KECELAKAAN (P3K)</h1>
+          <p class="hero-subtitle">Panduan langkah-langkah pertolongan pertama untuk kecelakaan yang umum terjadi di
+            industri pengolahan limbah — ringkas, praktis, dan siap dipraktikkan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section">
+    <div class="container">
+      <div class="main-container">
+        <div class="p-5">
+
+          <!-- Introduction -->
+          <div class="row justify-content-center mb-4">
+            <div class="col-md-10 text-center">
+              <div class="section-title">
+                <p class="lead">Berikut ini adalah prosedur pertolongan pertama pada kecelakaan (P3K) yang mungkin
+                  terjadi di lingkungan kerja pengolahan limbah industri. Gunakan panduan ini sebagai langkah awal
+                  sambil menunggu bantuan medis profesional bila diperlukan.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category header + download -->
+          <div class="category-header">
+            <span class="icon ion-medkit"></span>
+            <h3>Pertolongan Pertama (P3K) - Panduan Praktis</h3>
+            <p class="mb-2">Langkah cepat untuk mengurangi risiko dan menstabilkan korban sebelum perawatan medis.</p>
+
+            <!-- Tombol Download di Category Header -->
+            <a href="#" class="btn-download-header" id="downloadPdf">
+              <i class="fa fa-file-pdf-o"></i> Download PDF P3K
+            </a>
+          </div>
+
+          <div class="row mb-4">
+            <!-- 1. Menghirup bahan kimia -->
+            <div class="col-lg-12 mb-3">
+              <div class="law-card">
+                <div class="d-flex align-items-start">
+                  <div class="mr-4">
+                    <div class="law-number">1</div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h4>P3K Saat Menghirup Bahan Kimia Berbahaya</h4>
+                    <strong>Gejala & bahaya:</strong>
+                    <p>Menghirup uap, gas, atau debu dari limbah dapat menyebabkan sesak napas, pusing, kehilangan
+                      kesadaran.</p>
+                    <strong>Langkah-langkah Pertolongan Pertama:</strong>
+                    <ul>
+                      <li>Segera pindahkan korban ke udara segar; pastikan area evakuasi aman untuk penolong.</li>
+                      <li>Longgarkan pakaian yang ketat di sekitar dada/leher.</li>
+                      <li>Jika sadar, posisikan korban setengah duduk untuk memudahkan bernapas.</li>
+                      <li>Jika tidak sadar tetapi bernapas, posisikan korban pada posisi pemulihan (miring).</li>
+                      <li>Pantau pernapasan dan kesadaran; bila napas berhenti, berikan napas buatan bila terlatih.</li>
+                      <li>Segera panggil bantuan medis atau bawa ke fasilitas kesehatan terdekat.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Luka sayat -->
+            <div class="col-lg-12 mb-3">
+              <div class="law-card">
+                <div class="d-flex align-items-start">
+                  <div class="mr-4">
+                    <div class="law-number">2</div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h4>P3K Saat Tersayat Benda Tajam</h4>
+                    <strong>Gejala & bahaya:</strong>
+                    <p>Luka sayat dari pecahan kaca/logam bisa menyebabkan pendarahan dan infeksi.</p>
+                    <strong>Langkah-langkah Pertolongan Pertama:</strong>
+                    <ul>
+                      <li>Hentikan pendarahan dengan menekan luka menggunakan kain kasa steril atau kain bersih.</li>
+                      <li>Jika benda masih menancap, jangan dicabut—tekan di sekitar benda tersebut.</li>
+                      <li>Tinggikan bagian luka bila memungkinkan.</li>
+                      <li>Setelah pendarahan terkontrol, bilas luka dengan air bersih; hindari alkohol/hidrogen
+                        peroksida langsung di dalam luka.</li>
+                      <li>Oleskan antiseptik di sekitar luka dan tutup dengan perban steril.</li>
+                      <li>Jika luka dalam/lebar atau pendarahan tidak berhenti, segera cari pertolongan medis (mungkin
+                        diperlukan jahitan dan anti-tetanus).</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Tertusuk -->
+            <div class="col-lg-12 mb-3">
+              <div class="law-card">
+                <div class="d-flex align-items-start">
+                  <div class="mr-4">
+                    <div class="law-number">3</div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h4>P3K Saat Tertusuk (Benda Terkontaminasi)</h4>
+                    <strong>Gejala & bahaya:</strong>
+                    <p>Tertusuk jarum atau benda terkontaminasi memiliki risiko infeksi serius (tetanus, hepatitis,
+                      HIV).</p>
+                    <strong>Langkah-langkah Pertolongan Pertama:</strong>
+                    <ul>
+                      <li>Jangan panik dan jangan mengisap darah dari luka.</li>
+                      <li>Biarkan darah mengalir sebentar untuk membantu mendorong kuman keluar.</li>
+                      <li>Cuci luka di bawah air mengalir selama 5–10 menit dengan sabun.</li>
+                      <li>Keringkan lembut, beri antiseptik di sekitar luka, lalu tutup dengan perban steril.</li>
+                      <li>Segera laporkan ke atasan dan pergi ke fasilitas kesehatan untuk evaluasi risiko dan tindakan
+                        pencegahan (mis. vaksin tetanus, profilaksis bila perlu).</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Bahan kimia kena kulit/mata -->
+            <div class="col-lg-12 mb-3">
+              <div class="law-card">
+                <div class="d-flex align-items-start">
+                  <div class="mr-4">
+                    <div class="law-number">4</div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h4>P3K Saat Terkena Bahan Kimia di Kulit atau Mata</h4>
+                    <strong>Gejala & bahaya:</strong>
+                    <p>Kontak bahan kimia korosif/iritan dapat menyebabkan luka bakar kimia dan kerusakan mata.</p>
+                    <strong>Langkah-langkah Pertolongan Pertama:</strong>
+                    <ul>
+                      <li><em>Jika terkena kulit:</em> lepaskan pakaian/sepatu/perhiasan yang terkontaminasi; bilas area
+                        dengan air mengalir selama 15–20 menit; jangan digosok; tutup longgar dengan kasa steril; cari
+                        pertolongan medis.</li>
+                      <li><em>Jika terkena mata:</em> bilas mata segera di eyewash station atau air bersih selama
+                        minimal 15 menit; tahan kelopak terbuka; alirkan dari sisi dalam ke luar; jangan mengucek;
+                        segera bawa ke UGD.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Keseleo -->
+            <div class="col-lg-12 mb-3">
+              <div class="law-card">
+                <div class="d-flex align-items-start">
+                  <div class="mr-4">
+                    <div class="law-number">5</div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h4>P3K Saat Keseleo atau Terkilir (Sprains/Strains)</h4>
+                    <strong>Gejala & bahaya:</strong>
+                    <p>Nyeri, bengkak, memar, kesulitan menggerakkan area yang cedera.</p>
+                    <strong>Langkah-langkah Pertolongan Pertama (RICE):</strong>
+                    <ul>
+                      <li><strong>R</strong> - Rest: Istirahatkan bagian yang cedera.</li>
+                      <li><strong>I</strong> - Ice: Kompres dengan es (dibungkus kain) 15–20 menit setiap 2–3 jam.</li>
+                      <li><strong>C</strong> - Compression: Balut dengan perban elastis tetapi jangan terlalu kencang.
+                      </li>
+                      <li><strong>E</strong> - Elevation: Tinggikan bagian yang cedera di atas jantung untuk mengurangi
+                        pembengkakan.</li>
+                      <li>Segera ke fasilitas medis jika dicurigai patah tulang (bunyi, deformitas, nyeri hebat).</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Luka bakar -->
+            <div class="col-lg-12 mb-3">
+              <div class="law-card">
+                <div class="d-flex align-items-start">
+                  <div class="mr-4">
+                    <div class="law-number">6</div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h4>P3K untuk Luka Bakar (Panas / Api)</h4>
+                    <strong>Gejala & bahaya:</strong>
+                    <p>Luka bakar dapat merusak jaringan kulit dan menyebabkan infeksi.</p>
+                    <strong>Langkah-langkah Pertolongan Pertama:</strong>
+                    <ul>
+                      <li>Jauhkan korban dari sumber panas; jika pakaian terbakar, padamkan api (berguling atau tutup
+                        dengan kain tebal).</li>
+                      <li>Dinginkan luka dengan air mengalir bersuhu sejuk selama 10–20 menit (jangan es).</li>
+                      <li>Lepaskan perhiasan/pakaian yang menutupi luka (jika tidak menempel).</li>
+                      <li>Tutup longgar dengan kasa steril atau plastik bersih; jangan oleskan bahan rumahan (mentega,
+                        pasta gigi, dll.).</li>
+                      <li>Bawa ke fasilitas medis jika luka luas, melepuh, atau di area sensitif.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 7. Mata kemasukan benda asing -->
+            <div class="col-lg-12 mb-3">
+              <div class="law-card">
+                <div class="d-flex align-items-start">
+                  <div class="mr-4">
+                    <div class="law-number">7</div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h4>P3K Saat Mata Kemasukan Benda Asing (Debu/Serpihan)</h4>
+                    <strong>Gejala & bahaya:</strong>
+                    <p>Iritasi, rasa gatal, mata berair, potensi goresan kornea.</p>
+                    <strong>Langkah-langkah Pertolongan Pertama:</strong>
+                    <ul>
+                      <li>Jangan mengucek mata.</li>
+                      <li>Arahkan korban untuk melihat ke segala arah; berkedip beberapa kali dapat membantu
+                        mengeluarkan partikel kecil.</li>
+                      <li>Bilas mata dengan air bersih dari sudut dalam ke luar; gunakan eyewash jika tersedia.</li>
+                      <li>Jika benda menancap, jangan dicabut; tutup kedua mata dengan kasa longgar dan bawa ke UGD.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 8. Pingsan / kelelahan panas -->
+            <div class="col-lg-12 mb-3">
+              <div class="law-card">
+                <div class="d-flex align-items-start">
+                  <div class="mr-4">
+                    <div class="law-number">8</div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h4>P3K Saat Pingsan atau Kelelahan Panas (Heat Exhaustion)</h4>
+                    <strong>Gejala & bahaya:</strong>
+                    <p>Keringat berlebih, kulit lembap & pucat, pusing, mual, lemas — dapat berkembang menjadi heat
+                      stroke.</p>
+                    <strong>Langkah-langkah Pertolongan Pertama:</strong>
+                    <ul>
+                      <li>Pindahkan korban ke tempat teduh/sejuk.</li>
+                      <li>Baringkan korban dengan kaki sedikit diangkat.</li>
+                      <li>Longgarkan pakaian dan berikan kompres dingin (leher/ketiak/selangkangan).</li>
+                      <li>Jika sadar dan tidak mual, beri minum perlahan (air atau elektrolit).</li>
+                      <li>Jika tidak membaik atau kehilangan kesadaran, segera panggil bantuan medis.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 9. Terjepit/tergilas mesin -->
+            <div class="col-lg-12 mb-3">
+              <div class="law-card">
+                <div class="d-flex align-items-start">
+                  <div class="mr-4">
+                    <div class="law-number">9</div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h4>P3K Saat Terjepit atau Tergilas Mesin (Crushing Injury)</h4>
+                    <strong>Gejala & bahaya:</strong>
+                    <p>Cedera berat, pendarahan internal, patah tulang, crush syndrome.</p>
+                    <strong>Langkah-langkah Pertolongan Pertama:</strong>
+                    <ul>
+                      <li>Matikan mesin atau sumber tenaga segera (emergency stop).</li>
+                      <li>Panggil bantuan medis darurat (ambulans) segera.</li>
+                      <li>Jangan mencoba mengangkat benda berat sendiri — tunggu tim darurat untuk mengurangi risiko
+                        crush syndrome.</li>
+                      <li>Kontrol pendarahan eksternal dengan tekanan langsung bila ada.</li>
+                      <li>Tenangkan korban dan selimuti untuk mencegah syok; jangan beri makan/minum.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 10. Tersengat listrik -->
+            <div class="col-lg-12 mb-0">
+              <div class="law-card">
+                <div class="d-flex align-items-start">
+                  <div class="mr-4">
+                    <div class="law-number">10</div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <h4>P3K Saat Tersengat Listrik (Electrocution)</h4>
+                    <strong>Gejala & bahaya:</strong>
+                    <p>Luka bakar, kerusakan saraf, gangguan pernapasan, henti jantung; risiko untuk penolong jika
+                      sumber listrik masih aktif.</p>
+                    <strong>Langkah-langkah Pertolongan Pertama:</strong>
+                    <ul>
+                      <li>Jangan menyentuh korban jika sumber listrik masih aktif.</li>
+                      <li>Matikan sumber listrik dari panel utama atau cabut sekring; jika tidak bisa, gunakan benda
+                        isolator (kayu kering/plastik) untuk menjauhkan korban dari sumber.</li>
+                      <li>Periksa pernapasan dan denyut nadi setelah korban aman dari aliran listrik.</li>
+                      <li>Jika tidak bernapas dan tidak ada denyut, lakukan CPR jika terlatih dan panggil bantuan medis
+                        darurat.</li>
+                      <li>Tangani luka bakar dengan menutup longgar, dan bawa korban ke fasilitas medis.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Kesimpulan / highlight -->
+          <div class="highlight-section" style="margin-top: 1.5rem;">
+            <h3><span class="ion-ios-checkmark-outline mr-2"></span>Ringkasan & Tindakan Lanjutan</h3>
+            <p>
+              Panduan ini memberikan langkah awal untuk menstabilkan korban kecelakaan kerja. Selalu utamakan
+              keselamatan penolong, laporkan kejadian ke atasan, dan pastikan korban mendapatkan perawatan medis
+              profesional. Dokumentasikan kejadian untuk tindak lanjut K3 dan pencegahan.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">Komitmen Penerapan K3</h2>
+      <p class="lead">Kepatuhan terhadap prosedur K3 memastikan keselamatan pekerja dan keberlanjutan operasional. Latih
+        P3K secara berkala dan pastikan fasilitas P3K tersedia di lokasi kerja.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-4 mb-5">
+          <h3>Tentang Kami</h3>
+          <p class="mb-5">K3 Pengolahan Limbah berkomitmen untuk menciptakan lingkungan kerja yang aman dan sehat bagi
+            seluruh pekerja dalam industri pengelolaan limbah berbahaya.</p>
+          <ul class="list-unstyled footer-link d-flex footer-social">
+            <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+            <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+            <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+            <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+          </ul>
+        </div>
+        <div class="col-md-5 mb-5 pl-md-5">
+          <h3>Informasi Kontak</h3>
+          <ul class="list-unstyled footer-link">
+            <li class="d-block">
+              <span class="d-block">Alamat:</span>
+              <span>Jurusan Teknologi Informasi, Politeknik Negeri Malang</span>
+            </li>
+            <li class="d-block">
+              <span class="d-block">Telepon:</span>
+              <span>+62 341 404424</span>
+            </li>
+            <li class="d-block">
+              <span class="d-block">Email:</span>
+              <span>k3@polinema.ac.id</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-5">
+          <h3>QUICK LINKS</h3>
+          <ul class="list-unstyled footer-link">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lingkungan_kerja.html">Lingkungan Kerja</a></li>
+            <li><a href="keselamatan_kerja.html">Keselamatan Kerja</a></li>
+            <li><a href="apd.html">APD</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-md-center text-left">
+          <p>
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> | Kel 1-SIB 3B | Sistem Informasi K3 Pengolahan
+            Limbah
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- loader -->
+  <div id="loader" class="show fullscreen" style="display:none;">
+    <svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#6c5ce7" />
+    </svg>
+  </div>
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- PDF Generation Script (jsPDF) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    // PDF generator: create PDF with all P3K sections, auto-wrap and add pages
+    function generateP3KPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+      const margin = 40;
+      const pageWidth = doc.internal.pageSize.getWidth();
+      const pageHeight = doc.internal.pageSize.getHeight();
+      const maxLineWidth = pageWidth - margin * 2;
+      const lineHeight = 14;
+      let y = margin;
+
+      // Helper to add title header
+      function addHeader(title, subtitle) {
+        doc.setFontSize(18);
+        doc.setTextColor(40, 40, 40);
+        doc.setFont('helvetica', 'bold');
+        doc.text(title, margin, y);
+        y += 22;
+        if (subtitle) {
+          doc.setFontSize(11);
+          doc.setFont('helvetica', 'normal');
+          doc.setTextColor(100, 100, 100);
+          const lines = doc.splitTextToSize(subtitle, maxLineWidth);
+          doc.text(lines, margin, y);
+          y += lines.length * lineHeight + 6;
+        }
+        // divider
+        doc.setDrawColor(108, 92, 231);
+        doc.setLineWidth(1);
+        doc.line(margin, y, pageWidth - margin, y);
+        y += 12;
+      }
+
+      // Title
+      addHeader('PERTOLONGAN PERTAMA PADA KECELAKAAN (P3K)', 'Panduan langkah-langkah pertolongan pertama untuk kecelakaan di lingkungan pengolahan limbah industri.');
+
+      // Content as array of sections (title + paragraphs or list)
+      const sections = [
+        {
+          title: '1. P3K Saat Menghirup Bahan Kimia Berbahaya',
+          body: [
+            'Menghirup uap, gas, atau debu dari limbah dapat menyebabkan sesak napas, pusing, hingga kehilangan kesadaran.',
+            'Langkah-langkah Pertolongan Pertama:',
+            '- Segera pindahkan korban ke area dengan udara segar; pastikan area evakuasi aman untuk penolong.',
+            '- Longgarkan pakaian yang ketat di sekitar leher dan dada.',
+            '- Jika korban sadar, posisikan setengah duduk agar lebih mudah bernapas.',
+            '- Jika korban tidak sadar tetapi masih bernapas, baringkan dalam posisi pemulihan (miring ke satu sisi).',
+            '- Pantau pernapasan; bila napas berhenti, berikan napas buatan bila terlatih.',
+            '- Segera panggil bantuan medis atau bawa korban ke fasilitas kesehatan terdekat.'
+          ]
+        },
+        {
+          title: '2. P3K Saat Tersayat Benda Tajam',
+          body: [
+            'Luka sayat bisa disebabkan oleh pecahan kaca, logam, atau benda tajam lainnya dalam limbah.',
+            'Langkah-langkah Pertolongan Pertama:',
+            '- Hentikan pendarahan dengan menekan luka menggunakan kain kasa steril atau kain bersih.',
+            '- Jika benda masih menancap, jangan dicabut; tekan di sekitar benda tersebut.',
+            '- Tinggikan bagian yang luka bila memungkinkan.',
+            '- Setelah pendarahan berhenti, bilas luka dengan air bersih; hindari alkohol atau hidrogen peroksida langsung di dalam luka.',
+            '- Oleskan antiseptik di sekitar luka dan tutup dengan perban steril.',
+            '- Jika luka sangat dalam/lebar atau pendarahan tidak berhenti, segera cari pertolongan medis.'
+          ]
+        },
+        {
+          title: '3. P3K Saat Tertusuk (Benda Terkontaminasi)',
+          body: [
+            'Tertusuk terutama oleh benda terkontaminasi berisiko tinggi terhadap infeksi (tetanus, hepatitis, HIV).',
+            'Langkah-langkah Pertolongan Pertama:',
+            '- Jangan panik dan jangan mengisap darah dari luka.',
+            '- Biarkan darah mengalir sebentar untuk mendorong kuman keluar.',
+            '- Cuci luka dengan air mengalir selama 5–10 menit dan pakai sabun bila tersedia.',
+            '- Keringkan dan oleskan antiseptik; tutup dengan perban steril.',
+            '- Segera laporkan kejadian ke atasan dan ke fasilitas kesehatan untuk evaluasi dan tindakan pencegahan (mis. vaksin tetanus).'
+          ]
+        },
+        {
+          title: '4. P3K Saat Terkena Bahan Kimia di Kulit atau Mata',
+          body: [
+            'Kontak bahan kimia korosif atau iritan adalah keadaan darurat yang memerlukan penanganan cepat.',
+            'Jika terkena di kulit:',
+            '- Lepaskan pakaian/sepatu/perhiasan yang terkontaminasi.',
+            '- Bilas area dengan air mengalir selama minimal 15–20 menit (gunakan safety shower bila ada).',
+            '- Jangan menggosok; tutup longgar dengan kasa steril; cari pertolongan medis.',
+            'Jika terkena di mata:',
+            '- Bilas mata segera selama minimal 15 menit (buka kelopak mata dan alirkan dari sisi dalam ke luar).',
+            '- Jangan mengucek; segera bawa korban ke UGD setelah pembilasan.'
+          ]
+        },
+        {
+          title: '5. P3K Saat Keseleo atau Terkilir (Sprains/Strains)',
+          body: [
+            'Gejala: nyeri, bengkak, memar, kesulitan menggerakkan area yang cedera.',
+            'Metode RICE:',
+            '- Rest (istirahatkan bagian yang cedera).',
+            '- Ice (kompres dingin 15–20 menit setiap 2–3 jam, jangan ditempel langsung ke kulit).',
+            '- Compression (balut dengan perban elastis, jangan terlalu kencang).',
+            '- Elevation (angkat bagian yang cedera lebih tinggi dari jantung).',
+            'Segera ke fasilitas medis bila dicurigai patah tulang.'
+          ]
+        },
+        {
+          title: '6. P3K untuk Luka Bakar (Akibat Panas/Api)',
+          body: [
+            'Luka bakar akibat panas atau api memerlukan pendinginan dan perlindungan dari infeksi.',
+            '- Jauhkan korban dari sumber panas; padamkan api pada pakaian dengan berguling atau tutup dengan kain tebal.',
+            '- Dinginkan luka dengan air mengalir bersuhu sejuk selama 10–20 menit (jangan es).',
+            '- Lepaskan perhiasan dan pakaian di sekitar luka jika memungkinkan; tutup dengan kasa steril longgar.',
+            '- Jangan oleskan bahan rumahan; bawa ke layanan medis jika luas atau melibatkan area sensitif.'
+          ]
+        },
+        {
+          title: '7. P3K Saat Mata Kemasukan Benda Asing (Debu/Serpihan)',
+          body: [
+            'Jangan mengucek mata; berkedip dan pembilasan seringkali membantu.',
+            '- Periksa dan minta korban berkedip; bilas mata dengan air bersih atau menggunakan eyewash.',
+            '- Arahkan aliran dari sudut dalam ke luar; jika benda menancap, jangan dicabut—tutupi mata dan bawa ke UGD.'
+          ]
+        },
+        {
+          title: '8. P3K Saat Pingsan atau Kelelahan Panas (Heat Exhaustion)',
+          body: [
+            'Gejala: keringat berlebih, kulit lembap, pusing, mual, lemas.',
+            '- Pindahkan korban ke tempat teduh/sejuk; baringkan dengan kaki sedikit diangkat.',
+            '- Longgarkan pakaian; kompres area tubuh dengan kain basah; beri minum jika sadar dan tidak mual.',
+            '- Jika tidak membaik atau kehilangan kesadaran, panggil bantuan medis (bisa berkembang menjadi heat stroke).'
+          ]
+        },
+        {
+          title: '9. P3K Saat Terjepit atau Tergilas Mesin (Crushing Injury)',
+          body: [
+            'Cedera serius yang dapat menyebabkan pendarahan internal dan crush syndrome.',
+            '- Matikan mesin/sumber tenaga (emergency stop) dan panggil bantuan medis segera.',
+            '- Jangan mengangkat benda berat sendiri; risiko crush syndrome tinggi.',
+            '- Kontrol pendarahan eksternal, tenangkan korban, dan tunggu tim medis profesional.'
+          ]
+        },
+        {
+          title: '10. P3K Saat Tersengat Listrik (Electrocution)',
+          body: [
+            'Risiko besar bagi korban dan penolong jika aliran listrik masih aktif.',
+            '- Jangan menyentuh korban saat sumber listrik masih aktif; matikan sumber listrik dari panel utama bila memungkinkan.',
+            '- Setelah aman, periksa pernapasan dan denyut; jika tidak bernapas, lakukan CPR bila terlatih dan panggil ambulans.',
+            '- Tangani luka bakar; bawa ke layanan medis.'
+          ]
+        }
+      ];
+
+      // function to write a section, handle page breaks
+      function writeSection(sec) {
+        doc.setFontSize(13);
+        doc.setFont('helvetica', 'bold');
+        let titleLines = doc.splitTextToSize(sec.title, maxLineWidth);
+        // add page if needed
+        if (y + titleLines.length * lineHeight > pageHeight - margin) {
+          doc.addPage();
+          y = margin;
+        }
+        doc.text(titleLines, margin, y);
+        y += titleLines.length * lineHeight + 6;
+
+        doc.setFontSize(11);
+        doc.setFont('helvetica', 'normal');
+        sec.body.forEach(par => {
+          const lines = doc.splitTextToSize(par, maxLineWidth);
+          if (y + lines.length * lineHeight > pageHeight - margin) {
+            doc.addPage();
+            y = margin;
+          }
+          doc.text(lines, margin, y);
+          y += lines.length * lineHeight + 6;
+        });
+        y += 4;
+      }
+
+      // write all sections
+      sections.forEach(s => writeSection(s));
+
+      // footer info
+      if (y + 60 > pageHeight - margin) {
+        doc.addPage();
+        y = margin;
+      }
+      doc.setFontSize(9);
+      doc.setTextColor(120, 120, 120);
+      doc.text('Dokumen dibuat oleh Sistem Informasi K3 Pengolahan Limbah — Kelompok 1', margin, pageHeight - 40);
+      const dateStr = new Date().toLocaleDateString('id-ID');
+      doc.text(dateStr, pageWidth - margin - doc.getStringUnitWidth(dateStr) * doc.internal.getFontSize() / doc.internal.scaleFactor, pageHeight - 40);
+
+      // open in new tab
+      window.open(doc.output('bloburl'), '_blank');
+    }
+
+    // attach event
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.getElementById('downloadPdf');
+      if (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          generateP3KPDF();
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>
