@@ -99,6 +99,52 @@
     .path {
       stroke: #6c5ce7 !important;
     }
+
+    .table-apd {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      background: #ffffff;
+    }
+
+    .table-apd th {
+      background: #6c5ce7;
+      color: white;
+      text-align: center;
+      padding: 14px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .table-apd td {
+      padding: 12px;
+      text-align: center;
+      border: 1px solid #e4e4e4;
+      font-size: 14px;
+    }
+
+    .table-apd tr:nth-child(even) {
+      background: #f7f7fc;
+    }
+
+    .checkmark {
+      color: #2ecc71;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .crossmark {
+      color: #e74c3c;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .row-title {
+      font-weight: 600;
+      background: #f0f0f8;
+    }
   </style>
 
 </head>
@@ -298,6 +344,83 @@
       </div>
 
     </div>
+
+    <div class="container mt-5 mb-5">
+      <h3 class="text-center mb-4">Kebutuhan APD Berdasarkan Jenis Limbah</h3>
+
+      <table class="table-apd">
+        <thead>
+          <tr>
+            <th>Jenis Limbah</th>
+            <th>Helm Keselamatan</th>
+            <th>Masker Respirator / SCBA</th>
+            <th>Sarung Tangan Tahan Kimia</th>
+            <th>Kacamata / Face Shield</th>
+            <th>Sepatu Safety Anti-Slip & Kimia</th>
+            <th>Baju Pelindung</th>
+            <th>Pelindung Telinga</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-title">Pengolahan Limbah Kimia Beracun</td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="crossmark">—</span></td>
+          </tr>
+
+          <tr>
+            <td class="row-title">Bahan Infeksius (Medis / Laboratorium)</td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="crossmark">—</span></td>
+          </tr>
+
+          <tr>
+            <td class="row-title">Limbah Elektronik</td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="crossmark">—</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="crossmark">—</span></td>
+            <td><span class="checkmark">✓</span></td>
+          </tr>
+
+          <tr>
+            <td class="row-title">Limbah Logam Berat</td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+          </tr>
+
+          <tr>
+            <td class="row-title">Limbah B3 Rumah Tangga</td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="crossmark">—</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="checkmark">✓</span></td>
+            <td><span class="crossmark">—</span></td>
+            <td><span class="checkmark">✓</span></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
   </section>
 
   <!-- SECTION 3: PERALATAN PROSEDURAL -->
