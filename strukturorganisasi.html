@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <title>Lingkungan Kerja | K3 Pengolahan Limbah</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .navbar-white {
+            background: #ffffff !important;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-white .navbar-brand {
+            color: #2d3436 !important;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        .navbar-white .nav-link {
+            color: #2d3436 !important;
+            font-weight: 500;
+            margin: 0 0.3rem;
+            padding: 0.5rem 1rem !important;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-white .nav-link:hover {
+            color: #6c5ce7 !important;
+        }
+
+        .navbar-white .nav-link.active {
+            color: #6c5ce7 !important;
+            font-weight: 600;
+        }
+
+        .navbar-white .navbar-toggler {
+            border-color: #2d3436;
+        }
+
+        .navbar-white .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2845, 52, 54, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        body {
+            padding-top: 80px;
+            background: #f8fafc;
+            color: #2d3436;
+        }
+
+        /* Hero Section dengan background biru */
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 0 80px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #ffffff !important;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95) !important;
+        }
+
+        /* Main container */
+        .main-container {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin: -40px auto 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Section titles */
+        .section-title {
+            position: relative;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title .heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d3436;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .section-title .heading::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        /* Content cards */
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            border: none;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border-left: 4px solid #6c5ce7;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Image styling - GAMBAR BESAR */
+        .large-image {
+            width: 100%;
+            max-height: 600px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            margin: 2rem 0;
+            transition: all 0.3s ease;
+            border: 3px solid #f8f9fa;
+            object-fit: contain;
+        }
+
+        .large-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-color: #6c5ce7;
+        }
+
+        /* Image container */
+        .image-container {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Content area */
+        .content-area {
+            padding: 0 2rem;
+        }
+
+        /* List styling */
+        .content-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .content-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .content-list li:last-child {
+            border-bottom: none;
+        }
+
+        .content-list li::before {
+            content: '-';
+            position: absolute;
+            left: 0;
+            color: #6c5ce7;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Color badges */
+        .color-badge {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            margin-right: 10px;
+            vertical-align: middle;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge-red {
+            background: #e74c3c;
+        }
+
+        .badge-green {
+            background: #27ae60;
+        }
+
+        .badge-yellow {
+            background: #f39c12;
+        }
+
+        .badge-gray {
+            background: #95a5a6;
+        }
+
+        .badge-brown {
+            background: #8b4513;
+        }
+
+        .badge-blue {
+            background: #3498db;
+        }
+
+        /* Alert styling */
+        .safety-alert {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .safety-alert strong {
+            color: #fff;
+        }
+
+        /* Footer styling */
+        .site-footer {
+            background: #ffffff !important;
+            color: #2d3436 !important;
+            border-top: 1px solid #e0e0e0;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .site-footer h3 {
+            color: #2d3436 !important;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .site-footer p,
+        .site-footer li,
+        .site-footer span {
+            color: #636e72 !important;
+        }
+
+        .site-footer a {
+            color: #6c5ce7 !important;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .site-footer a:hover {
+            color: #5b4bd4 !important;
+            text-decoration: underline;
+        }
+
+        .site-footer .footer-social a {
+            color: #636e72 !important;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .site-footer .footer-social a:hover {
+            color: #6c5ce7 !important;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .main-container {
+                margin: -20px 15px 0;
+                border-radius: 15px;
+            }
+
+            .content-card {
+                padding: 1.5rem;
+            }
+
+            .large-image {
+                max-height: 400px;
+            }
+
+            .content-area {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header role="banner">
+        <nav class="navbar navbar-expand-lg navbar-white fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">K3 Pengolahan Limbah</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+                    aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarsExample05">
+                    <ul class="navbar-nav pl-md-5 ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="landasan_hukum.html">Landasan Hukum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="lingkungan_kerja.html">Lingkungan Kerja</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="keselamatan_kerja.html">Keselamatan Kerja</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownLainnya" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Lainnya
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownLainnya">
+                                <a class="dropdown-item" href="apd.html">APD</a>
+                                <a class="dropdown-item" href="p3k.html">P3K</a>
+                                <a class="dropdown-item" href="strukturorganisasi.html">Struktur K3</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- END header -->
+
+    <div class="top-shadow"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="hero-title">Struktur Organisasi P2K3</h1>
+                    <p class="hero-subtitle">Struktur organisasi Panitia Pembina Keselamatan dan Kesehatan Kerja
+                        (P2K3) pada perusahaan pengelolaan limbah industri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container">
+            <div class="main-container">
+                <div class="p-5">
+
+                    <!-- GAMBAR STRUKTUR -->
+                    <div class="content-card">
+                        <div class="image-container">
+                            <img src="images/strukturK3.jpg" alt="Struktur Organisasi P2K3" class="large-image">
+                        </div>
+
+                        <div class="content-area">
+                            <h3 class="mb-4 text-center">Penjelasan Struktur P2K3</h3>
+                            <p class="text-center mb-4">
+                                Struktur organisasi ini menjelaskan pembagian tugas, peran, dan tanggung jawab tiap tim
+                                dalam upaya penerapan Keselamatan dan Kesehatan Kerja di perusahaan pengolahan limbah
+                                industri.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- TUGAS TIAP TIM -->
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-md-10 text-center">
+                            <div class="section-title">
+                                <h2 class="heading">Tugas & Tanggung Jawab Tiap Tim</h2>
+                                <p class="lead">Berikut uraian lengkap tugas setiap tim</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TIM 1 -->
+                    <div class="content-card">
+                        <h4 class="mb-3">Tim Evaluasi & Audit P2K3</h4>
+                        <ul class="content-list">
+                            <li>Audit internal K3LH secara berkala (min. 2x per tahun).</li>
+                            <li>Investigasi kecelakaan kerja dan insiden lingkungan.</li>
+                            <li>Menyusun dan memperbarui HIRA di seluruh area kerja.</li>
+                            <li>Evaluasi kepatuhan K3 & lingkungan terhadap regulasi.</li>
+                            <li>Evaluasi manifest limbah B3 & dokumen perizinan.</li>
+                            <li>Laporan K3LH ke Disnaker & KLHK.</li>
+                            <li>Audit ISO 14001, ISO 45001 & SMK3.</li>
+                            <li>Evaluasi efektivitas program P2K3.</li>
+                        </ul>
+                    </div>
+
+                    <!-- TIM 2 -->
+                    <div class="content-card">
+                        <h4 class="mb-3">Tim Pelatihan & Kompetensi</h4>
+                        <ul class="content-list">
+                            <li>Menyusun program pelatihan K3 tahunan.</li>
+                            <li>Safety Induction untuk karyawan baru & kontraktor.</li>
+                            <li>Pelatihan handling limbah B3.</li>
+                            <li>Pelatihan penggunaan APD.</li>
+                            <li>Pelatihan Emergency Response & P3K.</li>
+                            <li>Sertifikasi kompetensi (K3 Umum, K3 Kimia, dll).</li>
+                            <li>Melakukan Safety Talk & Toolbox Meeting rutin.</li>
+                        </ul>
+                    </div>
+
+                    <!-- TIM 3 -->
+                    <div class="content-card">
+                        <h4 class="mb-3">Tim Kesehatan Kerja</h4>
+                        <ul class="content-list">
+                            <li>Medical Check Up rutin.</li>
+                            <li>Pemeriksaan kesehatan pekerja terpapar B3.</li>
+                            <li>Monitoring kesehatan area high risk.</li>
+                            <li>Hygiene industri: debu, gas, kebisingan.</li>
+                            <li>Penyuluhan kesehatan & pengelolaan klinik.</li>
+                            <li>Investigasi Penyakit Akibat Kerja (PAK).</li>
+                        </ul>
+                    </div>
+
+                    <!-- TIM 4 -->
+                    <div class="content-card">
+                        <h4 class="mb-3">Tim Pengawasan K3</h4>
+                        <ul class="content-list">
+                            <li>Inspeksi harian APD.</li>
+                            <li>Pengawasan Permit to Work.</li>
+                            <li>Inspeksi peralatan kerja & scaffolding.</li>
+                            <li>Safety patrol & JSA pekerjaan berisiko tinggi.</li>
+                            <li>Pengawasan operasional di TPS Limbah B3 & IPAL.</li>
+                        </ul>
+                    </div>
+
+                    <!-- TIM 5 -->
+                    <div class="content-card">
+                        <h4 class="mb-3">Tim Tanggap Darurat (ERT)</h4>
+                        <ul class="content-list">
+                            <li>Menyusun Emergency Response Plan (ERP).</li>
+                            <li>Siaga 24/7 untuk keadaan darurat.</li>
+                            <li>Penanganan tumpahan limbah B3.</li>
+                            <li>Pemadaman kebakaran menggunakan APAR & hydrant.</li>
+                            <li>Evakuasi korban ke assembly point.</li>
+                            <li>Simulasi emergency minimal 2x per tahun.</li>
+                        </ul>
+                    </div>
+
+                    <!-- TIM 6 -->
+                    <div class="content-card">
+                        <h4 class="mb-3">Tim Pengendalian Operasional</h4>
+                        <ul class="content-list">
+                            <li>Pengawasan incinerator & proses treatment limbah.</li>
+                            <li>Stabilisasi/solidifikasi limbah B3.</li>
+                            <li>Operasional transportasi limbah B3.</li>
+                            <li>Pengendalian WWTP & parameter lingkungan.</li>
+                            <li>Pengawasan SOP operasional seluruh unit proses.</li>
+                        </ul>
+                    </div>
+
+                    <!-- TIM 7 -->
+                    <div class="content-card">
+                        <h4 class="mb-3">Tim Pemantauan Lingkungan</h4>
+                        <ul class="content-list">
+                            <li>Sampling & monitoring air limbah.</li>
+                            <li>Pengukuran emisi udara & kualitas udara ambien.</li>
+                            <li>Pengelolaan lumpur B3 dari IPAL.</li>
+                            <li>Pelaporan PROPER & SPPL.</li>
+                            <li>Program 3R dan penghijauan.</li>
+                        </ul>
+                    </div>
+
+                    <!-- TIM 8 -->
+                    <div class="content-card">
+                        <h4 class="mb-3">Tim Inspeksi & Pemeliharaan Fasilitas</h4>
+                        <ul class="content-list">
+                            <li>Inspeksi incinerator, IPAL, gudang B3, dan instalasi.</li>
+                            <li>Maintenance preventive semua equipment kritikal.</li>
+                            <li>Kalibrasi alat ukur & inspeksi safety device.</li>
+                            <li>Maintenance forklift & alat berat.</li>
+                            <li>Pengelolaan logbook maintenance.</li>
+                        </ul>
+                    </div>
+
+                    <!-- SEKRETARIAT -->
+                    <div class="content-card">
+                        <h4 class="mb-3">Sekretariat P2K3</h4>
+                        <ul class="content-list">
+                            <li>Mengatur jadwal rapat P2K3.</li>
+                            <li>Membuat notulensi & dokumentasi.</li>
+                            <li>Laporan bulanan kinerja P2K3.</li>
+                            <li>Mengelola database insiden & dokumen K3.</li>
+                            <li>Mempersiapkan audit eksternal.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-4 mb-5">
+                    <h3>Tentang Kami</h3>
+                    <p class="mb-5">K3 Pengolahan Limbah berkomitmen untuk menciptakan lingkungan kerja yang aman dan
+                        sehat bagi
+                        seluruh pekerja dalam industri pengelolaan limbah berbahaya.</p>
+                    <ul class="list-unstyled footer-link d-flex footer-social">
+                        <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+                        <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+                        <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-5 mb-5 pl-md-5">
+                    <h3>Informasi Kontak</h3>
+                    <ul class="list-unstyled footer-link">
+                        <li class="d-block">
+                            <span class="d-block">Alamat:</span>
+                            <span>Jurusan Teknologi Informasi, Politeknik Negeri Malang</span>
+                        </li>
+                        <li class="d-block">
+                            <span class="d-block">Telepon:</span>
+                            <span>+62 341 404424</span>
+                        </li>
+                        <li class="d-block">
+                            <span class="d-block">Email:</span>
+                            <span>k3@polinema.ac.id</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-5">
+                    <h3>QUICK LINKS</h3>
+                    <ul class="list-unstyled footer-link">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="landasan_hukum.html">Landasan Hukum</a></li>
+                        <li><a href="keselamatan_kerja.html">Keselamatan Kerja</a></li>
+                        <li><a href="apd.html">APD</a></li>
+                        <li><a href="p3k.html">P3K</a></li>
+                        <li><a href="strukturorganisasi.html">Struktur K3</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-md-center text-left">
+                    <p>
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> | Kel 1-SIB 3B | Sistem Informasi K3
+                        Pengolahan
+                        Limbah
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END footer -->
+
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#6c5ce7" />
+        </svg></div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
