@@ -218,6 +218,67 @@
       color: #636e72;
       font-size: 14px;
     }
+
+    /* Styles untuk tabel HIRARC */
+    .hirarc-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      font-size: 14px;
+    }
+
+    .hirarc-table thead {
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      color: #fff;
+    }
+
+    .hirarc-table th,
+    .hirarc-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #f1f3f5;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    .hirarc-table tbody tr:nth-child(even) {
+      background: #fbfbfd;
+    }
+
+    .badge-risk {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 12px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .risk-high {
+      background: #e74c3c;
+    }
+
+    .risk-medium {
+      background: #f39c12;
+    }
+
+    .risk-low {
+      background: #2ecc71;
+    }
+
+    @media (max-width: 991px) {
+      .hirarc-table th:last-child,
+      .hirarc-table td:last-child {
+        min-width: 120px;
+      }
+
+      .hirarc-responsive {
+        overflow-x: auto;
+      }
+    }
   </style>
 
 </head>
@@ -427,22 +488,175 @@
     </div>
   </section>
 
-  <!-- Tabel HIRARC -->
+  <!-- Tabel HIRARC (HTML) -->
   <section class="section bg-light">
     <div class="container">
-      <div class="row justify-content-center mb-5 element-animate">
-        <div class="col-md-12 text-center">
-          <h2 class="heading mb-4">Tabel HIRARC (Hazard Identification Risk Assessment and Risk Control)</h2>
-          <p class="lead mb-4">
-            Tabel HIRARC digunakan sebagai dasar untuk mengidentifikasi bahaya, menilai besarnya risiko, dan menetapkan
-            langkah pengendalian yang tepat pada proses pengolahan limbah.
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-10 text-center">
+          <h2 class="heading mb-2">Tabel HIRARC (Contoh)</h2>
+          <p class="lead mb-4">Tabel berikut memperlihatkan contoh identifikasi bahaya, analisa risiko, dan kategori risiko.
           </p>
         </div>
       </div>
 
-      <div class="row element-animate">
+      <div class="row">
+        <div class="col-12 hirarc-responsive">
+          <table class="hirarc-table">
+            <thead>
+              <tr>
+                <th style="width:40px">No</th>
+                <th>Aktivitas Kerja</th>
+                <th>Bahaya (Hazard)</th>
+                <th>Dampak (Consequence)</th>
+                <th style="width:90px">Likelihood (1–5)</th>
+                <th style="width:90px">Severity (1–5)</th>
+                <th style="width:90px">Risk (L x S)</th>
+                <th style="width:140px">Kategori Risiko</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                 <td>1</td>
+    <td>Penerimaan limbah B3</td>
+    <td>Tumpahan bahan kimia korosif</td>
+    <td>Luka bakar kimia, iritasi, keracunan</td>
+    <td>3</td>
+    <td>5</td>
+    <td>15</td>
+    <td><span class="badge-risk risk-high">HIGH</span></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Pengangkatan drum limbah</td>
+    <td>Beban berat (ergonomi)</td>
+    <td>Cedera otot, low back pain</td>
+    <td>4</td>
+    <td>3</td>
+    <td>12</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Pemindahan limbah medis</td>
+    <td>Bahaya biologis (virus, bakteri)</td>
+    <td>Infeksi, penyakit menular</td>
+    <td>3</td>
+    <td>5</td>
+    <td>15</td>
+    <td><span class="badge-risk risk-high">HIGH</span></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Penghancuran limbah</td>
+    <td>Bahaya mekanis (jari terjepit mesin)</td>
+    <td>Luka berat / amputasi</td>
+    <td>2</td>
+    <td>5</td>
+    <td>10</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Reaksi kimia pengolahan limbah</td>
+    <td>Gas beracun (Cl2, H2S, NH3)</td>
+    <td>Sesak napas, keracunan fatal</td>
+    <td>3</td>
+    <td>5</td>
+    <td>15</td>
+    <td><span class="badge-risk risk-high">HIGH</span></td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Penyimpanan limbah B3</td>
+    <td>Kebocoran wadah</td>
+    <td>Kontaminasi lingkungan, paparan kimia</td>
+    <td>3</td>
+    <td>4</td>
+    <td>12</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Area insinerator</td>
+    <td>Paparan panas tinggi</td>
+    <td>Luka bakar, heat stress</td>
+    <td>2</td>
+    <td>5</td>
+    <td>10</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>Pembersihan tumpahan</td>
+    <td>Kontak langsung bahan kimia</td>
+    <td>Luka bakar, iritasi kulit</td>
+    <td>3</td>
+    <td>4</td>
+    <td>12</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>Pengangkutan internal limbah</td>
+    <td>Lantai licin saat pemindahan</td>
+    <td>Terpeleset, cedera kepala/kaki</td>
+    <td>3</td>
+    <td>2</td>
+    <td>6</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>Pengujian limbah di laboratorium</td>
+    <td>Paparan bahan reaktif</td>
+    <td>Keracunan akut</td>
+    <td>2</td>
+    <td>5</td>
+    <td>10</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>Pencacahan limbah padat</td>
+    <td>Debu berbahaya</td>
+    <td>Gangguan pernapasan</td>
+    <td>3</td>
+    <td>3</td>
+    <td>9</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>Pengolahan limbah minyak</td>
+    <td>Reaksi panas spontan</td>
+    <td>Kebakaran</td>
+    <td>2</td>
+    <td>5</td>
+    <td>10</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>Penimbangan limbah</td>
+    <td>Timbangan licin</td>
+    <td>Cedera jari/kaki</td>
+    <td>2</td>
+    <td>5</td>
+    <td>10</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+ 
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row mt-3">
         <div class="col-md-12">
-          <img src="images/hirarc.png" alt="Tabel HIRARC" class="hirarc-image">
+          <p class="text-muted small">
+            Catatan: nilai Likelihood dan Severity serta kategori risiko adalah contoh. Sesuaikan penilaian dan kontrol
+            di lapangan berdasarkan hasil HIRARC yang dilakukan bersama tim K3.
+          </p>
         </div>
       </div>
     </div>
