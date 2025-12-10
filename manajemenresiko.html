@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <title>Manajemen Resiko - K3 Pengolahan Limbah</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Manajemen risiko K3 untuk pengolahan limbah industri">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:400,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+  <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+
+  <!-- Theme Style -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .navbar-white {
+      background: #ffffff !important;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-white .navbar-brand {
+      color: #2d3436 !important;
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+
+    .navbar-white .nav-link {
+      color: #2d3436 !important;
+      font-weight: 500;
+      margin: 0 0.3rem;
+      padding: 0.5rem 1rem !important;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-white .nav-link:hover {
+      color: #6c5ce7 !important;
+    }
+
+    .navbar-white .nav-link.active {
+      color: #6c5ce7 !important;
+      font-weight: 600;
+    }
+
+    .navbar-white .navbar-toggler {
+      border-color: #2d3436;
+    }
+
+    .navbar-white .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2845, 52, 54, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    body {
+      padding-top: 80px;
+      background: #fafafa;
+    }
+
+    .bg-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    }
+
+    .text-primary {
+      color: #6c5ce7 !important;
+    }
+
+    .card {
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .site-footer {
+      background: #ffffff !important;
+      color: #2d3436 !important;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .site-footer h3 {
+      color: #2d3436 !important;
+    }
+
+    .site-footer p,
+    .site-footer li,
+    .site-footer span {
+      color: #636e72 !important;
+    }
+
+    .site-footer a {
+      color: #6c5ce7 !important;
+      transition: color 0.3s ease;
+    }
+
+    .site-footer a:hover {
+      color: #5b4bd4 !important;
+    }
+
+    .site-footer .footer-social a {
+      color: #636e72 !important;
+    }
+
+    .site-footer .footer-social a:hover {
+      color: #6c5ce7 !important;
+    }
+
+    .path {
+      stroke: #6c5ce7 !important;
+    }
+
+    section.section {
+      padding-top: 40px !important;
+      padding-bottom: 40px !important;
+    }
+
+    /* Custom styles untuk Manajemen Risiko */
+    .hirarc-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+    }
+
+    .tahapan-card {
+      background: #ffffff;
+      border-left: 5px solid #6c5ce7;
+      padding: 25px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .tahapan-card h4 {
+      color: #2d3436;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .tahapan-card p {
+      color: #636e72;
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    .tahapan-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .tahapan-card ul li {
+      color: #636e72;
+      padding-left: 25px;
+      margin-bottom: 10px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .tahapan-card ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #6c5ce7;
+      font-weight: bold;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 8px;
+      margin: 30px 0;
+    }
+
+    .highlight-box h3 {
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .highlight-box p {
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.8;
+    }
+
+    .highlight-box strong {
+      color: #ffd700;
+    }
+
+    .icon-box {
+      text-align: center;
+      padding: 20px;
+      background: #f8f9ff;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .icon-box .ion-icon {
+      font-size: 40px;
+      color: #6c5ce7;
+      margin-bottom: 15px;
+    }
+
+    .icon-box h5 {
+      color: #2d3436;
+      font-weight: 700;
+    }
+
+    .icon-box p {
+      color: #636e72;
+      font-size: 14px;
+    }
+
+    /* Styles untuk tabel HIRARC */
+    .hirarc-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      font-size: 14px;
+    }
+
+    .hirarc-table thead {
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      color: #fff;
+    }
+
+    .hirarc-table th,
+    .hirarc-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #f1f3f5;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    .hirarc-table tbody tr:nth-child(even) {
+      background: #fbfbfd;
+    }
+
+    .badge-risk {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 12px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .risk-high {
+      background: #e74c3c;
+    }
+
+    .risk-medium {
+      background: #f39c12;
+    }
+
+    .risk-low {
+      background: #2ecc71;
+    }
+
+    @media (max-width: 991px) {
+      .hirarc-table th:last-child,
+      .hirarc-table td:last-child {
+        min-width: 120px;
+      }
+
+      .hirarc-responsive {
+        overflow-x: auto;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header role="banner">
+    <nav class="navbar navbar-expand-lg navbar-white fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">K3 Pengolahan Limbah</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+          aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample05">
+          <ul class="navbar-nav pl-md-5 ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="landasan_hukum.html">Landasan Hukum</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lingkungan_kerja.html">Lingkungan Kerja</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="keselamatan_kerja.html">Keselamatan Kerja</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="dropdownLainnya" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Lainnya
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownLainnya">
+                <a class="dropdown-item" href="apd.html">APD</a>
+                <a class="dropdown-item" href="p3k.html">P3K</a>
+                <a class="dropdown-item" href="strukturorganisasi.html">Struktur K3</a>
+                <a class="dropdown-item active" href="manajemenresiko.html">Manajemen Resiko</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- END header -->
+
+  <div class="top-shadow"></div>
+
+  <!-- Hero Section -->
+  <section class="section bg-primary">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h1 class="text-white mb-3">Manajemen Resiko K3</h1>
+          <p class="text-white lead">Pendekatan sistematis untuk mengidentifikasi, mengevaluasi, dan mengendalikan
+            risiko keselamatan dan kesehatan kerja di lingkungan pengolahan limbah.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section">
+    <div class="container">
+      <!-- Pengenalan Manajemen Risiko -->
+      <div class="row justify-content-center mb-5 element-animate">
+        <div class="col-md-10">
+          <h2 class="heading text-center mb-4">Tahapan Manajemen Risiko K3</h2>
+          <p class="lead text-center mb-5">
+            Manajemen risiko K3 merupakan proses yang sistematis dan berkelanjutan untuk mencegah kecelakaan kerja
+            dan penyakit akibat kerja.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tahapan 1: Komitmen -->
+      <div class="row mb-4 element-animate">
+        <div class="col-md-12">
+          <div class="tahapan-card">
+            <h4><span class="badge badge-primary">1</span> Komitmen</h4>
+            <p>
+              Tahap pertama adalah komitmen yang kuat dari manajemen puncak. Komitmen ini diperlukan untuk
+              memastikan bahwa proses manajemen risiko mendapatkan dukungan dalam bentuk kebijakan, anggaran,
+              fasilitas, dan sumber daya manusia. Dalam industri pengolahan limbah, komitmen sangat penting karena
+              risiko paparan bahan kimia berbahaya, gas beracun, dan limbah medis sangat tinggi. Komitmen manajemen
+              diwujudkan melalui penyusunan SOP, penetapan kebijakan K3, penyediaan sarana keselamatan, hingga
+              pengawasan langsung terhadap penerapan K3 di lapangan.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tahapan 2: Persiapan -->
+      <div class="row mb-4 element-animate">
+        <div class="col-md-12">
+          <div class="tahapan-card">
+            <h4><span class="badge badge-primary">2</span> Persiapan</h4>
+            <p>
+              Tahap persiapan dilakukan dengan menetapkan ruang lingkup pekerjaan yang akan dilakukan risiko keselamatan
+              dan kesehatan, dan menetapkan metode penilaian. Di perusahaan pengolahan limbah, tim ini terdiri dari
+              petugas K3, supervisor, operator limbah, teknisi mesin, dan manajemen. Persiapan juga mencakup pengumpulan
+              data bahaya, daftar material B3, informasi MSDS, serta proses operasional memiliki risiko tinggi. Tahap
+              ini memastikan penilaian risiko berjalan dengan terorganisir dan melibatkan seluruh personel kompeten.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tahapan 3: Identifikasi Bahaya -->
+      <div class="row mb-4 element-animate">
+        <div class="col-md-12">
+          <div class="tahapan-card">
+            <h4><span class="badge badge-primary">3</span> Identifikasi Bahaya</h4>
+            <p>
+              Identifikasi bahaya bertujuan menemukan semua potensi bahaya yang ada di lingkungan kerja. Pada industri
+              limbah, bahaya dapat berupa:
+            </p>
+            <ul>
+              <li><strong>Bahaya kimia,</strong> seperti reaksi beracun, uap korosif, tumpahan bahan kimia.</li>
+              <li><strong>Bahaya fisik,</strong> seperti panas, kebisingan, radiasi, getaran, lintah licin.</li>
+              <li><strong>Bahaya biologi,</strong> terutama dari limbah medis yang mengandung virus, bakteri, dan jamur.
+              </li>
+              <li><strong>Bahaya mekanis,</strong> dari mesin pencacah, conveyor, dan alat angkut limbah.</li>
+              <li><strong>Bahaya ergonomi,</strong> saat mengangkat drum atau wadah limbah yang berat. Identifikasi ini
+                menjadi dasar pengendalian risiko selanjutnya.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tahapan 4: Analisa dan Penilaian Risiko -->
+      <div class="row mb-4 element-animate">
+        <div class="col-md-12">
+          <div class="tahapan-card">
+            <h4><span class="badge badge-primary">4</span> Analisa dan Penilaian Risiko</h4>
+            <p>
+              Setelah bahaya teridentifikasi, dilakukan analisa risiko dengan menilai tingkat kemungkinan (likelihood)
+              kejadiaan dan konsekuensi (severity) dampaknya. Misalnya tumpahan limbah asam memiliki kemungkinan sedang
+              tetapi dampak sangat tinggi karena dapat menyebabkan luka bakar kimia pada pekerja. Penilaian risiko
+              mengklasifikasikan risiko menjadi rendah, sedang, tinggi, atau ekstrem, sehingga perusahaan dapat
+              menetapkan prioritas penanganan. Risiko tinggi dan ekstrem harus segera ditangani agar tidak mengancam
+              keselamatan pekerja.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tahapan 5: Penanganan Risiko -->
+      <div class="row mb-4 element-animate">
+        <div class="col-md-12">
+          <div class="tahapan-card">
+            <h4><span class="badge badge-primary">5</span> Penanganan Risiko</h4>
+            <p>
+              Penanganan risiko dilakukan berdasarkan hirarki pengendalian risiko:
+            </p>
+            <ul>
+              <li><strong>Eliminasi</strong> menghilangkan bahan atau proses yang berbahaya jika memungkinkan.</li>
+              <li><strong>Substitusi</strong> mengganti bahan kimia berbahaya dengan yang lebih aman.</li>
+              <li><strong>Rekayasa teknis</strong> memasang ventilasi, exhaust fan, pelindung mesin, gas detector, serta
+                sistem pemisah tumpahan.</li>
+              <li><strong>Administratif</strong> menererapkan SOP, rotasi kerja, tanda peringatan bahaya, dan pembatasan
+                akses area berisiko.</li>
+              <li><strong>APD respirator kimia,</strong> baju tahan bahan kimia, sarung tangan, goggles, dan sepatu
+                safety sebagai perlindungan terakhir.</li>
+              <li>Pada pengolahan limbah industri, rekayasa teknis dan APD menjadi kontrol utama karena sifat limbah B3
+                cenderung berbahaya dan tidak dapat dieliminasi.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tahapan 6: Pemantauan dan Review -->
+      <div class="row mb-4 element-animate">
+        <div class="col-md-12">
+          <div class="tahapan-card">
+            <h4><span class="badge badge-primary">6</span> Pemantauan dan Review</h4>
+            <p>
+              Tahap terakhir adalah memantau efektivitas pengendalian yang telah diterapkan serta melakukan review
+              berkala. Perusahaan wajib melakukan inspeksi K3 rutin, audit internal, pemeriksaan APP dan alat
+              keselamatan, pengecakan dialog APD dan alat keselamatan, pengecakan dialog APD dan kondisi area yang
+              meminculkan fasilitas seperti spill kit dan eyewash station selalu siap digunakan. Review dilakukan apabila
+              terjadi perubahan proses, penambahan material baru, kegagalan sistem manajemen risiko tetap relevan dan
+              selalu diperbaharui sesuai kebutuhan operasional.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Highlight Box -->
+      <div class="row mt-5 element-animate">
+        <div class="col-md-12">
+          <div class="highlight-box">
+            <h3>Kesimpulan</h3>
+            <p>
+              Penerapan manajemen risiko K3 pada perusahaan pengolahan limbah industri merupakan strategi untuk
+              mencegah kecelakaan kerja dan mengendalikan potensi bahaya yang berasal dari limbah B3. Melalui kebijakan
+              K3 yang jelas, dukungan anggaran, alokasi sumber daya, memastikan pelaksanaan enam tahapan manajemen
+              risiko secara konsisten, perusahaan mampu menciptakan lingkungan kerja yang aman, sehat, dan sesuai
+              standard. Manajemen risiko yang baik tidak hanya melindungi pekerja, tetapi juga menjaga operasional
+              perusahaan tetap stabil dan ramah lingkungan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabel HIRARC (HTML) -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-10 text-center">
+          <h2 class="heading mb-2">Tabel HIRARC (Contoh)</h2>
+          <p class="lead mb-4">Tabel berikut memperlihatkan contoh identifikasi bahaya, analisa risiko, dan kategori risiko.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 hirarc-responsive">
+          <table class="hirarc-table">
+            <thead>
+              <tr>
+                <th style="width:40px">No</th>
+                <th>Aktivitas Kerja</th>
+                <th>Bahaya (Hazard)</th>
+                <th>Dampak (Consequence)</th>
+                <th style="width:90px">Likelihood (1–5)</th>
+                <th style="width:90px">Severity (1–5)</th>
+                <th style="width:90px">Risk (L x S)</th>
+                <th style="width:140px">Kategori Risiko</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                 <td>1</td>
+    <td>Penerimaan limbah B3</td>
+    <td>Tumpahan bahan kimia korosif</td>
+    <td>Luka bakar kimia, iritasi, keracunan</td>
+    <td>3</td>
+    <td>5</td>
+    <td>15</td>
+    <td><span class="badge-risk risk-high">HIGH</span></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Pengangkatan drum limbah</td>
+    <td>Beban berat (ergonomi)</td>
+    <td>Cedera otot, low back pain</td>
+    <td>4</td>
+    <td>3</td>
+    <td>12</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Pemindahan limbah medis</td>
+    <td>Bahaya biologis (virus, bakteri)</td>
+    <td>Infeksi, penyakit menular</td>
+    <td>3</td>
+    <td>5</td>
+    <td>15</td>
+    <td><span class="badge-risk risk-high">HIGH</span></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Penghancuran limbah</td>
+    <td>Bahaya mekanis (jari terjepit mesin)</td>
+    <td>Luka berat / amputasi</td>
+    <td>2</td>
+    <td>5</td>
+    <td>10</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Reaksi kimia pengolahan limbah</td>
+    <td>Gas beracun (Cl2, H2S, NH3)</td>
+    <td>Sesak napas, keracunan fatal</td>
+    <td>3</td>
+    <td>5</td>
+    <td>15</td>
+    <td><span class="badge-risk risk-high">HIGH</span></td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Penyimpanan limbah B3</td>
+    <td>Kebocoran wadah</td>
+    <td>Kontaminasi lingkungan, paparan kimia</td>
+    <td>3</td>
+    <td>4</td>
+    <td>12</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Area insinerator</td>
+    <td>Paparan panas tinggi</td>
+    <td>Luka bakar, heat stress</td>
+    <td>2</td>
+    <td>5</td>
+    <td>10</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>Pembersihan tumpahan</td>
+    <td>Kontak langsung bahan kimia</td>
+    <td>Luka bakar, iritasi kulit</td>
+    <td>3</td>
+    <td>4</td>
+    <td>12</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>Pengangkutan internal limbah</td>
+    <td>Lantai licin saat pemindahan</td>
+    <td>Terpeleset, cedera kepala/kaki</td>
+    <td>3</td>
+    <td>2</td>
+    <td>6</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>Pengujian limbah di laboratorium</td>
+    <td>Paparan bahan reaktif</td>
+    <td>Keracunan akut</td>
+    <td>2</td>
+    <td>5</td>
+    <td>10</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>Pencacahan limbah padat</td>
+    <td>Debu berbahaya</td>
+    <td>Gangguan pernapasan</td>
+    <td>3</td>
+    <td>3</td>
+    <td>9</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>Pengolahan limbah minyak</td>
+    <td>Reaksi panas spontan</td>
+    <td>Kebakaran</td>
+    <td>2</td>
+    <td>5</td>
+    <td>10</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>Penimbangan limbah</td>
+    <td>Timbangan licin</td>
+    <td>Cedera jari/kaki</td>
+    <td>2</td>
+    <td>5</td>
+    <td>10</td>
+    <td><span class="badge-risk risk-medium">MEDIUM</span></td>
+  </tr>
+ 
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <p class="text-muted small">
+            Catatan: nilai Likelihood dan Severity serta kategori risiko adalah contoh. Sesuaikan penilaian dan kontrol
+            di lapangan berdasarkan hasil HIRARC yang dilakukan bersama tim K3.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer bg-light" role="contentinfo">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-4 mb-5">
+          <h3>Tentang Kami</h3>
+          <p class="mb-5">K3 Pengolahan Limbah berkomitmen untuk menciptakan lingkungan kerja yang aman dan sehat bagi
+            seluruh pekerja dalam industri pengelolaan limbah berbahaya.</p>
+          <ul class="list-unstyled footer-link d-flex footer-social">
+            <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+            <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+            <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+            <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+          </ul>
+        </div>
+        <div class="col-md-5 mb-5 pl-md-5">
+          <h3>Informasi Kontak</h3>
+          <ul class="list-unstyled footer-link">
+            <li class="d-block">
+              <span class="d-block">Alamat:</span>
+              <span>Jurusan Teknologi Informasi, Politeknik Negeri Malang</span>
+            </li>
+            <li class="d-block">
+              <span class="d-block">Telepon:</span>
+              <span>+62 341 404424</span>
+            </li>
+            <li class="d-block">
+              <span class="d-block">Email:</span>
+              <span>k3@polinema.ac.id</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-5">
+          <h3>QUICK LINKS</h3>
+          <ul class="list-unstyled footer-link">
+            <li><a href="landasan_hukum.html">Landasan Hukum</a></li>
+            <li><a href="lingkungan_kerja.html">Lingkungan Kerja</a></li>
+            <li><a href="keselamatan_kerja.html">Keselamatan Kerja</a></li>
+            <li><a href="apd.html">APD</a></li>
+            <li><a href="p3k.html">P3K</a></li>
+            <li><a href="strukturorganisasi.html">Struktur K3</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-md-center text-left">
+          <p>
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> | Kel 1-SIB 3B | Sistem Informasi K3 Pengolahan
+            Limbah
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- END footer -->
+
+  <!-- loader -->
+  <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#6c5ce7" />
+    </svg></div>
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
