@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit SMK3 - Pengelolaan Limbah Industri</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <!-- FONT MONTSEERRAT SAMA DENGAN LANDASAN HUKUM -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:400,700" rel="stylesheet">
+    
+    <style>
+        /* NAVIGATION BAR STYLE (sama seperti APD/P3K) */
+        .navbar-white {
+            background: #ffffff !important;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-white .navbar-brand {
+            color: #2d3436 !important;
+            font-weight: 700;
+            font-size: 1.4rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .navbar-white .nav-link {
+            color: #2d3436 !important;
+            font-weight: 500;
+            margin: 0 0.3rem;
+            padding: 0.5rem 1rem !important;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .navbar-white .nav-link:hover {
+            color: #6c5ce7 !important;
+        }
+
+        .navbar-white .nav-link.active {
+            color: #6c5ce7 !important;
+            font-weight: 600;
+        }
+
+        .navbar-white .navbar-toggler {
+            border-color: #2d3436;
+        }
+
+        .navbar-white .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2845, 52, 54, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* BODY FONT MONTSEERRAT SAMA DENGAN LANDASAN HUKUM */
+        body {
+            padding-top: 80px;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* HEADER STYLE SAMA PERSIS DENGAN LANDASAN HUKUM */
+        .audit-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0 80px;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ANIMASI BACKGROUND SAMA DENGAN LANDASAN HUKUM */
+        .audit-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* JUDUL SAMA PERSIS DENGAN .hero-title DI LANDASAN HUKUM */
+        .audit-header h1 {
+            font-size: 3.5rem !important;
+            font-weight: 800 !important;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #ffffff !important;
+            font-family: 'Montserrat', sans-serif !important;
+            position: relative;
+            z-index: 2;
+        }
+
+        .audit-header p {
+            font-size: 1.4rem !important;
+            opacity: 0.9;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95) !important;
+            font-family: 'Montserrat', sans-serif !important;
+            position: relative;
+            z-index: 2;
+        }
+
+        .audit-info-box {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-top: 10px;
+            backdrop-filter: blur(5px);
+            position: relative;
+            z-index: 2;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .audit-info-box p {
+            margin-bottom: 5px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.95) !important;
+        }
+
+        /* MAIN CONTENT STYLE */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .filters {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: flex-end;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .filter-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border 0.3s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .filter-input:focus {
+            border-color: #6c5ce7;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.2);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .stat-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            min-width: 180px;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 28px;
+            color: #6c5ce7;
+            margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .stat-card p {
+            color: #666;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .section-container {
+            margin-bottom: 20px;
+        }
+
+        .section-header {
+            background-color: #6c5ce7;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .section-header:hover {
+            background-color: #5b4bd4;
+        }
+
+        .section-header h2 {
+            font-size: 20px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .section-toggle {
+            font-size: 18px;
+            transition: transform 0.3s;
+        }
+
+        .section-content {
+            background-color: white;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            display: none;
+        }
+
+        .section-content.expanded {
+            display: block;
+        }
+
+        .audit-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .audit-table th {
+            background-color: #f1f5fd;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #444;
+            border-bottom: 2px solid #ddd;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .audit-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .audit-table tr:hover {
+            background-color: #f9fafe;
+        }
+
+        .criteria-no {
+            font-weight: 600;
+            color: #6c5ce7;
+            width: 80px;
+        }
+
+        .criteria-desc {
+            width: 45%;
+        }
+
+        .penilaian {
+            width: 100px;
+            text-align: center;
+        }
+
+        .keterangan {
+            width: 30%;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .sesuai {
+            background-color: #e7f4e8;
+            color: #2e7d32;
+        }
+
+        .tidak-sesuai {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        .belum-dinilai {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: #888;
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .no-results i {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+
+        /* FOOTER STYLE SAMA DENGAN LANDASAN HUKUM */
+        .site-footer {
+            background: #ffffff !important;
+            color: #2d3436 !important;
+            border-top: 1px solid #e0e0e0;
+            padding: 60px 0 30px;
+            margin-top: 50px;
+        }
+
+        .site-footer h3 {
+            color: #2d3436 !important;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .site-footer p, .site-footer li, .site-footer span {
+            color: #636e72 !important;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .site-footer a {
+            color: #6c5ce7 !important;
+            transition: color 0.3s ease;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .site-footer a:hover {
+            color: #5b4bd4 !important;
+        }
+
+        .footer-social a {
+            color: #636e72 !important;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #f8f9fa;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: #6c5ce7;
+            color: white !important;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            color: #636e72 !important;
+            font-size: 0.95rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar-white .nav-link {
+                padding: 0.5rem 0.5rem !important;
+            }
+            
+            .audit-header h1 {
+                font-size: 2.5rem !important;
+            }
+            
+            .audit-header p {
+                font-size: 1.1rem !important;
+            }
+            
+            .filters {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .filter-group {
+                min-width: 100%;
+            }
+            
+            .audit-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .section-header h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR (sama seperti APD/P3K) -->
+    <nav class="navbar navbar-expand-lg navbar-white fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">K3 PENGOLAHAN LIMBAH</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+                aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExample05">
+                <ul class="navbar-nav pl-md-5 ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="landasan_hukum.html">Landasan Hukum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lingkungan_kerja.html">Lingkungan Kerja</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="keselamatan_kerja.html">Keselamatan Kerja</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownLainnya" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Lainnya
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownLainnya">
+                            <a class="dropdown-item" href="apd.html">APD</a>
+                            <a class="dropdown-item" href="p3k.html">P3K</a>
+                            <a class="dropdown-item" href="strukturorganisasi.html">Struktur K3</a>
+                            <a class="dropdown-item active" href="audit_smk3.html">Audit SMK3</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER SECTION SAMA PERSIS DENGAN LANDASAN HUKUM -->
+    <section class="audit-header">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="audit-title"><i class="fas fa-clipboard-check"></i> Audit SMK3</h1>
+                    <p class="audit-subtitle">Checklist Penerapan SMK3 - Pengelolaan Limbah Industri (PP No. 50 Tahun 2012)</p>
+                    <div class="audit-info-box">
+                        <p><strong>Auditi:</strong> Daffa, Zaki</p>
+                        <p><strong>Auditor:</strong> Arimbi, Claudya</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <div class="filters">
+            <div class="filter-group">
+                <label for="search"><i class="fas fa-search"></i> Cari Kriteria</label>
+                <input type="text" id="search" class="filter-input" placeholder="Ketik kata kunci...">
+            </div>
+            <div class="filter-group">
+                <label for="sectionFilter"><i class="fas fa-filter"></i> Filter Berdasarkan Bagian</label>
+                <select id="sectionFilter" class="filter-input">
+                    <option value="all">Semua Bagian</option>
+                    <option value="1">Bagian 1: Pembangunan dan Pemeliharaan Komitmen</option>
+                    <option value="2">Bagian 2: Perencanaan dan Dokumentasi</option>
+                    <option value="3">Bagian 3: Pengendalian Perancangan & Tinjauan Kontrak</option>
+                    <option value="4">Bagian 4: Pengendalian Dokumen</option>
+                    <option value="5">Bagian 5: Penilaian & Pengendalian Produk</option>
+                    <option value="6">Bagian 6: Keamanan Bekerja</option>
+                    <option value="7">Bagian 7: Pemantauan</option>
+                    <option value="8">Bagian 8: Pelaporan dan Perbaikan</option>
+                    <option value="9">Bagian 9: Pengelolaan Material</option>
+                    <option value="10">Bagian 10: Pengumpulan dan Penggunaan Data</option>
+                    <option value="11">Bagian 11: Pemeriksaan SMK3</option>
+                    <option value="12">Bagian 12: Pengembangan Keterampilan</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="statusFilter"><i class="fas fa-check-circle"></i> Filter Status</label>
+                <select id="statusFilter" class="filter-input">
+                    <option value="all">Semua Status</option>
+                    <option value="sesuai">Sesuai (✓)</option>
+                    <option value="tidak-sesuai">Tidak Sesuai (✗)</option>
+                    <option value="belum">Belum Dinilai</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <h3 id="totalItems">0</h3>
+                <p>Total Kriteria</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="sesuaiCount">0</h3>
+                <p>Sesuai</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="tidakSesuaiCount">0</h3>
+                <p>Tidak Sesuai</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="persentase">0%</h3>
+                <p>Tingkat Kesesuaian</p>
+            </div>
+        </div>
+        
+        <div id="auditSections">
+            <!-- Bagian audit akan dimuat di sini oleh JavaScript -->
+        </div>
+        
+        <div id="noResults" class="no-results" style="display: none;">
+            <i class="fas fa-search"></i>
+            <h3>Tidak ada hasil yang ditemukan</h3>
+            <p>Coba gunakan kata kunci lain atau pilih filter yang berbeda</p>
+        </div>
+    </div>
+
+    <!-- FOOTER SAMA DENGAN LANDASAN HUKUM -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-4 mb-5">
+                    <h3>Tentang Kami</h3>
+                    <p class="mb-5">K3 Pengolahan Limbah berkomitmen untuk menciptakan lingkungan kerja yang aman dan sehat bagi
+                        seluruh pekerja dalam industri pengelolaan limbah berbahaya.</p>
+                    <ul class="list-unstyled footer-link d-flex footer-social">
+                        <li><a href="#" class="p-2"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="p-2"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" class="p-2"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#" class="p-2"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-5 mb-5 pl-md-5">
+                    <h3>Informasi Kontak</h3>
+                    <ul class="list-unstyled footer-link">
+                        <li class="d-block">
+                            <span class="d-block">Alamat:</span>
+                            <span>Jurusan Teknologi Informasi, Politeknik Negeri Malang</span>
+                        </li>
+                        <li class="d-block">
+                            <span class="d-block">Telepon:</span>
+                            <span>+62 341 404424</span>
+                        </li>
+                        <li class="d-block">
+                            <span class="d-block">Email:</span>
+                            <span>k3@polinema.ac.id</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-5">
+                    <h3>QUICK LINKS</h3>
+                    <ul class="list-unstyled footer-link">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="landasan_hukum.html">Landasan Hukum</a></li>
+                        <li><a href="lingkungan_kerja.html">Lingkungan Kerja</a></li>
+                        <li><a href="keselamatan_kerja.html">Keselamatan Kerja</a></li>
+                        <li><a href="apd.html">APD</a></li>
+                        <li><a href="p3k.html">P3K</a></li>
+                        <li><a href="strukturorganisasi.html">Struktur K3</a></li>
+                        <li><a href="audit_smk3.html">Audit SMK3</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-md-center text-left">
+                    <p class="copyright">
+                        Copyright &copy; <script>document.write(new Date().getFullYear());</script> | Kel 1-SIB 3B | Sistem Informasi K3 Pengolahan Limbah
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        // Data audit dari dokumen Word (SAMA PERSIS DENGAN KODE SEBELUMNYA)
+        const auditData = [
+            // BAGIAN 1: Pembangunan dan Pemeliharaan Komitmen
+            {
+                sectionId: "1",
+                sectionName: "Pembangunan dan Pemeliharaan Komitmen",
+                items: [
+                    { no: "1.1.1", criteria: "Terdapat kebijakan K3 yang tertulis, bertanggal, ditandatangani oleh pengusaha atau pengurus, secara jelas menyatakan tujuan dan sasaran K3 serta komitmen terhadap peningkatan K3", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.1.2", criteria: "Kebijakan disusun oleh pengusaha dan/atau pengurus setelah melalui proses konsultasi dengan wakil tenaga kerja", penilaian: "sesuai", keterangan: "Tidak ditemukan bukti seperti notulensi atau dokumentasi" },
+                    { no: "1.1.3", criteria: "Perusahaan mengkomunikasikan kebijakan K3 kepada seluruh tenaga kerja, tamu, kontraktor, pelanggan, dan pemasok dengan tata cara yang tepat", penilaian: "sesuai", keterangan: "Tidak ditemukan bukti" },
+                    { no: "1.1.4", criteria: "Kebijakan khusus dibuat untuk masalah K3 yang bersifat khusus", penilaian: "sesuai", keterangan: "Ada pada bagian APD 'kebutuhan APD berdasarkan jenis limbah'" },
+                    { no: "1.1.5", criteria: "Kebijakan K3 dan kebijakan khusus lainnya ditinjau ulang secara berkala untuk menjamin bahwa kebijakan tersebut sesuai dengan perubahan yang terjadi dalam perusahaan dan dalam peraturan perundang-undangan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.2.1", criteria: "Tanggung jawab dan wewenang untuk mengambil tindakan dan melaporkan kepada semua pihak yang terkait dalam perusahaan di bidang K3 telah ditetapkan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.2.2", criteria: "Penunjukan penanggung jawab K3 harus sesuai peraturan perundang-undangan", penilaian: "sesuai", keterangan: "Terdapat pada bagian landasan hukum" },
+                    { no: "1.2.3", criteria: "Pimpinan unit kerja dalam suatu perusahaan bertanggung jawab atas kinerja K3 pada unit kerjanya", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.2.4", criteria: "Pengusaha atau pengurus bertanggung jawab secara penuh untuk menjamin pelaksanaan SMK3", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.2.5", criteria: "Petugas yang bertanggung jawab untuk penanganan keadaan darurat telah ditetapkan dan mendapatkan pelatihan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.2.6", criteria: "Perusahaan mendapatkan saran-saran dari para ahli di bidang K3 yang berasal dari dalam dan/atau luar perusahaan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.2.7", criteria: "Kinerja K3 termuat dalam laporan tahunan perusahaan atau laporan lain yang setingkat", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.3.1", criteria: "Tinjauan terhadap penerapan SMK3 meliputi kebijakan, perencanaan, pelaksanaan, pemantauan dan evaluasi telah dilakukan, dicatat dan didokumentasikan", penilaian: "tidak-sesuai", keterangan: "" },
+                    { no: "1.3.2", criteria: "Hasil tinjauan dimasukkan dalam perencanaan tindakan manajemen", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.3.3", criteria: "Pengurus harus meninjau ulang pelaksanaan SMK3 secara berkala untuk menilai kesesuaian dan efektivitas SMK3", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.4.1", criteria: "Keterlibatan dan penjadwalan konsultasi tenaga kerja dengan wakil perusahaan didokumentasikan dan disebarluaskan ke seluruh tenaga kerja", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.4.2", criteria: "Terdapat prosedur yang memudahkan konsultasi mengenai perubahan-perubahan yang mempunyai implikasi terhadap K3", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.4.3", criteria: "Perusahaan telah membentuk P2K3 sesuai dengan peraturan perundang-undangan", penilaian: "sesuai", keterangan: "terdapat pada bagian struktur organisasi p2k3" },
+                    { no: "1.4.4", criteria: "Ketua P2K3 adalah pimpinan puncak atau pengurus", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.4.5", criteria: "Sekretaris P2K3 adalah ahli K3 sesuai dengan peraturan perundang-undangan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.4.6", criteria: "P2K3 menitikberatkan kegiatan pada pengembangan kebijakan dan prosedur mengendalikan risiko", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.4.7", criteria: "Susunan pengurus P2K3 didokumentasikan dan diinformasikan kepada tenaga kerja", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.4.8", criteria: "P2K3 mengadakan pertemuan secara teratur dan hasilnya disebarluaskan di tempat kerja", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.4.9", criteria: "P2K3 melaporkan kegiatannya secara teratur sesuai dengan peraturan perundang-undangan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.4.10", criteria: "Dibentuk kelompok-kelompok kerja dan dipilih dari wakil-wakil tenaga kerja yang ditunjuk sebagai penanggung jawab K3 ditempat kerjanya dan kepadanya diberikan pelatihan sesuai dengan peraturan perundang-undangan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "1.4.11", criteria: "Susunan kelompok-kelompok kerja yang telah terbentuk didokumentasikan dan diinformasikan kepada tenaga kerja", penilaian: "sesuai", keterangan: "Tidak ada bukti" }
+                ]
+            },
+            // BAGIAN 2: Perencanaan dan Dokumentasi
+            {
+                sectionId: "2",
+                sectionName: "Perencanaan dan Dokumentasi",
+                items: [
+                    { no: "2.1.1", criteria: "Terdapat prosedur terdokumentasi untuk identifikasi potensi bahaya, penelitian, dan pengendalian risiko K3", penilaian: "sesuai", keterangan: "Terdapat pada bagian fitur Keselamatan Kerja" },
+                    { no: "2.1.2", criteria: "Identifikasi potensi bahaya, penilaian, dan pengendalian risiko K3 sebagai rencana strategi K3 dilakukan oleh petugas yang berkompeten", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "2.1.3", criteria: "Rencana strategi K3 sekurang-kurangnya berdasarkan tinjauan awal, identifikasi potensi bahaya, penilaian, pengendalian risiko, dan peraturan perundang-undangan serta informasi K3 lain baik dari dalam maupun luar perusahaan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "2.1.4", criteria: "Rencana strategi K3 yang telah ditetapkan digunakan untuk mengendalikan risiko K3 dengan menetapkan tujuan dan sasaran yang dapat diukur dan menjadi prioritas serta menyediakan sumber daya", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "2.1.5", criteria: "Rencana kerja dan rencana khusus yang berkaitan dengan produk, proses, proyek atau tempat kerja tertentu telah dibuat dengan menetapkan tujuan dan sasaran yang dapat diukur, menetapkan waktu pencapaian dan menyediakan sumber daya", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "2.1.6", criteria: "Rencana K3 diselaraskan dengan rencana sistem manajemen perusahaan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "2.2.1", criteria: "Manual SMK3 meliputi kebijakan, tujuan, rencana, prosedur SMK3, instruksi kerja, formulir, catatan dan tanggung jawab serta wewenang tanggung jawab K3 untuk semua tingkatan dalam perusahaan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "2.2.2", criteria: "Terdapat manual khusus yang berkaitan dengan produk, proses, atau tempat kerja tertentu", penilaian: "sesuai", keterangan: "Terdapat pada fitur lingkungan kerja dan APD" },
+                    { no: "2.2.3", criteria: "Manual SMK3 mudah didapat oleh semua personil dalam perusahaan sesuai kebutuhan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "2.3.1", criteria: "Terdapat prosedur yang terdokumentasi untuk mengidentifikasi, memperoleh, memelihara dan memahami peraturan perundang-undangan, standar, pedoman teknis, dan persyaratan lain yang relevan dibidang K3 untuk seluruh tenaga kerja di perusahaan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "2.3.2", criteria: "Penanggung jawab untuk memelihara dan mendistribusikan informasi terbaru mengenai peraturan perundang-undangan, standar, pedoman teknis, dan persyaratan lain telah ditetapkan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "2.3.3", criteria: "Persyaratan pada peraturan perundang-undangan, standar, pedoman teknis, dan persyaratan lain yang relevan di bidang K3 dimasukkan pada prosedur-prosedur dan petunjuk-petunjuk kerja", penilaian: "sesuai", keterangan: "Terdapat pada fitur landasan hukum dan APD" },
+                    { no: "2.3.4", criteria: "Perubahan pada peraturan perundang-undangan, standar, pedoman teknis, dan persyaratan lain yang relevan dibidang K3 digunakan untuk peninjauan prosedur-prosedur dan petunjuk-petunjuk kerja", penilaian: "sesuai", keterangan: "Terdapat pada fitur landasan hukum dan APD" },
+                    { no: "2.4.1", criteria: "Informasi yang dibutuhkan mengenai kegiatan K3 disebarluaskan secara sistematis kepada seluruh tenaga kerja, tamu, kontraktor, pelanggan, dan pemasok", penilaian: "sesuai", keterangan: "Tidak ada bukti" }
+                ]
+            },
+            // BAGIAN 3: Pengendalian Perancangan & Tinjauan Kontrak
+            {
+                sectionId: "3",
+                sectionName: "Pengendalian Perancangan & Tinjauan Kontrak",
+                items: [
+                    { no: "3.1.1", criteria: "Prosedur yang terdokumentasi mempertimbangkan identifikasi potensi bahaya, penilaian, dan pengendalian risiko yang dilakukan pada tahap perancangan dan modifikasi", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "3.1.2", criteria: "Prosedur, instruksi kerja dalam penggunaan produk, pengoperasian mesin dan peralatan, instalasi, pesawat atau proses serta informasi lainnya yang berkaitan dengan K3 telah dikembangkan selama perancangan dan/atau modifikasi", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "3.1.3", criteria: "Petugas yang berkompeten melakukan verifikasi bahwa perancangan dan/atau modifikasi memenuhi persyaratan K3 yang ditetapkan sebelum penggunaan hasil rancangan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "3.1.4", criteria: "Semua perubahan dan modifikasi perancangan yang mempunyai implikasi terhadap K3 diidentifikasikan, didokumentasikan, ditinjau ulang dan disetujui oleh petugas yang berwenang sebelum pelaksanaan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "3.2.1", criteria: "Prosedur yang terdokumentasi harus mampu mengidentifikasi bahaya dan menilai risiko K3 bagi tenaga kerja, lingkungan dan masyarakat, dimana prosedur tersebut digunakan pada saat memasok barang dan jasa dalam suatu kontrak", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "3.2.2", criteria: "Identifikasi bahaya dan penilaian risiko dilakukan pada tinjauan kontrak oleh petugas yang berkompeten", penilaian: "sesuai", keterangan: "Tedapat pada fitur keselamatan kerja" },
+                    { no: "3.2.3", criteria: "Kontrak ditinjau ulang untuk menjamin bahwa pemasok dapat memenuhi persyaratan K3 bagi pelanggan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "3.2.4", criteria: "Catatan tinjauan kontrak dipelihara dan didokumentasikan", penilaian: "sesuai", keterangan: "Tidak ada bukti" }
+                ]
+            },
+            // BAGIAN 4: Pengendalian Dokumen
+            {
+                sectionId: "4",
+                sectionName: "Pengendalian Dokumen",
+                items: [
+                    { no: "4.1.1", criteria: "Dokumen K3 mempunyai identifikasi status, wewenang, tanggal pengeluaran dan tanggal modifikasi", penilaian: "belum", keterangan: "" },
+                    { no: "4.1.2", criteria: "Penerima distribusi dokumen tercantum dalam dokumen tersebut", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "4.1.3", criteria: "Dokumen K3 edisi terbaru disimpan secara sistematis pada tempat yang ditentukan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "4.1.4", criteria: "Dokumen usang segera disingkirkan dari penggunaannya sedangkan dokumen usang yang disimpan untuk keperluan tertentu diberi tanda khusus", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "4.2.1", criteria: "Terdapat sistem untuk membuat, menyetujui perubahan terhadap dokumen K3", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "4.2.2", criteria: "Dalam hal ini terjadi perubahan diberikan alasan terjadinya perubahan dan tertera dalam dokumen atau lampirannya dan menginformasikan kepada pihak terkait", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "4.2.3", criteria: "Terdapat prosedur pengendalian dokumen atau daftar seluruh dokumen yang mencantumkan status dari setiap dokumen tersebut, dalam upaya mencegah penggunaan dokumen yang usang", penilaian: "sesuai", keterangan: "Tidak ada bukti" }
+                ]
+            },
+            // BAGIAN 5: Penilaian & Pengendalian Produk
+            {
+                sectionId: "5",
+                sectionName: "Penilaian & Pengendalian Produk",
+                items: [
+                    { no: "5.1.1", criteria: "Terdapat prosedur yang terdokumentasi yang dapat menjamin bahwa spesifikasi teknik dan informasi lain yang relevan dengan K3 telah diperiksa sebelum keputusan untuk membeli", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "5.1.2", criteria: "Spesifikasi pembelian untuk setiap sarana produksi, zat kimia atau jasa harus dilengkapi spesifikasi yang sesuai dengan persyaratan peraturan perundang-undangan dan standar K3", penilaian: "sesuai", keterangan: "Terdapat pada bagian landasan hukum" },
+                    { no: "5.1.3", criteria: "Konsultasi dengan tenaga kerja yang kompeten pada saat keputusan pembelian, dilakukan untuk menetapkan persyaratan K3 yang dicantumkan dalam spesifikasi pembelian dan diinformasikan kepada tenaga kerja yang menggunakannya", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "5.1.4", criteria: "Kebutuhan pelatihan, pasokan alat pelindung diri dan perubahan terhadap prosedur kerja harus dipertimbangkan sebelum pembelian dan penggunaannya", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "5.1.5", criteria: "Persyaratan K3 dievaluasi dan menjadi pertimbangan dalam seleksi pembelian", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "5.2.1", criteria: "Barang dan jasa yang dibeli diperiksa kesesuaiannya dengan spesifikasi pembelian", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "5.3", criteria: "Pengendalian Barang dan Jasa Yang Dipasok Pelanggan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "5.4.1", criteria: "Semua produk yang digunakan dalam proses produksi dapat diidentifikasi di seluruh tahapan produksi dan instalasi, jika terdapat potensi masalah K3", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "5.4.2", criteria: "Terdapat prosedur yang terdokumentasi untuk penelusuran produk yang telah terjual, jika terdapat potensi masalah K3 di dalam penggunaannya", penilaian: "sesuai", keterangan: "Tidak ada bukti" }
+                ]
+            },
+            // BAGIAN 6: Keamanan Bekerja (disingkat karena panjang)
+            {
+                sectionId: "6",
+                sectionName: "Keamanan Bekerja",
+                items: [
+                    { no: "6.1.1", criteria: "Petugas yang kompeten telah mengidentifikasi bahaya, menilai dan mengendalikan risiko yang timbul dari suatu proses kerja", penilaian: "sesuai", keterangan: "Terdapat pada bagian denah lingkungan kerja" },
+                    { no: "6.1.2", criteria: "Apabila upaya pengendalian risiko diperlukan, maka upaya tersebut ditetapkan melalui tingkat pengendalian", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.1.3", criteria: "Terdapat prosedur atau petunjuk kerja yang terdokumentasi untuk mengendalikan risiko yang teridentifikasi dan dibuat atas dasar masukan dari personil yang kompeten serta tenaga kerja yang terkait dan disahkan oleh orang yang berwenang di perusahaan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.1.4", criteria: "Kepatuhan terhadap peraturan perundang-undangan, standar serta pedoman teknis yang relevan diperhatikan pada saat mengembangkan atau melakukan modifikasi atau petunjuk kerja", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.1.5", criteria: "Terdapat sistem izin kerja untuk tugas berisiko tinggi", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.1.6", criteria: "Alat pelindung diri disediakan sesuai kebutuhan dan digunakan secara benar serta selalu dipelihara dalam kondisi layak pakai", penilaian: "sesuai", keterangan: "Terdapat pada bagian APD" },
+                    { no: "6.1.7", criteria: "Alat pelindung diri yang digunakan dipastikan telah dinyatakan layak pakai sesuai dengan standar dan/atau peraturan perundang-undangan yang berlaku", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.1.8", criteria: "Upaya pengendalian risiko dievaluasi secara berkala apabila terjadi ketidaksesuaian atau perubahan pada proses kerja", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.2.1", criteria: "Dilakukan pengawasan untuk menjamin bahwa setiap pekerjaan dilaksanakan dengan aman dan mengikuti prosedur dan petunjuk kerja yang telah ditentukan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.2.2", criteria: "Setiap orang diawasi sesuai dengan tingkat kemampuan dan tingkat risiko tugas", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.2.4", criteria: "Pengawas/penyelia diikutsertakan dalam melakukan penyelidikan dan pembuatan laporan terhadap terjadinya kecelakaan dan penyakit akibat kerja serta wajib menyerahkan laporan dan saran-saran kepada pengusaha atau pengurus", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.2.5", criteria: "Pengawas/penyelia ikut serta dalam proses konsultasi", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.3.1", criteria: "Persyaratan tugas tertentu termasuk persyaratan kesehatan diidentifikasi dan dipakai untuk menyeleksi dan menempatkan tenaga kerja", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.3.2", criteria: "Penugasan pekerjaan harus berdasarkan kemampuan dan keterampilan serta kewenangan yang dimiliki", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.4.1", criteria: "Pengusaha atau pengurus melakukan penilaian risiko lingkungan kerja untuk mengetahui daerah-daerah yang memerlukan pembatasan izin masuk", penilaian: "sesuai", keterangan: "Terdapat pada bagian denah lingkungan kerja" },
+                    { no: "6.4.2", criteria: "Terdapat pengendalian atas daerah/tempat dengan pembatasan izin masuk", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.4.3", criteria: "Tersedianya fasilitas dan layanan di tempat kerja sesuai dengan standar dan pedoman teknis", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.4.4", criteria: "Rambu-rambu K3 harus dipasang sesuai dengan standar dan pedoman teknis", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.5.1", criteria: "Penjadualan pemeriksaan dan pemeliharaan sarana produksi serta peralatan mencakup verifikasi alat-alat pengaman serta persyaratan yang ditetapkan oleh peraturan perundang-undangan, standar dan pedoman teknis yang relevan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.5.2", criteria: "Semua catatan yang memuat data secara rinci dari kegiatan pemeriksaan, pemeliharaan, perbaikan dan perubahan yang dilakukan atas sarana dan peralatan produksi harus disimpan dan dipelihara", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.5.3", criteria: "Sarana dan peralatan produksi memiliki sertifikat yang masih berlaku sesuai dengan persyaratan peraturan perundang-undangan dan standar", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.5.4", criteria: "Pemeriksaan, pemeliharaan, perawatan, perbaikan dan setiap perubahan harus dilakukan petugas yang kompeten dan berwenang", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.5.7", criteria: "Terdapat sistem untuk penandaan bagi peralatan yang sudah tidak aman lagi untuk digunakan atau sudah tidak digunakan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.5.8", criteria: "Apabila diperlukan dilakukan penerapan sistem penguncian pengoperasian (lock out system) untuk mencegah agar sarana produksi tidak dihidupkan sebelum saatnya", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.5.9", criteria: "Terdapat prosedur yang dapat menjamin keselamatan dan kesehatan tenaga kerja atau orang lain yang berada didekat sarana dan peralatan produksi pada saat proses pemeriksaan, pemeliharaan, perbaikan dan perubahan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.5.10", criteria: "Terdapat penanggung jawab untuk menyetujui bahwa sarana dan peralatan produksi telah aman digunakan setelah proses pemeliharaan, perawatan, perbaikan atau perubahan", penilaian: "belum", keterangan: "Tidak ada bukti" },
+                    { no: "6.6.1", criteria: "Apabila perusahaan dikontrak untuk menyediakan pelayanan yang tunduk pada standar dan peraturan perundang-undangan mengenai K3, maka perlu disusun prosedur untuk menjamin bahwa pelayanan memenuhi persyaratan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.6.2", criteria: "Apabila perusahaan diberi pelayanan melalui kontrak, dan pelayanan tunduk pada standar dan peraturan perundang-undangan K3, maka perlu disusun prosedur untuk menjamin bahwa pelayanan memenuhi persyaratan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.7.1", criteria: "Keadaan darurat yang potensial di dalam dan/atau di luar tempat kerja telah diidentifikasi dan prosedur keadaan darurat telah didokumentasikan dan diinformasikan agar diketahui oleh seluruh orang yang ada di tempat kerja", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.7.2", criteria: "Penyediaan alat/sarana dan prosedur keadaan darurat berdasarkan hasil identifikasi dan diuji serta ditinjau secara rutin oleh petugas yang berkompeten dan berwenang", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.7.3", criteria: "Tenaga kerja mendapat instruksi dan pelatihan mengenai prosedur keadaan darurat yang sesuai dengan tingkat risiko", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.7.4", criteria: "Petugas penanganan keadaan darurat ditetapkan dan diberikan pelatihan khusus serta diinformasikan kepada seluruh orang yang ada di tempat kerja", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.7.6", criteria: "Peralatan, dan sistem tanda bahaya keadaan darurat disediakan, diperiksa, diuji dan dipelihara secara berkala sesuai dengan peraturan perundang-undangan, standar dan pedoman teknis yang relevan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.7.7", criteria: "Jenis, jumlah, penempatan dan kemudahan untuk mendapatkan alat keadaan darurat telah sesuai dengan peraturan perundang-undangan atau standar dan dinilai oleh petugas yang berkompeten dan berwenang", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.8.1", criteria: "Perusahaan telah mengevaluasi alat P3K dan menjamin bahwa sistem P3K yang ada memenuhi peraturan perundang-undangan, standar dan pedoman teknis", penilaian: "sesuai", keterangan: "Terdapat pada landasan hukum dan P3K" },
+                    { no: "6.8.2", criteria: "Petugas P3K telah dilatih dan ditunjuk sesuai dengan peraturan perundang-undangan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "6.9.1", criteria: "Prosedur untuk pemulihan kondisi tenaga kerja maupun sarana dan peralatan produksi yang mengalami kerusakan telah ditetapkan dan dapat diterapkan sesegera mungkin setelah terjadinya kecelakaan dan penyakit akibat kerja", penilaian: "sesuai", keterangan: "Tidak ada bukti" }
+                ]
+            },
+            // BAGIAN 7: Pemantauan (disingkat)
+            {
+                sectionId: "7",
+                sectionName: "Pemantauan",
+                items: [
+                    { no: "7.1.1", criteria: "Pemeriksaan/inspeksi terhadap tempat kerja dan cara kerja dilaksanakan secara teratur", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "7.1.2", criteria: "Pemeriksaan/inspeksi dilaksanakan oleh petugas yang berkompeten dan berwenang yang telah memperoleh pelatihan mengenai identifikasi bahaya", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "7.1.3", criteria: "Pemeriksaan/inspeksi mencari masukan dari tenaga kerja yang melakukan tugas di tempat yang diperiksa", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "7.1.4", criteria: "Daftar periksa (check list) tempat kerja telah disusun untuk digunakan pada saat pemeriksaan/inspeksi", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "7.1.5", criteria: "Laporan pemeriksaan/inspeksi berisi rekomendasi untuk tindakan perbaikan dan diajukan kepada pengurus dan P2K3 sesuai dengan kebutuhan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "7.1.6", criteria: "Pengusaha atau pengurus telah menetapkan penanggung jawab untuk pelaksanaan tindakan perbaikan dari hasil laporan pemeriksaan/inspeksi", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "7.2.1", criteria: "Pemantauan/pengukuran lingkungan kerja dilaksanakan secara teratur dan hasilnya didokumentasikan, dipelihara dan digunakan untuk penilaian dan pengendalian risiko", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "7.2.2", criteria: "Pemantauan/pengukuran lingkungan kerja meliputi faktor fisik, kimia, biologi, ergonomi dan psikologi", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "7.2.3", criteria: "Pemantauan/pengukuran lingkungan kerja dilakukan oleh petugas atau pihak yang berkompeten dan berwenang dari dalam dan/atau luar perusahaan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "7.3.1", criteria: "Terdapat prosedur yang terdokumentasi mengenai identifikasi, kalibrasi, pemeliharaan dan penyimpanan untuk alat pemeriksaan, ukur dan uji mengenai K3", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "7.3.2", criteria: "Alat dipelihara dan dikalibrasi oleh petugas atau pihak yang berkompeten dan berwenang dari dalam dan/atau luar perusahaan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "7.4.1", criteria: "Dilakukan pemantauan kesehatan tenaga kerja yang bekerja pada tempat kerja yang mengandung potensi bahaya tinggi sesuai dengan peraturan perundang-undangan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "7.4.2", criteria: "Pengusaha atau pengurus telah melaksanakan identifikasi keadaan dimana pemeriksaan kesehatan tenaga kerja perlu dilakukan dan telah melaksanakan sistem untuk membantu pemeriksaan ini", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "7.4.3", criteria: "Pemeriksaan kesehatan tenaga kerja dilakukan oleh dokter pemeriksa yang ditunjuk sesuai peraturan perundang-undangan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "7.4.4", criteria: "Perusahaan menyediakan pelayanan kesehatan kerja sesuai peraturan perundang-undangan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "7.4.5", criteria: "Catatan mengenai pemantauan kesehatan tenaga kerja dibuat sesuai dengan peraturan perundang-undangan", penilaian: "sesuai", keterangan: "Tidak ada bukti" }
+                ]
+            },
+            // BAGIAN 8: Pelaporan dan Perbaikan
+            {
+                sectionId: "8",
+                sectionName: "Pelaporan dan Perbaikan",
+                items: [
+                    { no: "8.1.1", criteria: "Terdapat prosedur pelaporan bahaya yang berhubungan dengan K3 dan prosedur ini diketahui oleh tenaga kerja", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "8.3.1", criteria: "Tempat kerja/perusahaan mempunyai prosedur pemeriksaan dan pengkajian kecelakaan kerja dan penyakit akibat kerja", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "8.3.2", criteria: "Pemeriksaan dan pengkajian kecelakaan kerja dilakukan oleh petugas atau Ahli K3 yang ditunjuk sesuai peraturan perundang-undangan atau pihak lain yang berkompeten dan berwenang", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "8.3.3", criteria: "Laporan pemeriksaan dan pengkajian berisi tentang sebab dan akibat serta rekomendasi/saran dan jadwal waktu pelaksanaan usaha perbaikan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "8.3.4", criteria: "Penanggung jawab untuk melaksanakan tindakan perbaikan atas laporan pemeriksaan dan pengkajian telah ditetapkan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "8.3.5", criteria: "Tindakan perbaikan diinformasikan kepada tenaga kerja yang bekerja di tempat terjadinya kecelakaan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "8.3.6", criteria: "Pelaksanaan tindakan perbaikan dipantau, didokumentasikan dan diinformasikan ke seluruh tenaga kerja", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "8.4.1", criteria: "Terdapat prosedur untuk menangani masalah keselamatan dan kesehatan yang timbul dan sesuai dengan peraturan perundang-undangan yang berlaku", penilaian: "sesuai", keterangan: "Tidak ada bukti" }
+                ]
+            },
+            // BAGIAN 9: Pengelolaan Material
+            {
+                sectionId: "9",
+                sectionName: "Pengelolaan Material",
+                items: [
+                    { no: "9.1.1", criteria: "Terdapat prosedur untuk mengidentifikasi potensi bahaya dan menilai risiko yang berhubungan dengan penanganan secara manual dan mekanis", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "9.1.2", criteria: "Identifikasi bahaya dan penilaian risiko dilaksanakan oleh petugas yang berkompeten dan berwenang", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "9.1.3", criteria: "Pengusaha atau pengurus menerapkan dan meninjau cara pengendalian risiko yang berhubungan dengan penanganan secara manual atau mekanis", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "9.1.4", criteria: "Terdapat prosedur untuk penanganan bahan meliputi metode pencegahan terhadap kerusakan, tumpahan dan/atau kebocoran", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "9.2.1", criteria: "Terdapat prosedur yang menjamin bahwa bahan disimpan dan dipindahkan dengan cara yang aman sesuai dengan peraturan perundang-undangan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "9.2.3", criteria: "Terdapat prosedur yang menjamin bahwa bahan dibuang dengan cara yang aman sesuai dengan peraturan perundang-undangan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "9.3.1", criteria: "Perusahaan telah mendokumentasikan dan menerapkan prosedur mengenai penyimpanan, penanganan dan pemindahan BKB sesuai dengan persyaratan peraturan perundang-undangan, standar dan pedoman teknis yang relevan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "9.3.2", criteria: "Terdapat Lembar Data Keselamatan BKB (Material Safety Data Sheets) meliputi keterangan mengenai keselamatan bahan sebagaimana diatur pada peraturan perundang-undangan dan dengan mudah dapat diperoleh", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "9.3.3", criteria: "Terdapat sistem untuk mengidentifikasi dan pemberian label secara jelas pada bahan kimia berbahaya", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "9.3.4", criteria: "Rambu peringatan bahaya terpasang sesuai dengan persyaratan peraturan perundang-undangan dan/atau standar yang relevan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "9.3.5", criteria: "Penanganan BKB dilakukan oleh petugas yang berkompeten dan berwenang", penilaian: "sesuai", keterangan: "Tidak ada bukti" }
+                ]
+            },
+            // BAGIAN 10: Pengumpulan dan Penggunaan Data
+            {
+                sectionId: "10",
+                sectionName: "Pengumpulan dan Penggunaan Data",
+                items: [
+                    { no: "10.1.1", criteria: "Pengusaha atau pengurus telah mendokumentasikan dan menerapkan prosedur pelaksanaan identifikasi, pengumpulan, pengarsipan, pemeliharaan, penyimpanan dan penggantian catatan K3", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "10.1.2", criteria: "Peraturan perundang-undangan, standar dan pedoman teknis K3 yang relevan dipelihara pada tempat yang mudah didapat", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "10.1.3", criteria: "Terdapat prosedur yang menentukan persyaratan untuk menjaga kerahasiaan catatan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "10.1.4", criteria: "Catatan kompensasi kecelakaan dan rehabilitasi kesehatan tenaga kerja dipelihara", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "10.2.1", criteria: "Data K3 yang terbaru dikumpulkan dan dianalisa", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "10.2.2", criteria: "Laporan rutin kinerja K3 dibuat dan disebarluaskan di dalam tempat kerja", penilaian: "sesuai", keterangan: "Tidak ada bukti" }
+                ]
+            },
+            // BAGIAN 11: Pemeriksaan SMK3
+            {
+                sectionId: "11",
+                sectionName: "Pemeriksaan SMK3",
+                items: [
+                    { no: "11.1.1", criteria: "Audit internal SMK3 yang terjadwal dilaksanakan untuk memeriksa kesesuaian kegiatan perencanaan dan untuk menentukan efektifitas kegiatan tersebut", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "11.1.3", criteria: "Laporan audit didistribusikan kepada pengusaha atau pengurus dan petugas lain yang berkepentingan dan dipantau untuk menjamin dilakukannya tindakan perbaikan", penilaian: "sesuai", keterangan: "Tidak ada bukti" }
+                ]
+            },
+            // BAGIAN 12: Pengembangan Keterampilan
+            {
+                sectionId: "12",
+                sectionName: "Pengembangan Keterampilan",
+                items: [
+                    { no: "12.1.1", criteria: "Analisis kebutuhan pelatihan K3 sesuai persyaratan peraturan perundang-undangan telah dilakukan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "12.1.2", criteria: "Rencana pelatihan K3 bagi semua tingkatan telah disusun", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "12.1.3", criteria: "Jenis pelatihan K3 yang dilakukan harus disesuaikan dengan kebutuhan untuk pengendalian potensi bahaya", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "12.1.4", criteria: "Pelatihan dilakukan oleh orang atau badan yang berkompeten dan berwenang sesuai peraturan perundang-undangan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "12.1.5", criteria: "Terdapat fasilitas dan sumber daya memadai untuk pelaksanaan pelatihan yang efektif", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "12.1.6", criteria: "Pengusaha atau pengurus mendokumentasikan dan menyimpan catatan seluruh pelatihan", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "12.1.7", criteria: "Program pelatihan ditinjau secara teratur untuk menjamin agar tetap relevan dan efektif", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "12.2.1", criteria: "Anggota manajemen eksekutif dan pengurus berperan serta dalam pelatihan yang mencakup penjelasan tentang kewajiban hukum dan prinsip-prinsip serta pelaksanaan K3", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "12.2.2", criteria: "Manajer dan pengawas/penyelia menerima pelatihan yang sesuai dengan peran dan tanggung jawab mereka", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "12.3.1", criteria: "Pelatihan diberikan kepada semua tenaga kerja termasuk tenaga kerja baru dan yang dipindahkan agar mereka dapat melaksanakan tugasnya secara aman", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "12.3.2", criteria: "Pelatihan diberikan kepada tenaga kerja apabila di tempat kerjanya terjadi perubahan sarana produksi atau proses", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "12.3.3", criteria: "Pengusaha atau pengurus memberikan pelatihan penyegaran kepada semua tenaga kerja", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "12.4.1", criteria: "Terdapat prosedur yang menetapkan persyaratan untuk memberikan taklimat (briefing) kepada pengunjung dan mitra kerja guna menjamin K3", penilaian: "sesuai", keterangan: "Tidak ada bukti" },
+                    { no: "12.5.1", criteria: "Perusahaan mempunyai sistem yang menjamin kepatuhan terhadap persyaratan lisensi atau kualifikasi sesuai dengan peraturan perundangan untuk melaksanakan tugas khusus, melaksanakan pekerjaan atau mengoperasikan peralatan", penilaian: "sesuai", keterangan: "Tidak ada bukti" }
+                ]
+            }
+        ];
+
+        // Fungsi untuk merender semua bagian audit
+        function renderAuditSections() {
+            const container = document.getElementById('auditSections');
+            container.innerHTML = '';
+            
+            auditData.forEach(section => {
+                const sectionElement = document.createElement('div');
+                sectionElement.className = 'section-container';
+                sectionElement.dataset.sectionId = section.sectionId;
+                
+                // Header bagian
+                const sectionHeader = document.createElement('div');
+                sectionHeader.className = 'section-header';
+                sectionHeader.innerHTML = `
+                    <h2>Bagian ${section.sectionId}: ${section.sectionName}</h2>
+                    <div class="section-toggle"><i class="fas fa-chevron-down"></i></div>
+                `;
+                
+                // Konten bagian (tabel)
+                const sectionContent = document.createElement('div');
+                sectionContent.className = 'section-content';
+                
+                // Buat tabel
+                const table = document.createElement('table');
+                table.className = 'audit-table';
+                table.innerHTML = `
+                    <thead>
+                        <tr>
+                            <th class="criteria-no">No. Kriteria</th>
+                            <th class="criteria-desc">Kriteria Audit SMK3</th>
+                            <th class="penilaian">Penilaian</th>
+                            <th class="keterangan">Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${section.items.map(item => `
+                            <tr data-no="${item.no}" data-status="${item.penilaian}">
+                                <td class="criteria-no">${item.no}</td>
+                                <td class="criteria-desc">${item.criteria}</td>
+                                <td class="penilaian">
+                                    <span class="status-badge ${item.penilaian}">
+                                        ${item.penilaian === 'sesuai' ? '✓ Sesuai' : 
+                                          item.penilaian === 'tidak-sesuai' ? '✗ Tidak Sesuai' : 
+                                          '○ Belum Dinilai'}
+                                    </span>
+                                </td>
+                                <td class="keterangan">${item.keterangan || ''}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                `;
+                
+                sectionContent.appendChild(table);
+                sectionElement.appendChild(sectionHeader);
+                sectionElement.appendChild(sectionContent);
+                container.appendChild(sectionElement);
+                
+                // Event listener untuk toggle section
+                sectionHeader.addEventListener('click', () => {
+                    const icon = sectionHeader.querySelector('.section-toggle i');
+                    sectionContent.classList.toggle('expanded');
+                    icon.classList.toggle('fa-chevron-down');
+                    icon.classList.toggle('fa-chevron-up');
+                });
+            });
+            
+            // Buka bagian pertama secara default
+            const firstSection = document.querySelector('.section-container');
+            if (firstSection) {
+                const firstContent = firstSection.querySelector('.section-content');
+                const firstIcon = firstSection.querySelector('.section-toggle i');
+                firstContent.classList.add('expanded');
+                firstIcon.classList.remove('fa-chevron-down');
+                firstIcon.classList.add('fa-chevron-up');
+            }
+            
+            updateStatistics();
+        }
+
+        // Fungsi untuk update statistik
+        function updateStatistics() {
+            const allItems = document.querySelectorAll('.audit-table tbody tr');
+            const totalItems = allItems.length;
+            const sesuaiItems = document.querySelectorAll('.status-badge.sesuai').length;
+            const tidakSesuaiItems = document.querySelectorAll('.status-badge.tidak-sesuai').length;
+            const persentase = totalItems > 0 ? Math.round((sesuaiItems / totalItems) * 100) : 0;
+            
+            document.getElementById('totalItems').textContent = totalItems;
+            document.getElementById('sesuaiCount').textContent = sesuaiItems;
+            document.getElementById('tidakSesuaiCount').textContent = tidakSesuaiItems;
+            document.getElementById('persentase').textContent = `${persentase}%`;
+        }
+
+        // Fungsi untuk filter data
+        function filterAuditData() {
+            const searchTerm = document.getElementById('search').value.toLowerCase();
+            const sectionFilter = document.getElementById('sectionFilter').value;
+            const statusFilter = document.getElementById('statusFilter').value;
+            
+            let visibleItems = 0;
+            let visibleSections = 0;
+            
+            // Loop melalui semua bagian
+            document.querySelectorAll('.section-container').forEach(section => {
+                const sectionId = section.dataset.sectionId;
+                const sectionContent = section.querySelector('.section-content');
+                const rows = section.querySelectorAll('tbody tr');
+                
+                let sectionVisibleItems = 0;
+                
+                // Loop melalui semua baris dalam bagian
+                rows.forEach(row => {
+                    const no = row.dataset.no;
+                    const criteria = row.querySelector('.criteria-desc').textContent.toLowerCase();
+                    const status = row.dataset.status;
+                    
+                    // Terapkan filter
+                    const matchesSearch = searchTerm === '' || 
+                                          no.toLowerCase().includes(searchTerm) || 
+                                          criteria.includes(searchTerm);
+                    const matchesSection = sectionFilter === 'all' || sectionFilter === sectionId;
+                    const matchesStatus = statusFilter === 'all' || statusFilter === status;
+                    
+                    if (matchesSearch && matchesSection && matchesStatus) {
+                        row.style.display = '';
+                        sectionVisibleItems++;
+                        visibleItems++;
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+                
+                // Tampilkan/sembunyikan bagian berdasarkan apakah ada item yang visible
+                if (sectionVisibleItems > 0) {
+                    section.style.display = '';
+                    visibleSections++;
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+            
+            // Tampilkan pesan jika tidak ada hasil
+            const noResults = document.getElementById('noResults');
+            if (visibleItems === 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+            
+            updateStatistics();
+        }
+
+        // Inisialisasi saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            renderAuditSections();
+            
+            // Event listener untuk filter
+            document.getElementById('search').addEventListener('input', filterAuditData);
+            document.getElementById('sectionFilter').addEventListener('change', filterAuditData);
+            document.getElementById('statusFilter').addEventListener('change', filterAuditData);
+            
+            // Event listener untuk memperbarui statistik saat tabel di-klik (simulasi perubahan penilaian)
+            document.addEventListener('click', (e) => {
+                if (e.target.closest('.status-badge')) {
+                    const badge = e.target.closest('.status-badge');
+                    const row = badge.closest('tr');
+                    
+                    // Simulasi perubahan status (hanya untuk demo)
+                    // Dalam implementasi nyata, ini akan menyimpan ke database
+                    if (badge.classList.contains('sesuai')) {
+                        badge.classList.remove('sesuai');
+                        badge.classList.add('tidak-sesuai');
+                        badge.textContent = '✗ Tidak Sesuai';
+                        row.dataset.status = 'tidak-sesuai';
+                    } else if (badge.classList.contains('tidak-sesuai')) {
+                        badge.classList.remove('tidak-sesuai');
+                        badge.classList.add('belum');
+                        badge.textContent = '○ Belum Dinilai';
+                        row.dataset.status = 'belum';
+                    } else {
+                        badge.classList.remove('belum');
+                        badge.classList.add('sesuai');
+                        badge.textContent = '✓ Sesuai';
+                        row.dataset.status = 'sesuai';
+                    }
+                    
+                    updateStatistics();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
